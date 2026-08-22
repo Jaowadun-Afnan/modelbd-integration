@@ -2,7 +2,7 @@
 
 > **Team:** Cardinality Crew  
 >**Course:** Database Systems Lab (CSE, Chittagong University) 
->**Supervisor:** Prof. Dr. Rudra Pratap Deb Nath  
+>   **Supervisor:** Prof. Dr. Rudra Pratap Deb Nath  
 
 ## 📖 Project Overview
 This repository contains the ETL pipeline, DDL schemas, and integration logic for the unified Bangladesh Socioeconomic Database.
