@@ -11,54 +11,51 @@ RAW_DIR = Path("../raw_data/original")
 OUTPUT_DIR = Path("../raw_data/extracted/csv")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Complete list of ALL source files (CSV + Excel)
+# ============================================================
+# COMPLETE MASTER FILE LIST 
+# (Covers ALL 43 Entities from the Conceptual Model)
+# ============================================================
 FILE_CONFIG: Dict[str, Dict[str, Any]] = {
-    # ---------- WDI & World Bank (NOW INCLUDES METADATA) ----------
+
+    # =========================================================
+    # 1. WDI & WORLD BANK (Cluster A & B)
+    # =========================================================
     "API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv": {
         "type": "wdi",
         "encoding": "utf-8",
-        "skiprows": 0,
         "melt_id_vars": ["Country Name", "Country Code", "Indicator Name", "Indicator Code"],
         "value_name": "value",
         "var_name": "year"
     },
-    "Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv": {
-        "type": "standard",
-        "encoding": "utf-8"
-    },
-    "Metadata_Indicator_API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv": {
-        "type": "standard",
-        "encoding": "utf-8"
-    },
-    
-    # ---------- Science & Technology ----------
+    "Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv": {"type": "standard", "encoding": "utf-8"},
+    "Metadata_Indicator_API_SP.POP.TOTL_DS2_en_csv_v2_282912.csv": {"type": "standard", "encoding": "utf-8"},
+
+    # =========================================================
+    # 2. SCIENCE, TECH & AGRICULTURE (Cluster C)
+    # =========================================================
     "science-and-technology_bgd (6).csv": {"type": "standard", "encoding": "latin1"},
-    
-    # ---------- Social Development ----------
-    "social-development_bgd (1).csv": {"type": "standard", "encoding": "latin1"},
-    
-    # ---------- Agriculture ----------
     "indicators_bgd (1).csv": {"type": "standard", "encoding": "latin1"},
-    
-    # ---------- Youth Mortality ----------
-    "youth-mortality-rate.csv": {"type": "standard", "encoding": "utf-8"},
-    
-    # ---------- ILO Working Age Population ----------
+
+    # =========================================================
+    # 3. SOCIAL DEVELOPMENT & LABOR (Cluster D)
+    # =========================================================
+    "social-development_bgd (1).csv": {"type": "standard", "encoding": "latin1"},
     "POP_XWAP_SEX_AGE_NB_A-filtered-2026-05-14.csv": {"type": "standard", "encoding": "utf-8"},
-    
-    # ---------- Nominal/Real GDP (FIXED filename) ----------
-    "Nominal and Real GDP 2007-16 (csv).csv": {"type": "standard", "encoding": "utf-8"},
-    
-    # ---------- MPI Trends ----------
-    "bgd_mpi_trends.csv": {"type": "standard", "encoding": "utf-8"},
-    
-    # ---------- DHS Subnational (ALL 34 FILES INCLUDED) ----------
+
+    # =========================================================
+    # 4. NATIONAL HEALTH (Cluster E)
+    # =========================================================
+    "youth-mortality-rate.csv": {"type": "standard", "encoding": "utf-8"},
+    "life-expectancy-men-women.csv": {"type": "standard", "encoding": "utf-8"},
+    "maternal-mortality.csv": {"type": "standard", "encoding": "utf-8"},
+
+    # =========================================================
+    # 5. ALL DHS SUBNATIONAL OBSERVATIONS (Cluster F - 32 files)
+    # =========================================================
     "select-family-planning-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "select-nutrition-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "diarrhea_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "health-insurance_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
-    "life-expectancy-men-women.csv": {"type": "standard", "encoding": "utf-8"},
-    "maternal-mortality.csv": {"type": "standard", "encoding": "utf-8"},
     "orphans_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "select-child-mortality-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "select-education-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
@@ -85,19 +82,35 @@ FILE_CONFIG: Dict[str, Dict[str, Any]] = {
     "anemia_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
     "birth-registration_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
     "child-mortality-rates_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
-    
-    # ---------- EXCEL FILES ----------
+
+    # =========================================================
+    # 6. MACROECONOMICS & TRADE (Cluster G)
+    # =========================================================
+    "Nominal and Real GDP 2007-16 (csv).csv": {"type": "standard", "encoding": "utf-8"},
+    "bgd_mpi_trends.csv": {"type": "standard", "encoding": "utf-8"},
+
+    # =========================================================
+    # 7. ALL EXCEL FILES (Cluster G, H, I)
+    # =========================================================
     "ban-key-indicators-2023.xlsx": {"type": "excel", "sheet_name": None},
     "ban-key-indicators-2024 (1).xlsx": {"type": "excel", "sheet_name": None},
     "nag_bgd (2).xlsx": {"type": "excel", "sheet_name": None},
     "exr_bgd (1).xlsx": {"type": "excel", "sheet_name": None},
     "cpi_bgd (1).xlsx": {"type": "excel", "sheet_name": None},
     "bgd_adminboundaries_tabulardata (1).xlsx": {"type": "excel", "sheet_name": None},
+    
+    # =========================================================
+    # 8. EXTRA SAFETY: Quarterly GDP (if it exists as a standalone file)
+    #    Mentioned in Cluster G, Table 26 of the conceptual model.
+    # =========================================================
+    "Quarterly GDP.xlsx": {"type": "excel", "sheet_name": None},  # <-- ADDED for safety
 }
 
 # ============================================================
-# CORE PARSING FUNCTIONS (same as before, unchanged for brevity)
+# (THE REST OF THE CODE BELOW IS IDENTICAL TO THE PREVIOUS VERSION)
+# I AM INCLUDING IT HERE SO YOU HAVE ONE COMPLETE FILE TO COPY.
 # ============================================================
+
 def try_read_csv(file_path: Path, encodings: list = None) -> pd.DataFrame:
     if encodings is None:
         encodings = ['utf-8', 'latin1', 'windows-1252', 'cp1252']
