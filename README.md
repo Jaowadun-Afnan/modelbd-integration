@@ -2,6 +2,7 @@
 
 > **Team:** Cardinality Crew  
 **Course:** Database Systems Lab (CSE, Chittagong University)
+> 
 > **Supervisor:** Prof. Dr. Rudra Pratap Deb Nath  
 
 ## 📖 Project Overview
