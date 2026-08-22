@@ -108,7 +108,7 @@ FILE_CONFIG: Dict[str, Dict[str, Any]] = {
 
 # ============================================================
 # (THE REST OF THE CODE BELOW IS IDENTICAL TO THE PREVIOUS VERSION)
-# I AM INCLUDING IT HERE SO YOU HAVE ONE COMPLETE FILE TO COPY.
+# I AM INCLUDING IT HERE SO WE HAVE ONE COMPLETE FILE TO COPY.
 # ============================================================
 
 def try_read_csv(file_path: Path, encodings: list = None) -> pd.DataFrame:
