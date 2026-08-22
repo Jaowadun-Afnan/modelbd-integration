@@ -1,22 +1,53 @@
 # MODELBD Integration — Bangladesh Socioeconomic Database
 
 > **Team:** Cardinality Crew  
-> **Course:** Database Systems Lab  
+**Course:** Database Systems Lab (CSE, Chittagong University)
 > **Supervisor:** Prof. Dr. Rudra Pratap Deb Nath  
 
 ## 📖 Project Overview
 This repository contains the ETL pipeline, DDL schemas, and integration logic for the unified Bangladesh Socioeconomic Database.
 
-## 🗂️ Repository Structure
-| Folder | Description |
-| :--- | :--- |
-| `raw_data/original/` | Original downloaded CSVs and PDFs (DO NOT EDIT) |
-| `raw_data/extracted/csv/` | Parsed CSV outputs from CSV extraction |
-| `raw_data/extracted/pdf_tables/` | Extracted tables from PDFs |
-| `scripts/extract/` | Python scripts for data extraction |
 
 ## 👥 Team Members
 - [Jaowadun Afnan Tean] - [24701045] - [Role]
 - [Adnan Abir Rangan]   - [24701052] - [Role]
 - [Samia Jahan Nourin]  - [24701053] - [Role]
 - [Sanjida Ferdous Sara]- [23701044] - [Role]
+
+ ### 🔑 Key Highlights
+- **43 Unified Entities** consolidated from 130+ raw tables.
+- **Zero Data Loss** consolidation strategy.
+- **Time-series integrity** preserved (`year` embedded in every PK).
+- **Handles messy PDF tables** (Camelot/Tabula fallback).
+- **Resolves approximate key mismatches** (`country_name` → `ISO3`, `sector` → `sector_code`).
+
+
+## 📁 Repository Structure
+├── raw_data/
+│ ├── original/ (original CSVs/PDFs here)
+│ ├── extracted/ (unprocessed CSV extracts)
+│ ├── csv/
+│ └── pdf_tables/
+├── staging/
+│ └── clean/  (cleaned, transformed CSVs)
+├── scripts/
+│ ├── extract/ # Parsers for CSV/Excel/PDF
+│ │ ├── extract_csv.py
+│ │ ├── extract_pdf.py
+│ │ └── run_all_extract.py
+│ ├── transform/ # Cleaning & mapping logic
+│ │ ├── mapping_dicts.py
+│ │ ├── transform_wdi.py
+│ │ ├── transform_macro.py
+│ │ ├── transform_dhs.py
+│ │ ├── transform_agri_labor.py
+│ │ ├── transform_census.py
+│ │ └── run_all_transform.py
+│ └── load/ # Oracle database loader
+│ ├── load_to_oracle.py
+│ └── verify_load.py
+├── ddl/ # Database schema
+│ └── 01_create_all_tables.sql
+├── logs/ # Runtime logs for debugging
+└── README.md 
+
