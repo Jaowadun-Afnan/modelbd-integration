@@ -24,30 +24,56 @@ This repository contains the ETL pipeline, DDL schemas, and integration logic fo
 
 ## 📁 Repository Structure
 ├── raw_data/
+
 │ ├── original/ (original CSVs/PDFs here)
+
 │ ├── extracted/ (unprocessed CSV extracts)
+
 │ ├── csv/
+
 │ └── pdf_tables/
+
 ├── staging/
+
 │ └── clean/  (cleaned, transformed CSVs)
+
 ├── scripts/
+
 │ ├── extract/ # Parsers for CSV/Excel/PDF
+
 │ │ ├── extract_csv.py
+
 │ │ ├── extract_pdf.py
+
 │ │ └── run_all_extract.py
+
 │ ├── transform/ # Cleaning & mapping logic
+
 │ │ ├── mapping_dicts.py
+
 │ │ ├── transform_wdi.py
+
 │ │ ├── transform_macro.py
+
 │ │ ├── transform_dhs.py
+
 │ │ ├── transform_agri_labor.py
+
 │ │ ├── transform_census.py
+
 │ │ └── run_all_transform.py
+
 │ └── load/ # Oracle database loader
+
 │ ├── load_to_oracle.py
+
 │ └── verify_load.py
+
 ├── ddl/ # Database schema
+
 │ └── 01_create_all_tables.sql
+
 ├── logs/ # Runtime logs for debugging
+
 └── README.md 
 
