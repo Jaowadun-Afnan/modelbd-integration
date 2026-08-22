@@ -9,10 +9,10 @@ This repository contains the ETL pipeline, DDL schemas, and integration logic fo
 
 
 ## 👥 Team Members
-- [Jaowadun Afnan Tean] - [24701045] - [Role]
-- [Adnan Abir Rangan]   - [24701052] - [Role]
-- [Samia Jahan Nourin]  - [24701053] - [Role]
-- [Sanjida Ferdous Sara]- [23701044] - [Role]
+- [Adnan Abir Rangan]   - [24701052] - [leader]
+- [Sanjida Ferdous Sara]- [23701044] 
+- [Jaowadun Afnan Tean] - [24701045]
+- [Samia Jahan Nourin]  - [24701053]
 
  ### 🔑 Key Highlights
 - **43 Unified Entities** consolidated from 130+ raw tables.
