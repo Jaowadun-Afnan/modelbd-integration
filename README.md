@@ -16,4 +16,7 @@ This repository contains the ETL pipeline, DDL schemas, and integration logic fo
 | `scripts/extract/` | Python scripts for data extraction |
 
 ## 👥 Team Members
-- [Your Name] - [Roll] - [Role]
+- [Jaowadun Afnan Tean] - [24701045] - [Role]
+- [Adnan Abir Rangan]   - [24701052] - [Role]
+- [Samia Jahan Nourin]  - [24701053] - [Role]
+- [Sanjida Ferdous Sara]- [23701044] - [Role]
