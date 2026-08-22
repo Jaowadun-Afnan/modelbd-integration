@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE folders
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore original data files (but keep the folder structure)
+raw_data/original/*
+!raw_data/original/.gitkeep
+
+raw_data/extracted/csv/*
+!raw_data/extracted/csv/.gitkeep
+
+raw_data/extracted/pdf_tables/*
+!raw_data/extracted/pdf_tables/.gitkeep
+
+# Log files
+*.log
