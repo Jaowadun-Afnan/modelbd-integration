@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 import re
 
-RAW_DIR = Path("../raw_data/original")
+RAW_DIR = Path("../../raw_data/original")
 OUTPUT_DIR = Path("../raw_data/extracted/pdf_tables")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
