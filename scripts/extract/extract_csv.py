@@ -99,11 +99,6 @@ FILE_CONFIG: Dict[str, Dict[str, Any]] = {
     "cpi_bgd (1).xlsx": {"type": "excel", "sheet_name": None},
     "bgd_adminboundaries_tabulardata (1).xlsx": {"type": "excel", "sheet_name": None},
     
-    # =========================================================
-    # 8. EXTRA SAFETY: Quarterly GDP (if it exists as a standalone file)
-    #    Mentioned in Cluster G, Table 26 of the conceptual model.
-    # =========================================================
-    "Quarterly GDP.xlsx": {"type": "excel", "sheet_name": None},  # <-- ADDED for safety
 }
 
 # ============================================================
