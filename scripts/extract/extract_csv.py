@@ -8,7 +8,7 @@ from typing import Dict, Any
 # CONFIGURATION
 # ============================================================
 RAW_DIR = Path("../../raw_data/original")
-OUTPUT_DIR = Path("../raw_data/extracted/csv")
+OUTPUT_DIR = Path("../../raw_data/extracted/csv")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
