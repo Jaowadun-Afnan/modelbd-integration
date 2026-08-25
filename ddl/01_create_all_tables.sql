@@ -4,6 +4,9 @@
 -- 
 -- Dependency Order: Parents first, then children.
 -- Run this script in SQL*Plus, SQL Developer, or DBeaver.
+-- 
+-- Created: August 2026
+-- Team: Cardinality Crew
 -- ============================================================
 
 -- ============================================================
@@ -30,7 +33,7 @@ CREATE TABLE Indicator_Definition (
     CONSTRAINT pk_indicator_def PRIMARY KEY (indicator_code)
 );
 
--- 3. Admin_Boundary (Self-referencing)
+-- 3. Admin_Boundary (Self-referencing - ADM0 to ADM3)
 CREATE TABLE Admin_Boundary (
     entity_pcode  VARCHAR2(20)   NOT NULL,
     admin_level   NUMBER(1)      NOT NULL,
@@ -43,20 +46,22 @@ CREATE TABLE Admin_Boundary (
     record_date   TIMESTAMP,
     CONSTRAINT pk_admin_boundary PRIMARY KEY (entity_pcode),
     CONSTRAINT fk_admin_parent FOREIGN KEY (parent_pcode) REFERENCES Admin_Boundary(entity_pcode),
-    CONSTRAINT fk_admin_country FOREIGN KEY (country_iso3) REFERENCES Country(country_code)
+    CONSTRAINT fk_admin_country FOREIGN KEY (country_iso3) REFERENCES Country(country_code),
+    CONSTRAINT chk_admin_level CHECK (admin_level BETWEEN 0 AND 3)
 );
 CREATE INDEX idx_admin_parent ON Admin_Boundary(parent_pcode);
 CREATE INDEX idx_admin_country ON Admin_Boundary(country_iso3);
 
--- 4. Industry_Sector (Self-referencing)
+-- 4. Industry_Sector (Self-referencing) - FIXED: Removed reserved word "level"
 CREATE TABLE Industry_Sector (
     sector_code        VARCHAR2(20)   NOT NULL,
     sector_name        VARCHAR2(100)  NOT NULL,
     parent_sector_code VARCHAR2(20),
     isic_division      VARCHAR2(10),
-    level              NUMBER(1),
+    sector_level       NUMBER(1),      -- <<< CHANGED FROM "level" to "sector_level"
     CONSTRAINT pk_industry_sector PRIMARY KEY (sector_code),
-    CONSTRAINT fk_sector_parent FOREIGN KEY (parent_sector_code) REFERENCES Industry_Sector(sector_code)
+    CONSTRAINT fk_sector_parent FOREIGN KEY (parent_sector_code) REFERENCES Industry_Sector(sector_code),
+    CONSTRAINT chk_sector_level CHECK (sector_level BETWEEN 0 AND 3)
 );
 CREATE INDEX idx_sector_parent ON Industry_Sector(parent_sector_code);
 
@@ -84,7 +89,7 @@ CREATE TABLE DHS_Region (
     characteristic_category VARCHAR2(50),
     characteristic_label   VARCHAR2(100),
     level_rank             NUMBER(10,2),
-    is_total               CHAR(1)       CHECK (is_total IN ('Y', 'N')),
+    is_total               CHAR(1)       DEFAULT 'N' CHECK (is_total IN ('Y', 'N')),
     CONSTRAINT pk_dhs_region PRIMARY KEY (region_id)
 );
 
@@ -127,7 +132,7 @@ CREATE TABLE Macroeconomic_Indicator (
 -- BATCH 2: FACT / OBSERVATION TABLES (Depends on Batch 1)
 -- ============================================================
 
--- 9. Country_Indicator_Observation
+-- 9. Country_Indicator_Observation (WDI)
 CREATE TABLE Country_Indicator_Observation (
     country_code   VARCHAR2(3)   NOT NULL,
     indicator_code VARCHAR2(50)  NOT NULL,
@@ -232,7 +237,7 @@ CREATE TABLE Sectoral_Employment (
 CREATE INDEX idx_se_country ON Sectoral_Employment(country_code);
 CREATE INDEX idx_se_sector ON Sectoral_Employment(sector_code);
 
--- 15. Working_Age_Population
+-- 15. Working_Age_Population (ILO data)
 CREATE TABLE Working_Age_Population (
     ref_area              VARCHAR2(3)   NOT NULL,
     year                  NUMBER(4)     NOT NULL,
@@ -304,7 +309,7 @@ CREATE TABLE Survey_Coverage_Detail (
 );
 CREATE INDEX idx_scd_vaccine ON Survey_Coverage_Detail(vaccine_code);
 
--- 20. DHS_Subnational_Observation
+-- 20. DHS_Subnational_Observation - FIXED: Added region_id column
 CREATE TABLE DHS_Subnational_Observation (
     survey_id                VARCHAR2(50)  NOT NULL,
     indicator_id             VARCHAR2(50)  NOT NULL,
@@ -321,8 +326,8 @@ CREATE TABLE DHS_Subnational_Observation (
     characteristic_category  VARCHAR2(50),
     characteristic_label     VARCHAR2(100),
     by_variable_label        VARCHAR2(100),
-    is_total                 CHAR(1)       CHECK (is_total IN ('Y', 'N')),
-    is_preferred             CHAR(1)       CHECK (is_preferred IN ('Y', 'N')),
+    is_total                 CHAR(1)       DEFAULT 'N' CHECK (is_total IN ('Y', 'N')),
+    is_preferred             CHAR(1)       DEFAULT 'N' CHECK (is_preferred IN ('Y', 'N')),
     sdr_id                   VARCHAR2(50),
     survey_year_label        VARCHAR2(20),
     survey_type              VARCHAR2(50),
@@ -334,6 +339,7 @@ CREATE TABLE DHS_Subnational_Observation (
     ci_low                   NUMBER(20,4),
     ci_high                  NUMBER(20,4),
     observation_domain       VARCHAR2(50),
+    region_id                VARCHAR2(50)  NOT NULL,   -- <<< ADDED region_id column
     CONSTRAINT pk_dhs_subnational_obs PRIMARY KEY (survey_id, indicator_id, characteristic_id, by_variable_id),
     CONSTRAINT fk_dso_survey FOREIGN KEY (survey_id) REFERENCES DHS_Survey(survey_id),
     CONSTRAINT fk_dso_region FOREIGN KEY (region_id) REFERENCES DHS_Region(region_id)
@@ -352,7 +358,7 @@ CREATE TABLE DHS_Thematic_Fact (
     denominator_unweighted NUMBER(10),
     ci_low               NUMBER(20,4),
     ci_high              NUMBER(20,4),
-    is_preferred         CHAR(1)       CHECK (is_preferred IN ('Y', 'N')),
+    is_preferred         CHAR(1)       DEFAULT 'N' CHECK (is_preferred IN ('Y', 'N')),
     survey_year          NUMBER(4),
     thematic_domain      VARCHAR2(50),
     CONSTRAINT pk_dhs_thematic PRIMARY KEY (survey_id, region_id, characteristic_id, indicator_id),
@@ -570,7 +576,7 @@ CREATE TABLE Trade_Detail (
     CONSTRAINT pk_trade_detail PRIMARY KEY (year, trade_type, detail_category, detail_value, month)
 );
 
--- 35. Country_Trade (Conceptual FK to Country - resolved in ETL)
+-- 35. Country_Trade (Conceptual FK to Country via country_name - resolved in ETL)
 CREATE TABLE Country_Trade (
     year              VARCHAR2(10)  NOT NULL,
     country_name      VARCHAR2(100) NOT NULL,
@@ -701,39 +707,14 @@ CREATE TABLE Country_GRB_Practice (
 );
 
 -- ============================================================
--- POST-CREATION: INDEXES FOR PERFORMANCE
--- (Additional indexes on frequently queried columns)
+-- VERIFICATION QUERIES (Run after creation to confirm)
 -- ============================================================
 
--- Indexes for year-based lookups across all macro tables
-CREATE INDEX idx_macro_year ON Macroeconomic_Indicator(year);
-CREATE INDEX idx_pop_year ON Population_Demographic(year);
-CREATE INDEX idx_labor_overview_year ON Labor_Force_Overview(year);
-CREATE INDEX idx_sg_year ON Sectoral_GDP(year);
-CREATE INDEX idx_qg_year ON Quarterly_GDP(year);
-CREATE INDEX idx_pi_year ON Price_Index(year);
-CREATE INDEX idx_er_year ON Exchange_Rate(year);
-CREATE INDEX idx_ma_year ON Monetary_Aggregate(year);
-CREATE INDEX idx_ir_year ON Interest_Rate(year);
-CREATE INDEX idx_gf_year ON Government_Finance(year);
-CREATE INDEX idx_bop_year ON Balance_of_Payments(year);
-CREATE INDEX idx_ed_year ON External_Debt_Indicator(year);
-CREATE INDEX idx_pe_year ON Production_Energy(year);
+-- Check all tables were created
+SELECT table_name FROM user_tables ORDER BY table_name;
 
--- Indexes for DHS spatial/regional lookups
-CREATE INDEX idx_dso_location ON DHS_Subnational_Observation(location);
-CREATE INDEX idx_dt_region ON DHS_Thematic_Fact(region_id);
-CREATE INDEX idx_df_region ON Child_Health_Diarrhea_Fact(region_id);
-
--- Indexes for Economic Census geography
-CREATE INDEX idx_eu_division ON Economic_Unit_Aggregate(division_id);
-CREATE INDEX idx_pe_division ON Person_Engaged_Aggregate(division_id);
-CREATE INDEX idx_be_division ON Business_Ecommerce_Fact(division_id);
-
--- ============================================================
--- VERIFICATION QUERY (Run after creation to confirm)
--- ============================================================
--- SELECT table_name FROM user_tables ORDER BY table_name;
+-- Check table count (should be 43)
+SELECT COUNT(*) AS total_tables FROM user_tables;
 
 PROMPT ============================================================
 PROMPT Phase 2 DDL execution complete. All 43 tables created.
