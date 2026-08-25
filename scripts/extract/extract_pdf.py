@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 
 RAW_DIR = Path("../../raw_data/original")
-OUTPUT_DIR = Path("../raw_data/extracted/pdf_tables")
+OUTPUT_DIR = Path("../../raw_data/extracted/pdf_tables")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ALL 9 PDFs (NOW INCLUDES 3ab00376...)
