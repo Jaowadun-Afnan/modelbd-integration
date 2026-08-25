@@ -17,31 +17,29 @@ def transform_macroeconomic_indicator():
     file = gdp_files[0]
     print(f"   Using file: {file.name}")
 
-    # Read the CSV with first row as header
+    # Read with first row as header
     df = pd.read_csv(file, low_memory=False)
-    # Normalise column names (strip spaces, remove newlines)
+    # Normalise column names (strip spaces)
     df.columns = [str(c).strip() for c in df.columns]
     print("   Original columns:", list(df.columns))
 
-    # Identify the column that contains years (Period)
-    if 'Period' not in df.columns:
-        # Try alternative: 'period' or first column
-        if df.columns[0].lower() == 'period':
-            df.rename(columns={df.columns[0]: 'Period'}, inplace=True)
-        else:
-            print("   ❌ Cannot find 'Period' column.")
-            return
+    # Identify the Period column (may be 'Period' or first column)
+    if 'Period' in df.columns:
+        period_col = 'Period'
+    else:
+        period_col = df.columns[0]
+    print(f"   Period column: {period_col}")
 
-    # Drop the sub‑header row: it contains text like 'Nominal growth rate' in the second column
-    # or has an empty Period.
-    df = df[df['Period'].notna()]  # remove NaN
-    df = df[df['Period'].astype(str).str.strip() != '']  # remove empty strings
-    # Also remove rows where the Period value is not a year (e.g., 'Nominal growth rate')
-    df = df[~df['Period'].astype(str).str.lower().str.contains('growth rate', na=False)]
+    # Drop the sub‑header row: it contains 'Nominal growth rate' in any cell
+    # or has an empty Period value.
+    df = df[df[period_col].notna()]  # remove NaN
+    # Remove rows where the period string is empty or contains 'growth rate'
+    df = df[df[period_col].astype(str).str.strip() != '']
+    df = df[~df[period_col].astype(str).str.lower().str.contains('growth rate', na=False)]
 
-    # Rename columns to standard names
+    # Rename known columns
     rename_map = {
-        'Period': 'period',
+        period_col: 'period',
         'GDP growth rate': 'nominal_growth_rate',
         'Inflation rate (Base: 2005-06)': 'inflation_rate'
     }
@@ -52,10 +50,10 @@ def transform_macroeconomic_indicator():
     if unnamed_cols:
         df.rename(columns={unnamed_cols[0]: 'real_growth_rate'}, inplace=True)
 
-    # Extract year from the period string
+    # Now convert period to year using parse_fiscal_year
     df['year'] = df['period'].apply(parse_fiscal_year, return_start_year=True)
 
-    # Drop invalid years (0)
+    # Drop rows where year is 0 (invalid)
     df = df[df['year'] != 0]
 
     # Convert numeric columns
@@ -68,7 +66,7 @@ def transform_macroeconomic_indicator():
     df = df[[c for c in keep if c in df.columns]]
     df.drop_duplicates(subset=['year'], inplace=True)
 
-    # Debug print (optional)
+    # Debug print
     print("   Processed rows:")
     print(df)
 
