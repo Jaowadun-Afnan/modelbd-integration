@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from mapping_dicts import map_admin_to_pcode, map_gender
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 RAW_DIR = BASE_DIR / "raw_data" / "extracted" / "csv"
 STAGING_DIR = BASE_DIR / "staging" / "clean"
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
