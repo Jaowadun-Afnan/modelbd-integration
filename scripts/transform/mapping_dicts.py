@@ -1,3 +1,4 @@
+import pandas as pd
 # mapping_dicts.py
 import re
 from typing import Optional
@@ -213,18 +214,28 @@ def map_vaccine_code(text: Optional[str]) -> str:
     return 'UNMAPPED'
 
 # ---------- FISCAL YEAR PARSER ----------
-def parse_fiscal_year(text: str, return_start_year: bool = True) -> int:
-    """Convert '2023-24', 'FY2023-24' to int year."""
+def parse_fiscal_year(text, return_start_year=True):
+    """
+    Convert '2023-24', 'FY2023-24', or even a numeric year to int.
+    Returns 0 if the input cannot be parsed.
+    """
+    if text is None:
+        return 0
     if isinstance(text, (int, float)):
+        # If it's a float, check for NaN
+        if pd.isna(text):
+            return 0
         return int(text)
     if not isinstance(text, str):
         return 0
     cleaned = re.sub(r'^fy\s*', '', text.strip(), flags=re.IGNORECASE)
+    # Extract years
     years = re.findall(r'\b(19|20)\d{2}\b', cleaned)
     if years:
         start = int(years[0])
         end = int(years[-1]) if len(years) > 1 else start + 1
         return start if return_start_year else end
+    # Fallback: extract any numbers
     nums = re.findall(r'\d+', cleaned)
     if nums:
         start = int(nums[0])
