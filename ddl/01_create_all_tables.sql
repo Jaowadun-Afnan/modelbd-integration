@@ -4,6 +4,9 @@
 -- 
 -- Dependency Order: Parents first, then children.
 -- Run this script in SQL*Plus, SQL Developer, or DBeaver.
+-- 
+-- Created: August 2026
+-- Team: Cardinality Crew
 -- ============================================================
 
 -- ============================================================
@@ -30,7 +33,7 @@ CREATE TABLE Indicator_Definition (
     CONSTRAINT pk_indicator_def PRIMARY KEY (indicator_code)
 );
 
--- 3. Admin_Boundary (Self-referencing)
+-- 3. Admin_Boundary (Self-referencing - ADM0 to ADM3)
 CREATE TABLE Admin_Boundary (
     entity_pcode  VARCHAR2(20)   NOT NULL,
     admin_level   NUMBER(1)      NOT NULL,
@@ -43,7 +46,8 @@ CREATE TABLE Admin_Boundary (
     record_date   TIMESTAMP,
     CONSTRAINT pk_admin_boundary PRIMARY KEY (entity_pcode),
     CONSTRAINT fk_admin_parent FOREIGN KEY (parent_pcode) REFERENCES Admin_Boundary(entity_pcode),
-    CONSTRAINT fk_admin_country FOREIGN KEY (country_iso3) REFERENCES Country(country_code)
+    CONSTRAINT fk_admin_country FOREIGN KEY (country_iso3) REFERENCES Country(country_code),
+    CONSTRAINT chk_admin_level CHECK (admin_level BETWEEN 0 AND 3)
 );
 CREATE INDEX idx_admin_parent ON Admin_Boundary(parent_pcode);
 CREATE INDEX idx_admin_country ON Admin_Boundary(country_iso3);
@@ -56,7 +60,8 @@ CREATE TABLE Industry_Sector (
     isic_division      VARCHAR2(10),
     level              NUMBER(1),
     CONSTRAINT pk_industry_sector PRIMARY KEY (sector_code),
-    CONSTRAINT fk_sector_parent FOREIGN KEY (parent_sector_code) REFERENCES Industry_Sector(sector_code)
+    CONSTRAINT fk_sector_parent FOREIGN KEY (parent_sector_code) REFERENCES Industry_Sector(sector_code),
+    CONSTRAINT chk_sector_level CHECK (level BETWEEN 0 AND 3)
 );
 CREATE INDEX idx_sector_parent ON Industry_Sector(parent_sector_code);
 
@@ -84,7 +89,7 @@ CREATE TABLE DHS_Region (
     characteristic_category VARCHAR2(50),
     characteristic_label   VARCHAR2(100),
     level_rank             NUMBER(10,2),
-    is_total               CHAR(1)       CHECK (is_total IN ('Y', 'N')),
+    is_total               CHAR(1)       DEFAULT 'N' CHECK (is_total IN ('Y', 'N')),
     CONSTRAINT pk_dhs_region PRIMARY KEY (region_id)
 );
 
@@ -122,12 +127,13 @@ CREATE TABLE Macroeconomic_Indicator (
     trend_pci_growth_pct          NUMBER(10,4),
     CONSTRAINT pk_macroeconomic_indicator PRIMARY KEY (year)
 );
+CREATE INDEX idx_macro_year ON Macroeconomic_Indicator(year);
 
 -- ============================================================
 -- BATCH 2: FACT / OBSERVATION TABLES (Depends on Batch 1)
 -- ============================================================
 
--- 9. Country_Indicator_Observation
+-- 9. Country_Indicator_Observation (WDI)
 CREATE TABLE Country_Indicator_Observation (
     country_code   VARCHAR2(3)   NOT NULL,
     indicator_code VARCHAR2(50)  NOT NULL,
@@ -140,6 +146,7 @@ CREATE TABLE Country_Indicator_Observation (
 );
 CREATE INDEX idx_cio_country ON Country_Indicator_Observation(country_code);
 CREATE INDEX idx_cio_indicator ON Country_Indicator_Observation(indicator_code);
+CREATE INDEX idx_cio_year ON Country_Indicator_Observation(year);
 
 -- 10. Science_Technology_Metric
 CREATE TABLE Science_Technology_Metric (
@@ -154,6 +161,7 @@ CREATE TABLE Science_Technology_Metric (
     CONSTRAINT fk_st_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_st_country ON Science_Technology_Metric(country_code);
+CREATE INDEX idx_st_year ON Science_Technology_Metric(year);
 
 -- 11. Agricultural_Land_Use
 CREATE TABLE Agricultural_Land_Use (
@@ -171,6 +179,7 @@ CREATE TABLE Agricultural_Land_Use (
     CONSTRAINT fk_agri_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_agri_country ON Agricultural_Land_Use(country_code);
+CREATE INDEX idx_agri_year ON Agricultural_Land_Use(year);
 
 -- 12. Labor_Force_Participation
 CREATE TABLE Labor_Force_Participation (
@@ -194,6 +203,7 @@ CREATE TABLE Labor_Force_Participation (
     CONSTRAINT fk_lfp_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_lfp_country ON Labor_Force_Participation(country_code);
+CREATE INDEX idx_lfp_year ON Labor_Force_Participation(year);
 
 -- 13. Child_Employment_Education
 CREATE TABLE Child_Employment_Education (
@@ -210,6 +220,7 @@ CREATE TABLE Child_Employment_Education (
     CONSTRAINT fk_cee_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_cee_country ON Child_Employment_Education(country_code);
+CREATE INDEX idx_cee_year ON Child_Employment_Education(year);
 
 -- 14. Sectoral_Employment
 CREATE TABLE Sectoral_Employment (
@@ -231,8 +242,9 @@ CREATE TABLE Sectoral_Employment (
 );
 CREATE INDEX idx_se_country ON Sectoral_Employment(country_code);
 CREATE INDEX idx_se_sector ON Sectoral_Employment(sector_code);
+CREATE INDEX idx_se_year ON Sectoral_Employment(year);
 
--- 15. Working_Age_Population
+-- 15. Working_Age_Population (ILO data)
 CREATE TABLE Working_Age_Population (
     ref_area              VARCHAR2(3)   NOT NULL,
     year                  NUMBER(4)     NOT NULL,
@@ -250,6 +262,7 @@ CREATE TABLE Working_Age_Population (
     CONSTRAINT fk_wap_country FOREIGN KEY (ref_area) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_wap_country ON Working_Age_Population(ref_area);
+CREATE INDEX idx_wap_year ON Working_Age_Population(year);
 
 -- 16. National_Health_Stat
 CREATE TABLE National_Health_Stat (
@@ -264,6 +277,7 @@ CREATE TABLE National_Health_Stat (
     CONSTRAINT fk_nhs_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_nhs_country ON National_Health_Stat(country_code);
+CREATE INDEX idx_nhs_year ON National_Health_Stat(year);
 
 -- 17. Youth_Mortality_Observation
 CREATE TABLE Youth_Mortality_Observation (
@@ -274,6 +288,7 @@ CREATE TABLE Youth_Mortality_Observation (
     CONSTRAINT fk_ym_country FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 CREATE INDEX idx_ym_country ON Youth_Mortality_Observation(country_code);
+CREATE INDEX idx_ym_year ON Youth_Mortality_Observation(year);
 
 -- 18. Immunization_Coverage_Estimate
 CREATE TABLE Immunization_Coverage_Estimate (
@@ -287,6 +302,7 @@ CREATE TABLE Immunization_Coverage_Estimate (
     CONSTRAINT fk_imm_vaccine FOREIGN KEY (vaccine_code) REFERENCES Vaccine_Metadata(vaccine_code)
 );
 CREATE INDEX idx_imm_vaccine ON Immunization_Coverage_Estimate(vaccine_code);
+CREATE INDEX idx_imm_year ON Immunization_Coverage_Estimate(year);
 
 -- 19. Survey_Coverage_Detail
 CREATE TABLE Survey_Coverage_Detail (
@@ -303,6 +319,7 @@ CREATE TABLE Survey_Coverage_Detail (
     CONSTRAINT fk_scd_vaccine FOREIGN KEY (vaccine_code) REFERENCES Vaccine_Metadata(vaccine_code)
 );
 CREATE INDEX idx_scd_vaccine ON Survey_Coverage_Detail(vaccine_code);
+CREATE INDEX idx_scd_survey_year ON Survey_Coverage_Detail(survey_year);
 
 -- 20. DHS_Subnational_Observation
 CREATE TABLE DHS_Subnational_Observation (
@@ -321,8 +338,8 @@ CREATE TABLE DHS_Subnational_Observation (
     characteristic_category  VARCHAR2(50),
     characteristic_label     VARCHAR2(100),
     by_variable_label        VARCHAR2(100),
-    is_total                 CHAR(1)       CHECK (is_total IN ('Y', 'N')),
-    is_preferred             CHAR(1)       CHECK (is_preferred IN ('Y', 'N')),
+    is_total                 CHAR(1)       DEFAULT 'N' CHECK (is_total IN ('Y', 'N')),
+    is_preferred             CHAR(1)       DEFAULT 'N' CHECK (is_preferred IN ('Y', 'N')),
     sdr_id                   VARCHAR2(50),
     survey_year_label        VARCHAR2(20),
     survey_type              VARCHAR2(50),
@@ -334,12 +351,14 @@ CREATE TABLE DHS_Subnational_Observation (
     ci_low                   NUMBER(20,4),
     ci_high                  NUMBER(20,4),
     observation_domain       VARCHAR2(50),
+    region_id                VARCHAR2(50),
     CONSTRAINT pk_dhs_subnational_obs PRIMARY KEY (survey_id, indicator_id, characteristic_id, by_variable_id),
     CONSTRAINT fk_dso_survey FOREIGN KEY (survey_id) REFERENCES DHS_Survey(survey_id),
     CONSTRAINT fk_dso_region FOREIGN KEY (region_id) REFERENCES DHS_Region(region_id)
 );
 CREATE INDEX idx_dso_survey ON DHS_Subnational_Observation(survey_id);
 CREATE INDEX idx_dso_region ON DHS_Subnational_Observation(region_id);
+CREATE INDEX idx_dso_survey_year ON DHS_Subnational_Observation(survey_year);
 
 -- 21. DHS_Thematic_Fact
 CREATE TABLE DHS_Thematic_Fact (
@@ -352,7 +371,7 @@ CREATE TABLE DHS_Thematic_Fact (
     denominator_unweighted NUMBER(10),
     ci_low               NUMBER(20,4),
     ci_high              NUMBER(20,4),
-    is_preferred         CHAR(1)       CHECK (is_preferred IN ('Y', 'N')),
+    is_preferred         CHAR(1)       DEFAULT 'N' CHECK (is_preferred IN ('Y', 'N')),
     survey_year          NUMBER(4),
     thematic_domain      VARCHAR2(50),
     CONSTRAINT pk_dhs_thematic PRIMARY KEY (survey_id, region_id, characteristic_id, indicator_id),
@@ -389,6 +408,7 @@ CREATE TABLE Population_Demographic (
     CONSTRAINT pk_pop_demographic PRIMARY KEY (year),
     CONSTRAINT fk_pop_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
+CREATE INDEX idx_pop_year ON Population_Demographic(year);
 
 -- 24. Labor_Force_Overview (1:1 with Macroeconomic_Indicator)
 CREATE TABLE Labor_Force_Overview (
@@ -400,6 +420,7 @@ CREATE TABLE Labor_Force_Overview (
     CONSTRAINT pk_labor_overview PRIMARY KEY (year),
     CONSTRAINT fk_labor_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
+CREATE INDEX idx_labor_overview_year ON Labor_Force_Overview(year);
 
 -- 25. Sectoral_GDP
 CREATE TABLE Sectoral_GDP (
@@ -421,6 +442,7 @@ CREATE TABLE Sectoral_GDP (
 );
 CREATE INDEX idx_sg_macro ON Sectoral_GDP(year);
 CREATE INDEX idx_sg_sector ON Sectoral_GDP(sector_code);
+CREATE INDEX idx_sg_year ON Sectoral_GDP(year);
 
 -- 26. Quarterly_GDP
 CREATE TABLE Quarterly_GDP (
@@ -436,6 +458,7 @@ CREATE TABLE Quarterly_GDP (
     CONSTRAINT fk_qg_sector FOREIGN KEY (sector_code) REFERENCES Industry_Sector(sector_code)
 );
 CREATE INDEX idx_qg_sector ON Quarterly_GDP(sector_code);
+CREATE INDEX idx_qg_year ON Quarterly_GDP(year);
 
 -- 27. Price_Index
 CREATE TABLE Price_Index (
@@ -449,8 +472,10 @@ CREATE TABLE Price_Index (
     weight_value      NUMBER(10,4),
     annual_change_pct NUMBER(10,4),
     pct_change        NUMBER(10,4),
-    CONSTRAINT pk_price_index PRIMARY KEY (year, month, base_year, index_name, area_level, area_name)
+    CONSTRAINT pk_price_index PRIMARY KEY (year, month, base_year, index_name, area_level, area_name),
+    CONSTRAINT chk_month CHECK (month BETWEEN 0 AND 12)
 );
+CREATE INDEX idx_pi_year ON Price_Index(year);
 
 -- 28. Exchange_Rate
 CREATE TABLE Exchange_Rate (
@@ -460,8 +485,10 @@ CREATE TABLE Exchange_Rate (
     exchange_rate_value  NUMBER(15,4),
     end_of_period_rate   NUMBER(15,4),
     period_average_rate  NUMBER(15,4),
-    CONSTRAINT pk_exchange_rate PRIMARY KEY (year, month, rate_type)
+    CONSTRAINT pk_exchange_rate PRIMARY KEY (year, month, rate_type),
+    CONSTRAINT chk_exr_month CHECK (month BETWEEN 0 AND 12)
 );
+CREATE INDEX idx_er_year ON Exchange_Rate(year);
 
 -- 29. Monetary_Aggregate
 CREATE TABLE Monetary_Aggregate (
@@ -481,6 +508,7 @@ CREATE TABLE Monetary_Aggregate (
     CONSTRAINT fk_ma_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
 CREATE INDEX idx_ma_macro ON Monetary_Aggregate(year);
+CREATE INDEX idx_ma_year ON Monetary_Aggregate(year);
 
 -- 30. Interest_Rate
 CREATE TABLE Interest_Rate (
@@ -491,6 +519,7 @@ CREATE TABLE Interest_Rate (
     CONSTRAINT fk_ir_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
 CREATE INDEX idx_ir_macro ON Interest_Rate(year);
+CREATE INDEX idx_ir_year ON Interest_Rate(year);
 
 -- 31. Government_Finance
 CREATE TABLE Government_Finance (
@@ -514,6 +543,7 @@ CREATE TABLE Government_Finance (
     CONSTRAINT fk_gf_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
 CREATE INDEX idx_gf_macro ON Government_Finance(year);
+CREATE INDEX idx_gf_year ON Government_Finance(year);
 
 -- 32. CGE_Simulation_Metric
 CREATE TABLE CGE_Simulation_Metric (
@@ -570,7 +600,7 @@ CREATE TABLE Trade_Detail (
     CONSTRAINT pk_trade_detail PRIMARY KEY (year, trade_type, detail_category, detail_value, month)
 );
 
--- 35. Country_Trade (Conceptual FK to Country - resolved in ETL)
+-- 35. Country_Trade (Conceptual FK to Country via country_name - resolved in ETL)
 CREATE TABLE Country_Trade (
     year              VARCHAR2(10)  NOT NULL,
     country_name      VARCHAR2(100) NOT NULL,
@@ -600,6 +630,7 @@ CREATE TABLE Balance_of_Payments (
     CONSTRAINT fk_bop_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
 CREATE INDEX idx_bop_macro ON Balance_of_Payments(year);
+CREATE INDEX idx_bop_year ON Balance_of_Payments(year);
 
 -- 37. External_Debt_Indicator
 CREATE TABLE External_Debt_Indicator (
@@ -615,6 +646,7 @@ CREATE TABLE External_Debt_Indicator (
     CONSTRAINT fk_ed_macro FOREIGN KEY (year) REFERENCES Macroeconomic_Indicator(year)
 );
 CREATE INDEX idx_ed_macro ON External_Debt_Indicator(year);
+CREATE INDEX idx_ed_year ON External_Debt_Indicator(year);
 
 -- 38. Production_Energy (Conceptual FK to Industry_Sector via isic_division)
 CREATE TABLE Production_Energy (
@@ -631,6 +663,8 @@ CREATE TABLE Production_Energy (
     revision_flag     VARCHAR2(10),
     CONSTRAINT pk_prod_energy PRIMARY KEY (year, period_label, base_year, resource_name, activity_type, isic_division)
 );
+CREATE INDEX idx_pe_year ON Production_Energy(year);
+CREATE INDEX idx_pe_isic ON Production_Energy(isic_division);
 
 -- 39. MPI_Measurement
 CREATE TABLE MPI_Measurement (
@@ -652,6 +686,7 @@ CREATE TABLE MPI_Measurement (
 );
 CREATE INDEX idx_mpi_admin ON MPI_Measurement(admin_1_pcode);
 CREATE INDEX idx_mpi_country ON MPI_Measurement(country_iso3);
+CREATE INDEX idx_mpi_survey_year ON MPI_Measurement(survey_year);
 
 -- 40. Economic_Unit_Aggregate (Conceptual FK to Admin_Boundary)
 CREATE TABLE Economic_Unit_Aggregate (
@@ -664,6 +699,8 @@ CREATE TABLE Economic_Unit_Aggregate (
     unit_count     NUMBER(20),
     CONSTRAINT pk_economic_unit PRIMARY KEY (year, division_id, district_id, unit_type, locality, industry_type)
 );
+CREATE INDEX idx_eu_division ON Economic_Unit_Aggregate(division_id);
+CREATE INDEX idx_eu_year ON Economic_Unit_Aggregate(year);
 
 -- 41. Person_Engaged_Aggregate (Conceptual FK to Admin_Boundary)
 CREATE TABLE Person_Engaged_Aggregate (
@@ -676,6 +713,8 @@ CREATE TABLE Person_Engaged_Aggregate (
     tpe_count          NUMBER(20),
     CONSTRAINT pk_person_engaged PRIMARY KEY (year, division_id, district_id, establishment_type, locality, sex)
 );
+CREATE INDEX idx_pe_division ON Person_Engaged_Aggregate(division_id);
+CREATE INDEX idx_pe_year ON Person_Engaged_Aggregate(year);
 
 -- 42. Business_Ecommerce_Fact (Conceptual FK to Admin_Boundary)
 CREATE TABLE Business_Ecommerce_Fact (
@@ -692,6 +731,8 @@ CREATE TABLE Business_Ecommerce_Fact (
     unit_count              NUMBER(20),
     CONSTRAINT pk_ecommerce_fact PRIMARY KEY (year, division_id, fact_type, sub_category, sex)
 );
+CREATE INDEX idx_be_division ON Business_Ecommerce_Fact(division_id);
+CREATE INDEX idx_be_year ON Business_Ecommerce_Fact(year);
 
 -- 43. Country_GRB_Practice (Conceptual FK to Country via country_name)
 CREATE TABLE Country_GRB_Practice (
@@ -701,40 +742,18 @@ CREATE TABLE Country_GRB_Practice (
 );
 
 -- ============================================================
--- POST-CREATION: INDEXES FOR PERFORMANCE
--- (Additional indexes on frequently queried columns)
+-- VERIFICATION QUERIES (Run after creation to confirm)
 -- ============================================================
 
--- Indexes for year-based lookups across all macro tables
-CREATE INDEX idx_macro_year ON Macroeconomic_Indicator(year);
-CREATE INDEX idx_pop_year ON Population_Demographic(year);
-CREATE INDEX idx_labor_overview_year ON Labor_Force_Overview(year);
-CREATE INDEX idx_sg_year ON Sectoral_GDP(year);
-CREATE INDEX idx_qg_year ON Quarterly_GDP(year);
-CREATE INDEX idx_pi_year ON Price_Index(year);
-CREATE INDEX idx_er_year ON Exchange_Rate(year);
-CREATE INDEX idx_ma_year ON Monetary_Aggregate(year);
-CREATE INDEX idx_ir_year ON Interest_Rate(year);
-CREATE INDEX idx_gf_year ON Government_Finance(year);
-CREATE INDEX idx_bop_year ON Balance_of_Payments(year);
-CREATE INDEX idx_ed_year ON External_Debt_Indicator(year);
-CREATE INDEX idx_pe_year ON Production_Energy(year);
-
--- Indexes for DHS spatial/regional lookups
-CREATE INDEX idx_dso_location ON DHS_Subnational_Observation(location);
-CREATE INDEX idx_dt_region ON DHS_Thematic_Fact(region_id);
-CREATE INDEX idx_df_region ON Child_Health_Diarrhea_Fact(region_id);
-
--- Indexes for Economic Census geography
-CREATE INDEX idx_eu_division ON Economic_Unit_Aggregate(division_id);
-CREATE INDEX idx_pe_division ON Person_Engaged_Aggregate(division_id);
-CREATE INDEX idx_be_division ON Business_Ecommerce_Fact(division_id);
-
--- ============================================================
--- VERIFICATION QUERY (Run after creation to confirm)
--- ============================================================
+-- Check all tables were created
 -- SELECT table_name FROM user_tables ORDER BY table_name;
+
+-- Check table count (should be 43)
+-- SELECT COUNT(*) AS total_tables FROM user_tables;
 
 PROMPT ============================================================
 PROMPT Phase 2 DDL execution complete. All 43 tables created.
 PROMPT ============================================================
+PROMPT 
+PROMPT To verify, run: SELECT table_name FROM user_tables ORDER BY table_name;
+PROMPT 
