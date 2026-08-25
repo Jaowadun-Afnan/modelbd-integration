@@ -1,5 +1,4 @@
 import pandas as pd
-# mapping_dicts.py
 import re
 from typing import Optional
 
@@ -74,24 +73,21 @@ def map_country_to_code(text: Optional[str]) -> str:
     if not text:
         return 'UNMAPPED'
     cleaned = clean_text(text)
-    # Direct match
     if cleaned in COUNTRY_MAP:
         return COUNTRY_MAP[cleaned]
-    # Try matching first token
     tokens = cleaned.split()
     for token in tokens:
         if token in COUNTRY_MAP:
             return COUNTRY_MAP[token]
-    # Try substring match
     for key in COUNTRY_MAP.keys():
         if key in cleaned or cleaned in key:
             return COUNTRY_MAP[key]
     return 'UNMAPPED'
 
-# ---------- SECTOR MAPPING ----------
+# ---------- SECTOR MAPPING (Expanded for NAG and other sources) ----------
 SECTOR_MAP = {
-    # ISIC letters
-    'a': 'A', 'agriculture': 'A', 'agri': 'A',
+    # ISIC letters (broad)
+    'a': 'A', 'agriculture': 'A', 'agri': 'A', 'agriculture forestry and fishing': 'A',
     'b': 'B', 'mining': 'B', 'quarrying': 'B',
     'c': 'C', 'manufacturing': 'C', 'industry': 'C',
     'd': 'D', 'electricity': 'D', 'gas': 'D', 'steam': 'D',
@@ -110,13 +106,38 @@ SECTOR_MAP = {
     'q': 'Q', 'health': 'Q', 'social work': 'Q',
     'r': 'R', 'arts': 'R', 'entertainment': 'R', 'recreation': 'R',
     's': 'S', 'other services': 'S', 'services': 'S',
-    # Bangladesh specifics
+    # Bangladesh specifics (from NAG, ban-key-indicators, etc.)
     'wearing apparel': 'C_APP', 'apparel': 'C_APP', 'garments': 'C_APP',
-    'textiles': 'C_TEX', 'crops': 'A_CROP', 'livestock': 'A_LIVE',
-    'fisheries': 'A_FISH', 'forestry': 'A_FOR',
-    'pharmaceuticals': 'C_PHAR', 'leather': 'C_LEA', 'jute': 'C_JUTE',
+    'textiles': 'C_TEX',
+    'crops': 'A_CROP', 'crops and horticulture': 'A_CROP',
+    'livestock': 'A_LIVE', 'animal farmings': 'A_LIVE',
+    'fisheries': 'A_FISH', 'fishing': 'A_FISH',
+    'forestry': 'A_FOR', 'forest and related services': 'A_FOR',
     'rice': 'A_CROP', 'wheat': 'A_CROP',
-    # Add more as needed
+    'natural gas and crude petroleum': 'B',
+    'other mining and coal': 'B',
+    'large industry': 'C', 'small medium and micro industry': 'C', 'cottage industry': 'C',
+    'electricity gas steam and air conditioning supply': 'D', 'electricity, gas, steam and air conditioning supply': 'D',
+    'water supply sewerage waste management': 'E', 'water supply, sewerage, waste management': 'E',
+    'wholesale and retail trade repair of motor vehicles': 'G', 'wholesale and retail trade; repair of motor vehicles': 'G',
+    'transportation and storage': 'H', 'land transport': 'H', 'water transport': 'H', 'air transport': 'H',
+    'warehousing and support activities': 'H', 'postal and courrier activities': 'H',
+    'accomodation and food services activities': 'I', 'accommodation and food service activities': 'I',
+    'information and communication': 'J',
+    'financial and insurance activities': 'K', 'monetary intermediation (banks)': 'K', 'insurance': 'K',
+    'other financial auxillaries': 'K',
+    'real estate activities': 'L',
+    'professional scientific and technical activities': 'M',
+    'administrative and support service activities': 'N',
+    'public administration and defense compulsory': 'O', 'public administration and defense; compulsory': 'O',
+    'human health and social work activities': 'Q',
+    'arts entertainment and recreation': 'R', 'arts, entertainment and recreation': 'R',
+    'other service activities': 'S',
+    # Total/aggregate placeholders (we'll map to 'TOTAL' but decide later)
+    'total gva at current basic price': 'TOTAL',
+    'total gva at constant basic price': 'TOTAL',
+    'gdp at current market prices': 'TOTAL',
+    'gdp at constant market prices': 'TOTAL',
 }
 
 def map_sector_code(text: Optional[str]) -> str:
@@ -128,17 +149,21 @@ def map_sector_code(text: Optional[str]) -> str:
         return SECTOR_MAP[cleaned]
     if cleaned.upper() in SECTOR_MAP:
         return SECTOR_MAP[cleaned.upper()]
+    # Try token matching
     tokens = cleaned.split()
     for token in tokens:
         if token in SECTOR_MAP:
             return SECTOR_MAP[token]
         if token.upper() in SECTOR_MAP:
             return SECTOR_MAP[token.upper()]
+    # Try substring matching (e.g., "crops" appears in "Crops and Horticulture")
+    for key in SECTOR_MAP.keys():
+        if key in cleaned or cleaned in key:
+            return SECTOR_MAP[key]
     return 'UNMAPPED'
 
 # ---------- ADMIN MAPPING (Divisions, districts, etc.) ----------
 ADMIN_MAP = {
-    # Divisions
     'dhaka': 'BD-A', 'dhaka division': 'BD-A',
     'chattagram': 'BD-B', 'chittagong': 'BD-B', 'chattagram division': 'BD-B',
     'barishal': 'BD-C', 'barisal': 'BD-C', 'barishal division': 'BD-C',
@@ -147,12 +172,9 @@ ADMIN_MAP = {
     'rangpur': 'BD-F', 'rangpur division': 'BD-F',
     'mymensingh': 'BD-G', 'myensingh': 'BD-G', 'mymensingh division': 'BD-G',
     'sylhet': 'BD-H', 'sylhet division': 'BD-H',
-    # National
     'bangladesh': 'BD-00', 'national': 'BD-00', 'bd': 'BD-00',
-    # Districts (example - add more from your data)
     'dhaka district': 'BD-A-1', 'gazipur': 'BD-A-2',
     'chittagong district': 'BD-B-1', 'cox\'s bazar': 'BD-B-2',
-    # Placeholder for others
 }
 
 def map_admin_to_pcode(text: Optional[str]) -> str:
@@ -213,10 +235,12 @@ def map_vaccine_code(text: Optional[str]) -> str:
         return cleaned.upper()
     return 'UNMAPPED'
 
-# ---------- FISCAL YEAR PARSER ----------
-
+# ---------- FISCAL YEAR PARSER (Robust) ----------
 def parse_fiscal_year(text, return_start_year=True):
-    """Convert 'FY2007', 'FY 2007', '2007-08', or numeric year to int."""
+    """
+    Convert 'FY2007', 'FY 2007', '2007-08', '2007/08', or numeric year to int.
+    Handles NaN, None, floats safely.
+    """
     if text is None:
         return 0
     if isinstance(text, (int, float)):
@@ -277,9 +301,13 @@ def run_sanity_checks():
     print("Running mapping_dicts.py sanity checks...")
     assert map_country_to_code("Bangladesh") == "BGD"
     assert map_sector_code("Manufacturing") == "C"
+    assert map_sector_code("Crops and Horticulture") == "A_CROP"
+    assert map_sector_code("Wholesale and Retail Trade; repair of motor vehicles") == "G"
     assert map_admin_to_pcode("Dhaka Division") == "BD-A"
     assert map_gender("M") == "Male"
     assert parse_fiscal_year("2023-24") == 2023
+    assert parse_fiscal_year("FY2007") == 2007
+    assert parse_fiscal_year(float('nan')) == 0
     assert map_vaccine_code("bcg") == "BCG"
     print("✅ All sanity checks passed.")
 
