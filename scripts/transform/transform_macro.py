@@ -3,113 +3,153 @@ import re
 from pathlib import Path
 from mapping_dicts import parse_fiscal_year, map_sector_code
 
-RAW_DIR = Path("../../raw_data/extracted/csv")
-STAGING_DIR = Path("../../staging/clean")
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+RAW_DIR = BASE_DIR / "raw_data" / "extracted" / "csv"
+STAGING_DIR = BASE_DIR / "staging" / "clean"
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
 def transform_macroeconomic_indicator():
-    """
-    Merges 'Nominal and Real GDP' and 'ban-key-indicators' into a single
-    Macroeconomic_Indicator table by year.
-    """
-    print("   → Processing Macroeconomic Indicator...")
-    
-    # 1. Load Nominal GDP file
-    gdp_file = RAW_DIR / "Nominal and Real GDP 2007-16 (csv).csv"
-    if not gdp_file.exists():
-        print("      ⚠️ Nominal GDP file not found.")
+    """Parse 'Nominal and Real GDP 2007-16 (csv).csv'."""
+    gdp_files = list(RAW_DIR.glob("*Nominal*GDP*.csv")) + list(RAW_DIR.glob("*GDP*.csv"))
+    if not gdp_files:
+        print("⚠️ GDP file not found. Skipping.")
         return
-    
-    df_gdp = pd.read_csv(gdp_file)
-    df_gdp = df_gdp.rename(columns={
-        'Year': 'year',
-        'Nominal GDP Growth (%)': 'nominal_growth_rate',
-        'Real GDP Growth (%)': 'real_growth_rate',
-        'Inflation Rate (%)': 'inflation_rate'
-    })
-    
-    # 2. Load Ban Key Indicators (if available)
-    # Since Ban indicators are in Excel with complex pivots, we'll parse the specific sheet.
-    # For now, we just take the GDP file as the base, and add columns later.
-    # Let's just create a minimal version.
-    
-    # Ensure year is int
-    df_gdp['year'] = pd.to_numeric(df_gdp['year'], errors='coerce')
-    df_gdp = df_gdp.dropna(subset=['year'])
-    df_gdp['year'] = df_gdp['year'].astype(int)
-    
-    # Deduplicate
-    df_gdp = df_gdp.drop_duplicates(subset=['year'])
-    
-    out_path = STAGING_DIR / "Macroeconomic_Indicator.csv"
-    df_gdp.to_csv(out_path, index=False, encoding='utf-8')
-    print(f"      ✅ Saved {len(df_gdp)} years to {out_path}")
+    file = gdp_files[0]
+    print(f"   Using file: {file.name}")
+
+    # Read with first row as header
+    df = pd.read_csv(file, low_memory=False)
+    # Normalise column names (strip spaces)
+    df.columns = [str(c).strip() for c in df.columns]
+    print("   Original columns:", list(df.columns))
+
+    # Identify the Period column (may be 'Period' or first column)
+    if 'Period' in df.columns:
+        period_col = 'Period'
+    else:
+        period_col = df.columns[0]
+    print(f"   Period column: {period_col}")
+
+    # Drop the sub‑header row: it contains 'Nominal growth rate' in any cell
+    # or has an empty Period value.
+    df = df[df[period_col].notna()]  # remove NaN
+    # Remove rows where the period string is empty or contains 'growth rate'
+    df = df[df[period_col].astype(str).str.strip() != '']
+    df = df[~df[period_col].astype(str).str.lower().str.contains('growth rate', na=False)]
+
+    # Rename known columns
+    rename_map = {
+        period_col: 'period',
+        'GDP growth rate': 'nominal_growth_rate',
+        'Inflation rate (Base: 2005-06)': 'inflation_rate'
+    }
+    df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns}, inplace=True)
+
+    # The empty column (or 'Unnamed: 2') holds 'Real growth rate'
+    unnamed_cols = [c for c in df.columns if c.startswith('Unnamed') or c == '']
+    if unnamed_cols:
+        df.rename(columns={unnamed_cols[0]: 'real_growth_rate'}, inplace=True)
+
+    # Now convert period to year using parse_fiscal_year
+    df['year'] = df['period'].apply(parse_fiscal_year, return_start_year=True)
+
+    # Drop rows where year is 0 (invalid)
+    df = df[df['year'] != 0]
+
+    # Convert numeric columns
+    for col in ['nominal_growth_rate', 'real_growth_rate', 'inflation_rate']:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+
+    # Keep only relevant columns
+    keep = ['year', 'nominal_growth_rate', 'real_growth_rate', 'inflation_rate']
+    df = df[[c for c in keep if c in df.columns]]
+    df.drop_duplicates(subset=['year'], inplace=True)
+
+    # Debug print
+    print("   Processed rows:")
+    print(df)
+
+    out = STAGING_DIR / "Macroeconomic_Indicator.csv"
+    df.to_csv(out, index=False, encoding='utf-8')
+    print(f"   ✅ Saved {len(df)} rows to {out}")
 
 def transform_sectoral_gdp():
-    """
-    Parses the NAG Excel export (GDP by sector) into Sectoral_GDP.
-    """
-    print("   → Processing Sectoral GDP...")
-    
-    # The nag_bgd (2).xlsx exports multiple sheets.
-    # We look for the NAG_2015-16 sheet.
-    sheet_files = list(RAW_DIR.glob("nag_bgd_*_NAG_2015-16.csv"))
-    if not sheet_files:
-        print("      ⚠️ NAG sector sheet not found. Run Excel extraction.")
+    """Parse NAG file (e.g., nag_bgd (2)_NAG_2015_16.csv)."""
+    nag_files = list(RAW_DIR.glob("*NAG*.csv")) + list(RAW_DIR.glob("*nag*.csv"))
+    if not nag_files:
+        print("⚠️ NAG sector file not found. Skipping.")
         return
-    
-    df = pd.read_csv(sheet_files[0])
-    # This requires careful unpivoting depending on the structure.
-    # Placeholder logic: Assume columns: Year, Base_Year, Price_Type, Sector, Value.
-    # We will rename dynamically.
-    
-    # Since the structure is complex, we just ensure the required columns exist.
-    # For a real run, you will need to match the exact columns.
-    required_cols = ['year', 'base_year', 'price_type', 'component_type', 
-                     'component_name', 'sector_code', 'value_millions']
-    
-    # Placeholder: create an empty DataFrame with required columns if parsing fails.
-    df_out = pd.DataFrame(columns=required_cols)
-    
-    out_path = STAGING_DIR / "Sectoral_GDP.csv"
-    df_out.to_csv(out_path, index=False, encoding='utf-8')
-    print(f"      ✅ Saved {len(df_out)} sector records to {out_path}")
-    print("      ⚠️ NOTE: Sectoral_GDP parsing needs manual column mapping based on NAG structure.")
+    df_raw = pd.read_csv(nag_files[0], header=None, low_memory=False)
+    header_row = None
+    for i, row in df_raw.iterrows():
+        if any(str(val).strip().lower() == 'descriptor' for val in row.values):
+            header_row = i
+            break
+    if header_row is None:
+        print("   ❌ Could not find 'Descriptor' row in NAG file.")
+        return
+    df = pd.read_csv(nag_files[0], header=header_row, low_memory=False)
+    df.columns = [str(c).strip().replace('\n', ' ').replace('\r', '') for c in df.columns]
+    id_col = df.columns[0]
+    year_cols = [c for c in df.columns if c != id_col and c != '']
+    df_melted = df.melt(id_vars=[id_col], value_vars=year_cols,
+                        var_name='year', value_name='value_millions')
+    df_melted['year'] = pd.to_numeric(df_melted['year'], errors='coerce').astype(int)
+    df_melted = df_melted.rename(columns={id_col: 'sector_name'})
+    df_melted['sector_code'] = df_melted['sector_name'].apply(map_sector_code)
+    df_melted = df_melted[df_melted['sector_code'] != 'UNMAPPED']
+    df_melted = df_melted.dropna(subset=['year', 'value_millions'])
+    df_melted['base_year'] = 2015
+    df_melted['price_type'] = 'current'
+    out = STAGING_DIR / "Sectoral_GDP.csv"
+    df_melted.to_csv(out, index=False, encoding='utf-8')
+    print(f"   ✅ Saved {len(df_melted)} sector records to {out}")
 
 def transform_exchange_rate():
-    """Transforms exr_bgd export into Exchange_Rate table."""
-    print("   → Processing Exchange Rate...")
-    
-    exr_files = list(RAW_DIR.glob("exr_bgd_*.csv"))
+    """Parse exr CSV (wide format with year-month columns)."""
+    exr_files = list(RAW_DIR.glob("exr*.csv")) + list(RAW_DIR.glob("*exchange*.csv"))
     if not exr_files:
-        print("      ⚠️ Exchange rate file not found.")
+        print("⚠️ Exchange rate file not found. Skipping.")
         return
-    
-    df = pd.read_csv(exr_files[0])
-    # Assuming columns: Year, Month, Rate_Type, Exchange_Rate_Value
-    # Rename to match schema
-    df = df.rename(columns={
-        'Year': 'year',
-        'Month': 'month',
-        'Rate_Type': 'rate_type',
-        'Exchange_Rate': 'exchange_rate_value'
-    })
-    
-    # Fill missing with 0 or NULL
-    df['month'] = df['month'].fillna(0).astype(int)
-    df['end_of_period_rate'] = None
-    df['period_average_rate'] = None
-    
-    out_path = STAGING_DIR / "Exchange_Rate.csv"
-    df.to_csv(out_path, index=False, encoding='utf-8')
-    print(f"      ✅ Saved {len(df)} exchange rates to {out_path}")
+    df_raw = pd.read_csv(exr_files[0], header=None, low_memory=False)
+    header_row = None
+    for i, row in df_raw.iterrows():
+        if any(str(val).strip().lower() == 'descriptor' for val in row.values):
+            header_row = i
+            break
+    if header_row is None:
+        for i, row in df_raw.iterrows():
+            if any('exchange rate' in str(val).lower() for val in row.values):
+                header_row = i
+                break
+    if header_row is None:
+        print("   ❌ Could not find header row in exchange rate file.")
+        return
+    df = pd.read_csv(exr_files[0], header=header_row, low_memory=False)
+    df.columns = [str(c).strip().replace('\n', ' ').replace('\r', '') for c in df.columns]
+    id_col = df.columns[0]
+    date_cols = [c for c in df.columns if c != id_col]
+    df_melted = df.melt(id_vars=[id_col], value_vars=date_cols,
+                        var_name='date_str', value_name='exchange_rate_value')
+    df_melted = df_melted.rename(columns={id_col: 'rate_type'})
+    df_melted = df_melted[df_melted['date_str'].str.match(r'^\d{4}-\d{2}$', na=False)]
+    df_melted[['year', 'month']] = df_melted['date_str'].str.split('-', expand=True)
+    df_melted['year'] = pd.to_numeric(df_melted['year'], errors='coerce')
+    df_melted['month'] = pd.to_numeric(df_melted['month'], errors='coerce')
+    df_melted = df_melted.dropna(subset=['year', 'exchange_rate_value'])
+    df_melted['end_of_period_rate'] = df_melted['rate_type'].str.contains('End of period', case=False).astype(int)
+    df_melted['period_average_rate'] = df_melted['rate_type'].str.contains('Period average', case=False).astype(int)
+    df_melted['rate_type'] = df_melted['rate_type'].str.strip()
+    keep = ['year', 'month', 'rate_type', 'exchange_rate_value', 'end_of_period_rate', 'period_average_rate']
+    out = STAGING_DIR / "Exchange_Rate.csv"
+    df_melted[keep].to_csv(out, index=False, encoding='utf-8')
+    print(f"   ✅ Saved {len(df_melted)} exchange rate records to {out}")
 
 def transform_all_macro():
-    """Run all macro transformers."""
     transform_macroeconomic_indicator()
     transform_sectoral_gdp()
     transform_exchange_rate()
-    # Add Price_Index, Quarterly_GDP, etc. here following the same pattern.
 
 if __name__ == "__main__":
     transform_all_macro()

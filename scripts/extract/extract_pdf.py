@@ -2,8 +2,8 @@ import pandas as pd
 from pathlib import Path
 import re
 
-RAW_DIR = Path("../raw_data/original")
-OUTPUT_DIR = Path("../raw_data/extracted/pdf_tables")
+RAW_DIR = Path("../../raw_data/original")
+OUTPUT_DIR = Path("../../raw_data/extracted/pdf_tables")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ALL 9 PDFs (NOW INCLUDES 3ab00376...)
@@ -13,7 +13,7 @@ PDF_FILES = [
     "bgd.pdf",
     "gender_responsive_budget (1).pdf",
     "bangladesh-gender-equality-diagnostic.pdf",
-    "GDPandPCIofBD%20(1).pdf",
+    "GDPandPCIofBD(1).pdf",
     "d76506a501674dc294cc730a7bbee52f (1).pdf",
     "023fa68d-5117-474e-b9bd-8585e3737244 (1).pdf",
     "c7582226-d542-4ef3-acca-98d6e9ec0b00 (1).pdf",

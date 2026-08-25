@@ -1,0 +1,862 @@
+sector_name,year,value_millions,sector_code,base_year,price_type
+Agriculture and Forestry,2007,790100.0,A,2015,current
+Crops and Horticulture ,2007,576250.0,A_CROP,2015,current
+Animal Farmings ,2007,121980.0,A_LIVE,2015,current
+Forest and Related Services ,2007,91870.0,A_FOR,2015,current
+Fishing ,2007,188900.0,A_FISH,2015,current
+Mining and Quarrying,2007,78660.0,B,2015,current
+Natural Gas and Crude Petroleum,2007,50180.0,B,2015,current
+Other Mining and Coal ,2007,28480.0,B,2015,current
+Manufacturing ,2007,876050.0,C,2015,current
+Large and Medium Scale,2007,701310.0,A,2015,current
+Small Scale,2007,174740.0,A,2015,current
+"Electricity, Gas and Water Supply ",2007,57200.0,D,2015,current
+Electricity,2007,45000.0,D,2015,current
+Gas ,2007,8420.0,D,2015,current
+Water ,2007,3780.0,A,2015,current
+Construction ,2007,335130.0,F,2015,current
+Wholesale and Retail Trade ,2007,729710.0,G,2015,current
+Hotel and Restaurants,2007,40690.0,A,2015,current
+"Transport, Storage and Communication",2007,531320.0,H,2015,current
+Land Transport,2007,372950.0,H,2015,current
+Water transport,2007,48990.0,H,2015,current
+Air Transport,2007,5750.0,H,2015,current
+"Support transport services, storage ",2007,27720.0,N,2015,current
+Post and Telecommunication,2007,75910.0,A,2015,current
+Financial Intermediations,2007,162650.0,K,2015,current
+Banks,2007,137310.0,A,2015,current
+Insurances,2007,17140.0,A,2015,current
+Others ,2007,8190.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2007,413370.0,A,2015,current
+Public Administration and Defense ,2007,171320.0,A,2015,current
+Education ,2007,118530.0,P,2015,current
+Health and Social Works,2007,104530.0,Q,2015,current
+"Community, Social and Personal Services",2007,635440.0,S,2015,current
+Total GVA at current basic price,2007,5233608.0,TOTAL,2015,current
+Tax less subsidy,2007,264390.0,A,2015,current
+GDP at current market prices,2007,5498000.0,TOTAL,2015,current
+Agriculture and Forestry,2007,736456.0135110144,A,2015,current
+Crops and Horticulture ,2007,532522.5893283582,A_CROP,2015,current
+Animal Farmings ,2007,113907.14813322575,A_LIVE,2015,current
+Forest and Related Services ,2007,89416.77408117053,A_FOR,2015,current
+Fishing ,2007,190546.34523239653,A_FISH,2015,current
+Mining and Quarrying,2007,73707.89509454113,B,2015,current
+Natural Gas and Crude Petroleum,2007,49281.36818839415,B,2015,current
+Other Mining and Coal ,2007,24558.287036469508,B,2015,current
+Manufacturing ,2007,817169.4649342427,C,2015,current
+Large and Medium Scale,2007,655471.0503318558,A,2015,current
+Small Scale,2007,161808.5992807996,A,2015,current
+"Electricity, Gas and Water Supply ",2007,56089.06764100903,D,2015,current
+Electricity,2007,44863.49384795835,D,2015,current
+Gas ,2007,7325.848653404676,D,2015,current
+Water ,2007,3854.877627768495,A,2015,current
+Construction ,2007,321956.90133824875,F,2015,current
+Wholesale and Retail Trade ,2007,660890.428414373,G,2015,current
+Hotel and Restaurants,2007,35373.54360056313,A,2015,current
+"Transport, Storage and Communication",2007,506133.5354704361,H,2015,current
+Land Transport,2007,352971.81412530533,H,2015,current
+Water transport,2007,49375.91693439448,H,2015,current
+Air Transport,2007,5326.107274741423,H,2015,current
+"Support transport services, storage ",2007,27884.204402443374,N,2015,current
+Post and Telecommunication,2007,80853.97557223923,A,2015,current
+Financial Intermediations,2007,132522.26735854935,K,2015,current
+Banks,2007,106454.78952347428,A,2015,current
+Insurances,2007,17517.697606403446,A,2015,current
+Others ,2007,8460.83071484682,E,2015,current
+"Real Estate, Renting and Business Activities ",2007,386266.9937816827,A,2015,current
+Public Administration and Defense ,2007,153503.48770003172,A,2015,current
+Education ,2007,111983.2260661484,P,2015,current
+Health and Social Works,2007,92689.83407569482,Q,2015,current
+"Community, Social and Personal Services",2007,488324.84055792575,S,2015,current
+Total GVA at constant basic price,2007,4767265.320278253,TOTAL,2015,current
+GDP at constant market prices,2007,5163830.0,TOTAL,2015,current
+Private,2007,4062644.0,A,2015,current
+General Govt.,2007,294663.0,A,2015,current
+Investment (2),2007,1439293.0,E,2015,current
+Exports (3),2007,934403.0,E,2015,current
+Imports (4),2007,1261628.0,I,2015,current
+Gross Domestic Product at m.p.(5),2007,5498000.0,A,2015,current
+Statistical Discrepancy (6),2007,28623.0,A,2015,current
+Net factor income from abroad (7),2007,352755.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2007,5850752.0,A,2015,current
+Net current transfers from abroad (9),2007,39885.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2007,5890637.0,A,2015,current
+Gross National saving (12)=(10)-(1),2007,1533331.0,A,2015,current
+Gross Domestic Product at m.p.(5),2007,5163830.0,A,2015,current
+Agriculture and Forestry,2008,899860.0,A,2015,current
+Crops and Horticulture ,2008,657300.0,A_CROP,2015,current
+Animal Farmings ,2008,142970.0,A_LIVE,2015,current
+Forest and Related Services ,2008,99590.0,A_FOR,2015,current
+Fishing ,2008,206350.0,A_FISH,2015,current
+Mining and Quarrying,2008,91100.0,B,2015,current
+Natural Gas and Crude Petroleum,2008,53870.0,B,2015,current
+Other Mining and Coal ,2008,37230.0,B,2015,current
+Manufacturing ,2008,1013710.0,C,2015,current
+Large and Medium Scale,2008,810660.0,A,2015,current
+Small Scale,2008,203050.0,A,2015,current
+"Electricity, Gas and Water Supply ",2008,64410.0,D,2015,current
+Electricity,2008,49500.0,D,2015,current
+Gas ,2008,10450.0,D,2015,current
+Water ,2008,4450.0,A,2015,current
+Construction ,2008,385330.0,F,2015,current
+Wholesale and Retail Trade ,2008,861490.0,G,2015,current
+Hotel and Restaurants,2008,48260.0,A,2015,current
+"Transport, Storage and Communication",2008,596200.0,H,2015,current
+Land Transport,2008,418880.0,H,2015,current
+Water transport,2008,51110.0,H,2015,current
+Air Transport,2008,5950.0,H,2015,current
+"Support transport services, storage ",2008,31370.0,N,2015,current
+Post and Telecommunication,2008,88890.0,A,2015,current
+Financial Intermediations,2008,187020.0,K,2015,current
+Banks,2008,154310.0,A,2015,current
+Insurances,2008,21080.0,A,2015,current
+Others ,2008,11630.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2008,451180.0,A,2015,current
+Public Administration and Defense ,2008,196640.0,A,2015,current
+Education ,2008,143320.0,P,2015,current
+Health and Social Works,2008,121640.0,Q,2015,current
+"Community, Social and Personal Services",2008,722000.0,S,2015,current
+Total GVA at current basic price,2008,5988503.0,TOTAL,2015,current
+Tax less subsidy,2008,298320.0,A,2015,current
+GDP at current market prices,2008,6286820.0,TOTAL,2015,current
+Agriculture and Forestry,2008,758022.383328194,A,2015,current
+Crops and Horticulture ,2008,546755.4467910448,A_CROP,2015,current
+Animal Farmings ,2008,116687.73934253928,A_LIVE,2015,current
+Forest and Related Services ,2008,94309.52105904894,A_FOR,2015,current
+Fishing ,2008,198506.69984517095,A_FISH,2015,current
+Mining and Quarrying,2008,80299.43180659725,B,2015,current
+Natural Gas and Crude Petroleum,2008,53353.62827519691,B,2015,current
+Other Mining and Coal ,2008,27017.23763407907,B,2015,current
+Manufacturing ,2008,876104.3142804138,C,2015,current
+Large and Medium Scale,2008,703052.5846220199,A,2015,current
+Small Scale,2008,173291.3267014907,A,2015,current
+"Electricity, Gas and Water Supply ",2008,59884.50047509118,D,2015,current
+Electricity,2008,47859.87433494446,D,2015,current
+Gas ,2008,7891.772856537853,D,2015,current
+Water ,2008,4086.803148250751,A,2015,current
+Construction ,2008,340235.2161120944,F,2015,current
+Wholesale and Retail Trade ,2008,705961.2759565936,G,2015,current
+Hotel and Restaurants,2008,38044.81094901472,A,2015,current
+"Transport, Storage and Communication",2008,549385.1252133723,H,2015,current
+Land Transport,2008,369004.3859826085,H,2015,current
+Water transport,2008,50633.28305797794,H,2015,current
+Air Transport,2008,5657.30839138706,H,2015,current
+"Support transport services, storage ",2008,30239.020703699927,N,2015,current
+Post and Telecommunication,2008,98351.65394913687,A,2015,current
+Financial Intermediations,2008,144304.373944551,K,2015,current
+Banks,2008,115373.30877370528,A,2015,current
+Insurances,2008,19275.09489725237,A,2015,current
+Others ,2008,9515.838570306363,E,2015,current
+"Real Estate, Renting and Business Activities ",2008,400764.62675577233,A,2015,current
+Public Administration and Defense ,2008,163037.81840455902,A,2015,current
+Education ,2008,120718.19189106033,P,2015,current
+Health and Social Works,2008,99200.53111406318,Q,2015,current
+"Community, Social and Personal Services",2008,510866.8884390664,S,2015,current
+Total GVA at constant basic price,2008,5047330.110499099,TOTAL,2015,current
+GDP at constant market prices,2008,5474370.0,TOTAL,2015,current
+Private,2008,4754869.0,A,2015,current
+General Govt.,2008,325549.0,A,2015,current
+Investment (2),2008,1647290.0,E,2015,current
+Exports (3),2008,1110181.0,E,2015,current
+Imports (4),2008,1569320.0,I,2015,current
+Gross Domestic Product at m.p.(5),2008,6286820.0,A,2015,current
+Statistical Discrepancy (6),2008,18253.0,A,2015,current
+Net factor income from abroad (7),2008,483895.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2008,6770717.0,A,2015,current
+Net current transfers from abroad (9),2008,56713.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2008,6827430.0,A,2015,current
+Gross National saving (12)=(10)-(1),2008,1747012.0,A,2015,current
+Gross Domestic Product at m.p.(5),2008,5474370.0,A,2015,current
+Agriculture and Forestry,2009,978070.0,A,2015,current
+Crops and Horticulture ,2009,711580.0,A_CROP,2015,current
+Animal Farmings ,2009,158300.0,A_LIVE,2015,current
+Forest and Related Services ,2009,108190.0,A_FOR,2015,current
+Fishing ,2009,227930.0,A_FISH,2015,current
+Mining and Quarrying,2009,109620.0,B,2015,current
+Natural Gas and Crude Petroleum,2009,61940.0,B,2015,current
+Other Mining and Coal ,2009,47690.0,B,2015,current
+Manufacturing ,2009,1161970.0,C,2015,current
+Large and Medium Scale,2009,919960.0,A,2015,current
+Small Scale,2009,242010.0,A,2015,current
+"Electricity, Gas and Water Supply ",2009,70120.0,D,2015,current
+Electricity,2009,52820.0,D,2015,current
+Gas ,2009,12490.0,D,2015,current
+Water ,2009,4810.0,A,2015,current
+Construction ,2009,441800.0,F,2015,current
+Wholesale and Retail Trade ,2009,960940.0,G,2015,current
+Hotel and Restaurants,2009,57900.0,A,2015,current
+"Transport, Storage and Communication",2009,671850.0,H,2015,current
+Land Transport,2009,469940.0,H,2015,current
+Water transport,2009,55250.0,H,2015,current
+Air Transport,2009,6820.0,H,2015,current
+"Support transport services, storage ",2009,34230.0,N,2015,current
+Post and Telecommunication,2009,105610.0,A,2015,current
+Financial Intermediations,2009,200030.0,K,2015,current
+Banks,2009,158170.0,A,2015,current
+Insurances,2009,26260.0,A,2015,current
+Others ,2009,15600.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2009,494490.0,A,2015,current
+Public Administration and Defense ,2009,224640.0,A,2015,current
+Education ,2009,162500.0,P,2015,current
+Health and Social Works,2009,133680.0,Q,2015,current
+"Community, Social and Personal Services",2009,853660.0,S,2015,current
+Total GVA at current basic price,2009,6749198.0,TOTAL,2015,current
+Tax less subsidy,2009,301520.0,A,2015,current
+GDP at current market prices,2009,7050720.0,TOTAL,2015,current
+Agriculture and Forestry,2009,789133.0,A,2015,current
+Crops and Horticulture ,2009,568708.0,A_CROP,2015,current
+Animal Farmings ,2009,120747.0,A_LIVE,2015,current
+Forest and Related Services ,2009,99678.0,A_FOR,2015,current
+Fishing ,2009,206764.0,A_FISH,2015,current
+Mining and Quarrying,2009,88199.0,B,2015,current
+Natural Gas and Crude Petroleum,2009,58238.0,B,2015,current
+Other Mining and Coal ,2009,29961.0,B,2015,current
+Manufacturing ,2009,934589.0,C,2015,current
+Large and Medium Scale,2009,749336.0,A,2015,current
+Small Scale,2009,185253.0,A,2015,current
+"Electricity, Gas and Water Supply ",2009,63424.0,D,2015,current
+Electricity,2009,50439.0,D,2015,current
+Gas ,2009,8556.0,D,2015,current
+Water ,2009,4429.0,A,2015,current
+Construction ,2009,359616.0,F,2015,current
+Wholesale and Retail Trade ,2009,749785.0,G,2015,current
+Hotel and Restaurants,2009,40928.0,A,2015,current
+"Transport, Storage and Communication",2009,593396.0,H,2015,current
+Land Transport,2009,388092.0,H,2015,current
+Water transport,2009,51880.0,H,2015,current
+Air Transport,2009,6074.0,H,2015,current
+"Support transport services, storage ",2009,33156.0,N,2015,current
+Post and Telecommunication,2009,114194.0,A,2015,current
+Financial Intermediations,2009,157283.0,K,2015,current
+Banks,2009,125817.0,A,2015,current
+Insurances,2009,20891.0,A,2015,current
+Others ,2009,10575.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2009,416051.0,A,2015,current
+Public Administration and Defense ,2009,174471.0,A,2015,current
+Education ,2009,130439.0,P,2015,current
+Health and Social Works,2009,106340.0,Q,2015,current
+"Community, Social and Personal Services",2009,534893.0,S,2015,current
+Total GVA at constant basic price,2009,5345311.0,TOTAL,2015,current
+GDP at constant market prices,2009,5750560.0,TOTAL,2015,current
+Private,2009,5257991.0,A,2015,current
+General Govt.,2009,359146.0,A,2015,current
+Investment (2),2009,1847715.0,E,2015,current
+Exports (3),2009,1194401.0,E,2015,current
+Imports (4),2009,1632429.0,I,2015,current
+Gross Domestic Product at m.p.(5),2009,7050720.0,A,2015,current
+Statistical Discrepancy (6),2009,23894.0,A,2015,current
+Net factor income from abroad (7),2009,559012.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2009,7609730.0,A,2015,current
+Net current transfers from abroad (9),2009,24069.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2009,7633799.0,A,2015,current
+Gross National saving (12)=(10)-(1),2009,2016662.0,A,2015,current
+Gross Domestic Product at m.p.(5),2009,5750560.0,A,2015,current
+Agriculture and Forestry,2010,1109903.0,A,2015,current
+Crops and Horticulture ,2010,814050.0,A_CROP,2015,current
+Animal Farmings ,2010,175272.0,A_LIVE,2015,current
+Forest and Related Services ,2010,120581.0,A_FOR,2015,current
+Fishing ,2010,246007.0,A_FISH,2015,current
+Mining and Quarrying,2010,126449.0,B,2015,current
+Natural Gas and Crude Petroleum,2010,68032.0,B,2015,current
+Other Mining and Coal ,2010,58418.0,B,2015,current
+Manufacturing ,2010,1285730.0,C,2015,current
+Large and Medium Scale,2010,1016187.0,A,2015,current
+Small Scale,2010,269543.0,A,2015,current
+"Electricity, Gas and Water Supply ",2010,83457.0,D,2015,current
+Electricity,2010,60034.0,D,2015,current
+Gas ,2010,18088.0,D,2015,current
+Water ,2010,5334.0,A,2015,current
+Construction ,2010,494739.0,F,2015,current
+Wholesale and Retail Trade ,2010,1066064.0,G,2015,current
+Hotel and Restaurants,2010,70276.0,A,2015,current
+"Transport, Storage and Communication",2010,804542.0,H,2015,current
+Land Transport,2010,575736.0,H,2015,current
+Water transport,2010,63859.0,H,2015,current
+Air Transport,2010,8106.0,H,2015,current
+"Support transport services, storage ",2010,38258.0,N,2015,current
+Post and Telecommunication,2010,118584.0,A,2015,current
+Financial Intermediations,2010,234478.0,K,2015,current
+Banks,2010,175085.0,A,2015,current
+Insurances,2010,33562.0,A,2015,current
+Others ,2010,25831.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2010,544324.0,A,2015,current
+Public Administration and Defense ,2010,254256.0,A,2015,current
+Education ,2010,182575.0,P,2015,current
+Health and Social Works,2010,153258.0,Q,2015,current
+"Community, Social and Personal Services",2010,956922.0,S,2015,current
+Total GVA at current basic price,2010,7612981.0,TOTAL,2015,current
+Tax less subsidy,2010,362406.0,A,2015,current
+GDP at current market prices,2010,7975390.0,TOTAL,2015,current
+Agriculture and Forestry,2010,849042.0,A,2015,current
+Crops and Horticulture ,2010,624923.0,A_CROP,2015,current
+Animal Farmings ,2010,119120.0,A_LIVE,2015,current
+Forest and Related Services ,2010,104999.0,A_FOR,2015,current
+Fishing ,2010,216066.0,A_FISH,2015,current
+Mining and Quarrying,2010,95611.0,B,2015,current
+Natural Gas and Crude Petroleum,2010,63197.0,B,2015,current
+Other Mining and Coal ,2010,32414.0,B,2015,current
+Manufacturing ,2010,996709.0,C,2015,current
+Large and Medium Scale,2010,796314.0,A,2015,current
+Small Scale,2010,200395.0,A,2015,current
+"Electricity, Gas and Water Supply ",2010,74118.0,D,2015,current
+Electricity,2010,60125.0,D,2015,current
+Gas ,2010,9308.0,D,2015,current
+Water ,2010,4686.0,A,2015,current
+Construction ,2010,385542.0,F,2015,current
+Wholesale and Retail Trade ,2010,812193.0,G,2015,current
+Hotel and Restaurants,2010,43390.0,A,2015,current
+"Transport, Storage and Communication",2010,640059.0,H,2015,current
+Land Transport,2010,421685.0,H,2015,current
+Water transport,2010,53495.0,H,2015,current
+Air Transport,2010,7460.0,H,2015,current
+"Support transport services, storage ",2010,34671.0,N,2015,current
+Post and Telecommunication,2010,122747.0,A,2015,current
+Financial Intermediations,2010,167107.0,K,2015,current
+Banks,2010,129782.0,A,2015,current
+Insurances,2010,24878.0,A,2015,current
+Others ,2010,12447.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2010,440778.0,A,2015,current
+Public Administration and Defense ,2010,188823.0,A,2015,current
+Education ,2010,129306.0,P,2015,current
+Health and Social Works,2010,113600.0,Q,2015,current
+"Community, Social and Personal Services",2010,641909.0,S,2015,current
+Total GVA at constant basic price,2010,5794253.0,TOTAL,2015,current
+GDP at constant market prices,2010,6070970.0,TOTAL,2015,current
+Private,2010,5910930.0,A,2015,current
+General Govt.,2010,404777.0,A,2015,current
+Investment (2),2010,2093272.0,E,2015,current
+Exports (3),2010,1277985.0,E,2015,current
+Imports (4),2010,1736938.0,I,2015,current
+Gross Domestic Product at m.p.(5),2010,7975390.0,A,2015,current
+Statistical Discrepancy (6),2010,25361.0,A,2015,current
+Net factor income from abroad (7),2010,646035.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2010,8621422.0,A,2015,current
+Net current transfers from abroad (9),2010,42479.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2010,8663901.0,A,2015,current
+Gross National saving (12)=(10)-(1),2010,2348194.0,A,2015,current
+Gross Domestic Product at m.p.(5),2010,6070970.0,A,2015,current
+Agriculture and Forestry,2011,1254686.0,A,2015,current
+Crops and Horticulture ,2011,919028.0,A_CROP,2015,current
+Animal Farmings ,2011,201707.0,A_LIVE,2015,current
+Forest and Related Services ,2011,133952.0,A_FOR,2015,current
+Fishing ,2011,284820.0,A_FISH,2015,current
+Mining and Quarrying,2011,142084.0,B,2015,current
+Natural Gas and Crude Petroleum,2011,68456.0,B,2015,current
+Other Mining and Coal ,2011,73628.0,B,2015,current
+Manufacturing ,2011,1465027.0,C,2015,current
+Large and Medium Scale,2011,1164533.0,A,2015,current
+Small Scale,2011,300494.0,A,2015,current
+"Electricity, Gas and Water Supply ",2011,115893.0,D,2015,current
+Electricity,2011,86460.0,D,2015,current
+Gas ,2011,23386.0,D,2015,current
+Water ,2011,6048.0,A,2015,current
+Construction ,2011,570716.0,F,2015,current
+Wholesale and Retail Trade ,2011,1213319.0,G,2015,current
+Hotel and Restaurants,2011,82283.0,A,2015,current
+"Transport, Storage and Communication",2011,945711.0,H,2015,current
+Land Transport,2011,687171.0,H,2015,current
+Water transport,2011,69342.0,H,2015,current
+Air Transport,2011,9569.0,H,2015,current
+"Support transport services, storage ",2011,44100.0,N,2015,current
+Post and Telecommunication,2011,135528.0,A,2015,current
+Financial Intermediations,2011,275454.0,K,2015,current
+Banks,2011,215222.0,A,2015,current
+Insurances,2011,37862.0,A,2015,current
+Others ,2011,22371.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2011,601190.0,A,2015,current
+Public Administration and Defense ,2011,302820.0,A,2015,current
+Education ,2011,213920.0,P,2015,current
+Health and Social Works,2011,177312.0,Q,2015,current
+"Community, Social and Personal Services",2011,1046077.0,S,2015,current
+Total GVA at current basic price,2011,8691312.0,TOTAL,2015,current
+Tax less subsidy,2011,466976.0,A,2015,current
+GDP at current market prices,2011,9158290.0,TOTAL,2015,current
+Agriculture and Forestry,2011,882059.0,A,2015,current
+Crops and Horticulture ,2011,649011.0,A_CROP,2015,current
+Animal Farmings ,2011,122211.0,A_LIVE,2015,current
+Forest and Related Services ,2011,110838.0,A_FOR,2015,current
+Fishing ,2011,230514.0,A_FISH,2015,current
+Mining and Quarrying,2011,99069.0,B,2015,current
+Natural Gas and Crude Petroleum,2011,63628.0,B,2015,current
+Other Mining and Coal ,2011,35441.0,B,2015,current
+Manufacturing ,2011,1096514.0,C,2015,current
+Large and Medium Scale,2011,884753.0,A,2015,current
+Small Scale,2011,211760.0,A,2015,current
+"Electricity, Gas and Water Supply ",2011,84023.0,D,2015,current
+Electricity,2011,69638.0,D,2015,current
+Gas ,2011,9314.0,D,2015,current
+Water ,2011,5071.0,A,2015,current
+Construction ,2011,412350.0,F,2015,current
+Wholesale and Retail Trade ,2011,866497.0,G,2015,current
+Hotel and Restaurants,2011,46079.0,A,2015,current
+"Transport, Storage and Communication",2011,694094.0,H,2015,current
+Land Transport,2011,451976.0,H,2015,current
+Water transport,2011,55055.0,H,2015,current
+Air Transport,2011,8596.0,H,2015,current
+"Support transport services, storage ",2011,38821.0,N,2015,current
+Post and Telecommunication,2011,139645.0,A,2015,current
+Financial Intermediations,2011,184559.0,K,2015,current
+Banks,2011,146633.0,A,2015,current
+Insurances,2011,25795.0,A,2015,current
+Others ,2011,12131.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2011,457896.0,A,2015,current
+Public Administration and Defense ,2011,205518.0,A,2015,current
+Education ,2011,136588.0,P,2015,current
+Health and Social Works,2011,120801.0,Q,2015,current
+"Community, Social and Personal Services",2011,662646.0,S,2015,current
+Total GVA at constant basic price,2011,6179206.0,TOTAL,2015,current
+GDP at constant market prices,2011,6463420.0,TOTAL,2015,current
+Private,2011,6802819.0,A,2015,current
+General Govt.,2011,466839.0,A,2015,current
+Investment (2),2011,2511292.0,E,2015,current
+Exports (3),2011,1824521.0,E,2015,current
+Imports (4),2011,2518417.0,I,2015,current
+Gross Domestic Product at m.p.(5),2011,9158290.0,A,2015,current
+Statistical Discrepancy (6),2011,71234.0,A,2015,current
+Net factor income from abroad (7),2011,725135.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2011,9883423.0,A,2015,current
+Net current transfers from abroad (9),2011,31015.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2011,9914438.0,A,2015,current
+Gross National saving (12)=(10)-(1),2011,2644780.0,A,2015,current
+Gross Domestic Product at m.p.(5),2011,6463420.0,A,2015,current
+Agriculture and Forestry,2012,1388791.0,A,2015,current
+Crops and Horticulture ,2012,1008993.0,A_CROP,2015,current
+Animal Farmings ,2012,229987.0,A_LIVE,2015,current
+Forest and Related Services ,2012,149810.0,A_FOR,2015,current
+Fishing ,2012,318273.0,A_FISH,2015,current
+Mining and Quarrying,2012,166504.0,B,2015,current
+Natural Gas and Crude Petroleum,2012,73660.0,B,2015,current
+Other Mining and Coal ,2012,92844.0,B,2015,current
+Manufacturing ,2012,1679275.0,C,2015,current
+Large and Medium Scale,2012,1343974.0,A,2015,current
+Small Scale,2012,335301.0,A,2015,current
+"Electricity, Gas and Water Supply ",2012,141894.0,D,2015,current
+Electricity,2012,101891.0,D,2015,current
+Gas ,2012,32997.0,D,2015,current
+Water ,2012,7006.0,A,2015,current
+Construction ,2012,683044.0,F,2015,current
+Wholesale and Retail Trade ,2012,1373962.0,G,2015,current
+Hotel and Restaurants,2012,97551.0,A,2015,current
+"Transport, Storage and Communication",2012,1127023.0,H,2015,current
+Land Transport,2012,833454.0,H,2015,current
+Water transport,2012,70895.0,H,2015,current
+Air Transport,2012,10224.0,H,2015,current
+"Support transport services, storage ",2012,53913.0,N,2015,current
+Post and Telecommunication,2012,158538.0,A,2015,current
+Financial Intermediations,2012,363164.0,K,2015,current
+Banks,2012,293511.0,A,2015,current
+Insurances,2012,45841.0,A,2015,current
+Others ,2012,23812.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2012,687147.0,A,2015,current
+Public Administration and Defense ,2012,334991.0,A,2015,current
+Education ,2012,250477.0,P,2015,current
+Health and Social Works,2012,201327.0,Q,2015,current
+"Community, Social and Personal Services",2012,1172932.0,S,2015,current
+Total GVA at current basic price,2012,9986356.0,TOTAL,2015,current
+Tax less subsidy,2012,565684.0,A,2015,current
+GDP at current market prices,2012,10552040.0,TOTAL,2015,current
+Agriculture and Forestry,2012,903322.0,A,2015,current
+Crops and Horticulture ,2012,660385.0,A_CROP,2015,current
+Animal Farmings ,2012,125489.0,A_LIVE,2015,current
+Forest and Related Services ,2012,117448.0,A_FOR,2015,current
+Fishing ,2012,242787.0,A_FISH,2015,current
+Mining and Quarrying,2012,105930.0,B,2015,current
+Natural Gas and Crude Petroleum,2012,66032.0,B,2015,current
+Other Mining and Coal ,2012,39898.0,B,2015,current
+Manufacturing ,2012,1205674.0,C,2015,current
+Large and Medium Scale,2012,979983.0,A,2015,current
+Small Scale,2012,225691.0,A,2015,current
+"Electricity, Gas and Water Supply ",2012,92909.0,D,2015,current
+Electricity,2012,77276.0,D,2015,current
+Gas ,2012,10008.0,D,2015,current
+Water ,2012,5625.0,A,2015,current
+Construction ,2012,447089.0,F,2015,current
+Wholesale and Retail Trade ,2012,924574.0,G,2015,current
+Hotel and Restaurants,2012,49021.0,A,2015,current
+"Transport, Storage and Communication",2012,757609.0,H,2015,current
+Land Transport,2012,482827.0,H,2015,current
+Water transport,2012,56765.0,H,2015,current
+Air Transport,2012,9092.0,H,2015,current
+"Support transport services, storage ",2012,45653.0,N,2015,current
+Post and Telecommunication,2012,163271.0,A,2015,current
+Financial Intermediations,2012,211797.0,K,2015,current
+Banks,2012,172451.0,A,2015,current
+Insurances,2012,26933.0,A,2015,current
+Others ,2012,12413.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2012,475864.0,A,2015,current
+Public Administration and Defense ,2012,220994.0,A,2015,current
+Education ,2012,147175.0,P,2015,current
+Health and Social Works,2012,125402.0,Q,2015,current
+"Community, Social and Personal Services",2012,684163.0,S,2015,current
+Total GVA at constant basic price,2012,6594308.0,TOTAL,2015,current
+GDP at constant market prices,2012,6884930.0,TOTAL,2015,current
+Private,2012,7780747.0,A,2015,current
+General Govt.,2012,531753.0,A,2015,current
+Investment (2),2012,2982253.0,E,2015,current
+Exports (3),2012,2127459.0,E,2015,current
+Imports (4),2012,2949225.0,I,2015,current
+Gross Domestic Exp. at m.p.,2012,10472987.0,A,2015,current
+Gross Domestic Product at m.p.(5),2012,10552040.0,A,2015,current
+Statistical Discrepancy (6),2012,79053.0,A,2015,current
+Net factor income from abroad (7),2012,893020.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2012,11445060.0,A,2015,current
+Net current transfers from abroad (9),2012,17909.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2012,11462969.0,A,2015,current
+Gross National saving (12)=(10)-(1),2012,3150469.0,A,2015,current
+Gross Domestic Product at m.p.(5),2012,6884930.0,A,2015,current
+Agriculture and Forestry,2013,1487578.0,A,2015,current
+Crops and Horticulture ,2013,1067941.0,A_CROP,2015,current
+Animal Farmings ,2013,253588.0,A_LIVE,2015,current
+Forest and Related Services ,2013,166050.0,A_FOR,2015,current
+Fishing ,2013,369946.0,A_FISH,2015,current
+Mining and Quarrying,2013,194611.0,B,2015,current
+Natural Gas and Crude Petroleum,2013,79531.0,B,2015,current
+Other Mining and Coal ,2013,115080.0,B,2015,current
+Manufacturing ,2013,1971272.0,C,2015,current
+Large and Medium Scale,2013,1584482.0,A,2015,current
+Small Scale,2013,386790.0,A,2015,current
+"Electricity, Gas and Water Supply ",2013,163812.0,D,2015,current
+Electricity,2013,121682.0,D,2015,current
+Gas ,2013,34475.0,D,2015,current
+Water ,2013,7655.0,A,2015,current
+Construction ,2013,824321.0,F,2015,current
+Wholesale and Retail Trade ,2013,1545794.0,G,2015,current
+Hotel and Restaurants,2013,112634.0,A,2015,current
+"Transport, Storage and Communication",2013,1242805.0,H,2015,current
+Land Transport,2013,921831.0,H,2015,current
+Water transport,2013,76486.0,H,2015,current
+Air Transport,2013,10471.0,H,2015,current
+"Support transport services, storage ",2013,60014.0,N,2015,current
+Post and Telecommunication,2013,174003.0,A,2015,current
+Financial Intermediations,2013,422365.0,K,2015,current
+Banks,2013,347270.0,A,2015,current
+Insurances,2013,49198.0,A,2015,current
+Others ,2013,25897.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2013,788200.0,A,2015,current
+Public Administration and Defense ,2013,376782.0,A,2015,current
+Education ,2013,284293.0,P,2015,current
+Health and Social Works,2013,238683.0,Q,2015,current
+"Community, Social and Personal Services",2013,1389516.0,S,2015,current
+Total GVA at current basic price,2013,11412612.0,TOTAL,2015,current
+Tax less subsidy,2013,576620.0,A,2015,current
+GDP at current market prices,2013,11989230.0,TOTAL,2015,current
+Agriculture and Forestry,2013,916565.0,A,2015,current
+Crops and Horticulture ,2013,664270.0,A_CROP,2015,current
+Animal Farmings ,2013,128927.0,A_LIVE,2015,current
+Forest and Related Services ,2013,123367.0,A_FOR,2015,current
+Fishing ,2013,257795.0,A_FISH,2015,current
+Mining and Quarrying,2013,115839.0,B,2015,current
+Natural Gas and Crude Petroleum,2013,71017.0,B,2015,current
+Other Mining and Coal ,2013,44822.0,B,2015,current
+Manufacturing ,2013,1329941.0,C,2015,current
+Large and Medium Scale,2013,1084362.0,A,2015,current
+Small Scale,2013,245579.0,A,2015,current
+"Electricity, Gas and Water Supply ",2013,101257.0,D,2015,current
+Electricity,2013,84765.0,D,2015,current
+Gas ,2013,10600.0,D,2015,current
+Water ,2013,5892.0,A,2015,current
+Construction ,2013,483046.0,F,2015,current
+Wholesale and Retail Trade ,2013,981731.0,G,2015,current
+Hotel and Restaurants,2013,52204.0,A,2015,current
+"Transport, Storage and Communication",2013,805140.0,H,2015,current
+Land Transport,2013,511361.0,H,2015,current
+Water transport,2013,58588.0,H,2015,current
+Air Transport,2013,8943.0,H,2015,current
+"Support transport services, storage ",2013,47187.0,N,2015,current
+Post and Telecommunication,2013,179061.0,A,2015,current
+Financial Intermediations,2013,231097.0,K,2015,current
+Banks,2013,191197.0,A,2015,current
+Insurances,2013,27098.0,A,2015,current
+Others ,2013,12802.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2013,495089.0,A,2015,current
+Public Administration and Defense ,2013,235419.0,A,2015,current
+Education ,2013,156447.0,P,2015,current
+Health and Social Works,2013,131367.0,Q,2015,current
+"Community, Social and Personal Services",2013,706426.0,S,2015,current
+Total GVA at constant basic price,2013,6999363.0,TOTAL,2015,current
+GDP at constant market prices,2013,7298960.0,TOTAL,2015,current
+Domestic demand (1)+(2),2013,12750971.0,A,2015,current
+Consumption (1),2013,9347273.0,C,2015,current
+Private,2013,8733888.0,A,2015,current
+General Govt.,2013,613385.0,A,2015,current
+Investment (2),2013,3403697.0,E,2015,current
+Private,2013,2607486.0,A,2015,current
+Public,2013,796211.0,B,2015,current
+Resource balance (3)-(4),2013,-865701.0,A,2015,current
+Exports (3),2013,2342441.0,E,2015,current
+Imports (4),2013,3208142.0,I,2015,current
+Gross Domestic Exp. at m.p.,2013,11885270.0,A,2015,current
+Gross Domestic Product at m.p.(5),2013,11989230.0,A,2015,current
+Statistical Discrepancy (6),2013,103962.0,A,2015,current
+Net factor income from abroad (7),2013,964291.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2013,12953523.0,A,2015,current
+Net current transfers from abroad (9),2013,53749.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2013,13007272.0,A,2015,current
+Gross Domestic saving (11)=(5)-(1),2013,2641959.0,A,2015,current
+Gross National saving (12)=(10)-(1),2013,3659999.0,A,2015,current
+Current Account Balance (13)=(12)-(2)-(6),2013,152339.0,A,2015,current
+Comsumption,2013,77.96,C,2015,current
+Private,2013,72.8,A,2015,current
+General Govt.,2013,5.12,A,2015,current
+Investment,2013,28.39,E,2015,current
+Private,2013,21.75,A,2015,current
+Public,2013,6.64,B,2015,current
+Exports of goods & services,2013,19.54,S,2015,current
+Imports of goods & services,2013,26.76,S,2015,current
+Gross Domestic saving,2013,22.04,A,2015,current
+Gross National saving,2013,30.53,A,2015,current
+Domestic demand (1)+(2),2013,7490025.0,A,2015,current
+Consumption (1),2013,5282071.0,C,2015,current
+Private,2013,4913936.0,A,2015,current
+General Govt.,2013,368135.0,A,2015,current
+Investment (2),2013,2207954.0,E,2015,current
+Private,2013,1713349.0,A,2015,current
+Public,2013,494605.0,B,2015,current
+Resource balance (3)-(4),2013,-255176.0,A,2015,current
+Exports (3),2013,1436734.0,E,2015,current
+Imports (4),2013,1691911.0,I,2015,current
+Gross Domestic Exp. at m.p.,2013,7234849.0,A,2015,current
+Gross Domestic Product at m.p.(5),2013,7298960.0,A,2015,current
+Statistical Discrepancy (6),2013,64116.0,A,2015,current
+Net factor income from abroad (7),2013,587054.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2013,7886019.0,A,2015,current
+Net current transfers from abroad (9),2013,32722.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2013,7918741.0,A,2015,current
+Agriculture and Forestry,2014,1639682.0,A,2015,current
+Crops and Horticulture ,2014,1179029.0,A_CROP,2015,current
+Animal Farmings ,2014,276668.0,A_LIVE,2015,current
+Forest and Related Services ,2014,183985.0,A_FOR,2015,current
+Fishing ,2014,423076.0,A_FISH,2015,current
+Mining and Quarrying,2014,210799.0,B,2015,current
+Natural Gas and Crude Petroleum,2014,81557.0,B,2015,current
+Other Mining and Coal ,2014,129242.0,B,2015,current
+Manufacturing ,2014,2232207.0,C,2015,current
+Large and Medium Scale,2014,1803818.0,A,2015,current
+Small Scale,2014,428389.0,A,2015,current
+"Electricity, Gas and Water Supply ",2014,184006.0,D,2015,current
+Electricity,2014,138335.0,D,2015,current
+Gas ,2014,36759.0,D,2015,current
+Water ,2014,8912.0,A,2015,current
+Construction ,2014,908336.0,F,2015,current
+Wholesale and Retail Trade ,2014,1725752.0,G,2015,current
+Hotel and Restaurants,2014,130353.0,A,2015,current
+"Transport, Storage and Communication",2014,1343166.0,H,2015,current
+Land Transport,2014,993106.0,H,2015,current
+Water transport,2014,80643.0,H,2015,current
+Air Transport,2014,11156.0,H,2015,current
+"Support transport services, storage ",2014,66716.0,N,2015,current
+Post and Telecommunication,2014,191544.0,A,2015,current
+Financial Intermediations,2014,485632.0,K,2015,current
+Banks,2014,403897.0,A,2015,current
+Insurances,2014,53636.0,A,2015,current
+Others ,2014,28100.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2014,912291.0,A,2015,current
+Public Administration and Defense ,2014,447278.0,A,2015,current
+Education ,2014,327673.0,P,2015,current
+Health and Social Works,2014,269238.0,Q,2015,current
+"Community, Social and Personal Services",2014,1565516.0,S,2015,current
+Total GVA at current basic price,2014,12805005.0,TOTAL,2015,current
+Tax less subsidy,2014,631739.0,A,2015,current
+GDP at current market prices,2014,13436740.0,TOTAL,2015,current
+Agriculture and Forestry,2014,951513.0,A,2015,current
+Crops and Horticulture ,2014,689378.0,A_CROP,2015,current
+Animal Farmings ,2014,132581.0,A_LIVE,2015,current
+Forest and Related Services ,2014,129553.0,A_FOR,2015,current
+Fishing ,2014,274189.0,A_FISH,2015,current
+Mining and Quarrying,2014,121265.0,B,2015,current
+Natural Gas and Crude Petroleum,2014,72769.0,B,2015,current
+Other Mining and Coal ,2014,48496.0,B,2015,current
+Manufacturing ,2014,1446534.0,C,2015,current
+Large and Medium Scale,2014,1185403.0,A,2015,current
+Small Scale,2014,261131.0,A,2015,current
+"Electricity, Gas and Water Supply ",2014,105853.0,D,2015,current
+Electricity,2014,88538.0,D,2015,current
+Gas ,2014,10779.0,D,2015,current
+Water ,2014,6536.0,A,2015,current
+Construction ,2014,522087.0,F,2015,current
+Wholesale and Retail Trade ,2014,1047757.0,G,2015,current
+Hotel and Restaurants,2014,55701.0,A,2015,current
+"Transport, Storage and Communication",2014,853824.0,H,2015,current
+Land Transport,2014,539808.0,H,2015,current
+Water transport,2014,60433.0,H,2015,current
+Air Transport,2014,8997.0,H,2015,current
+"Support transport services, storage ",2014,48407.0,N,2015,current
+Post and Telecommunication,2014,196179.0,A,2015,current
+Financial Intermediations,2014,247902.0,K,2015,current
+Banks,2014,207117.0,A,2015,current
+Insurances,2014,27517.0,A,2015,current
+Others ,2014,13267.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2014,516147.0,A,2015,current
+Public Administration and Defense ,2014,251646.0,A,2015,current
+Education ,2014,167809.0,P,2015,current
+Health and Social Works,2014,138021.0,Q,2015,current
+"Community, Social and Personal Services",2014,729554.0,S,2015,current
+Total GVA at constant basic price,2014,7429801.0,TOTAL,2015,current
+Tax less subsidy,2014,311560.0,A,2015,current
+GDP at constant market prices,2014,7741361.0,TOTAL,2015,current
+Domestic demand (1)+(2),2014,14308511.0,A,2015,current
+Consumption (1),2014,10468575.0,C,2015,current
+Private,2014,9751386.0,A,2015,current
+General Govt.,2014,717189.0,A,2015,current
+Investment (2),2014,3839936.0,E,2015,current
+Private,2014,2960024.0,A,2015,current
+Public,2014,879912.0,B,2015,current
+Resource balance (3)-(4),2014,-878059.0,A,2015,current
+Exports (3),2014,2551592.0,E,2015,current
+Imports (4),2014,3429651.0,I,2015,current
+Gross Domestic Exp. at m.p.,2014,13430452.0,A,2015,current
+Gross Domestic Product at m.p.(5),2014,13436740.0,A,2015,current
+Statistical Discrepancy (6),2014,6292.0,A,2015,current
+Net factor income from abroad (7),2014,895494.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2014,14332238.0,A,2015,current
+Net current transfers from abroad (9),2014,63342.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2014,14395580.0,A,2015,current
+Gross Domestic saving (11)=(5)-(1),2014,2968169.0,A,2015,current
+Gross National saving (12)=(10)-(1),2014,3927005.0,A,2015,current
+Current Account Balance (13)=(12)-(2)-(6),2014,80777.0,A,2015,current
+Comsumption,2014,77.91,C,2015,current
+Private,2014,72.57,A,2015,current
+General Govt.,2014,5.34,A,2015,current
+Investment,2014,28.58,E,2015,current
+Private,2014,22.03,A,2015,current
+Public,2014,6.55,B,2015,current
+Exports of goods & services,2014,18.99,S,2015,current
+Imports of goods & services,2014,25.52,S,2015,current
+Gross Domestic saving,2014,22.09,A,2015,current
+Gross National saving,2014,29.23,A,2015,current
+Domestic demand (1)+(2),2014,7933480.0,A,2015,current
+Consumption (1),2014,5507931.0,C,2015,current
+Private,2014,5110768.0,A,2015,current
+General Govt.,2014,397163.0,A,2015,current
+Investment (2),2014,2425549.0,E,2015,current
+Private,2014,1873379.0,A,2015,current
+Public,2014,552170.0,B,2015,current
+Resource balance (3)-(4),2014,-228952.0,A,2015,current
+Exports (3),2014,1482726.0,E,2015,current
+Imports (4),2014,1711678.0,I,2015,current
+Gross Domestic Exp. at m.p.,2014,7704528.0,A,2015,current
+Gross Domestic Product at m.p.(5),2014,7741361.0,A,2015,current
+Statistical Discrepancy (6),2014,36833.0,A,2015,current
+Net factor income from abroad (7),2014,515924.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2014,8257285.0,A,2015,current
+Net current transfers from abroad (9),2014,36493.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2014,8293779.0,A,2015,current
+Agriculture and Forestry,2015,1764997.0,A,2015,current
+Crops and Horticulture ,2015,1261209.0,A_CROP,2015,current
+Animal Farmings ,2015,298845.0,A_LIVE,2015,current
+Forest and Related Services ,2015,204942.0,A_FOR,2015,current
+Fishing ,2015,475813.0,A_FISH,2015,current
+Mining and Quarrying,2015,238757.0,B,2015,current
+Natural Gas and Crude Petroleum,2015,91877.0,B,2015,current
+Other Mining and Coal ,2015,146880.0,B,2015,current
+Manufacturing ,2015,2544831.0,C,2015,current
+Large and Medium Scale,2015,2059920.0,A,2015,current
+Small Scale,2015,484911.0,A,2015,current
+"Electricity, Gas and Water Supply ",2015,198682.0,D,2015,current
+Electricity,2015,150614.0,D,2015,current
+Gas ,2015,37866.0,D,2015,current
+Water ,2015,10203.0,A,2015,current
+Construction ,2015,1084839.0,F,2015,current
+Wholesale and Retail Trade ,2015,1925854.0,G,2015,current
+Hotel and Restaurants,2015,149279.0,A,2015,current
+"Transport, Storage and Communication",2015,1500253.0,H,2015,current
+Land Transport,2015,1120956.0,H,2015,current
+Water transport,2015,89674.0,H,2015,current
+Air Transport,2015,12688.0,H,2015,current
+"Support transport services, storage ",2015,74270.0,N,2015,current
+Post and Telecommunication,2015,202665.0,A,2015,current
+Financial Intermediations,2015,557610.0,K,2015,current
+Banks,2015,466437.0,A,2015,current
+Insurances,2015,59376.0,A,2015,current
+Others ,2015,31796.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2015,1060609.0,A,2015,current
+Public Administration and Defense ,2015,506741.0,A,2015,current
+Education ,2015,376240.0,P,2015,current
+Health and Social Works,2015,301352.0,Q,2015,current
+"Community, Social and Personal Services",2015,1764017.0,S,2015,current
+Total GVA at current basic price,2015,14449873.0,TOTAL,2015,current
+Tax less subsidy,2015,708149.0,A,2015,current
+GDP at current market prices,2015,15158020.0,TOTAL,2015,current
+Agriculture and Forestry,2015,974802.0,A,2015,current
+Crops and Horticulture ,2015,701996.0,A_CROP,2015,current
+Animal Farmings ,2015,136666.0,A_LIVE,2015,current
+Forest and Related Services ,2015,136139.0,A_FOR,2015,current
+Fishing ,2015,291695.0,A_FISH,2015,current
+Mining and Quarrying,2015,132901.0,B,2015,current
+Natural Gas and Crude Petroleum,2015,79120.0,B,2015,current
+Other Mining and Coal ,2015,53781.0,B,2015,current
+Manufacturing ,2015,1595680.0,C,2015,current
+Large and Medium Scale,2015,1312254.0,A,2015,current
+Small Scale,2015,283426.0,A,2015,current
+"Electricity, Gas and Water Supply ",2015,112435.0,D,2015,current
+Electricity,2015,93934.0,D,2015,current
+Gas ,2015,11336.0,D,2015,current
+Water ,2015,7164.0,A,2015,current
+Construction ,2015,566983.0,F,2015,current
+Wholesale and Retail Trade ,2015,1114256.0,G,2015,current
+Hotel and Restaurants,2015,59504.0,A,2015,current
+"Transport, Storage and Communication",2015,904748.0,H,2015,current
+Land Transport,2015,573182.0,H,2015,current
+Water transport,2015,62622.0,H,2015,current
+Air Transport,2015,9781.0,H,2015,current
+"Support transport services, storage ",2015,51005.0,N,2015,current
+Post and Telecommunication,2015,208159.0,A,2015,current
+Financial Intermediations,2015,267192.0,K,2015,current
+Banks,2015,224700.0,A,2015,current
+Insurances,2015,28604.0,A,2015,current
+Others ,2015,13888.0,E,2015,current
+"Real Estate, Renting and Business Activities ",2015,538880.0,A,2015,current
+Public Administration and Defense ,2015,276365.0,A,2015,current
+Education ,2015,181250.0,P,2015,current
+Health and Social Works,2015,145174.0,Q,2015,current
+"Community, Social and Personal Services",2015,753518.0,S,2015,current
+Total GVA at constant basic price,2015,7915384.0,TOTAL,2015,current
+Tax less subsidy,2015,333240.0,A,2015,current
+GDP at constant market prices,2015,8248624.0,TOTAL,2015,current
+Domestic demand (1)+(2),2015,16177888.0,A,2015,current
+Consumption (1),2015,11799237.0,C,2015,current
+Private,2015,10980061.0,A,2015,current
+General Govt.,2015,819176.0,A,2015,current
+Investment (2),2015,4378651.0,E,2015,current
+Private,2015,3344722.0,A,2015,current
+Public,2015,1033929.0,B,2015,current
+Resource balance (3)-(4),2015,-1123611.0,A,2015,current
+Exports (3),2015,2627897.0,E,2015,current
+Imports (4),2015,3751508.0,I,2015,current
+Gross Domestic Exp. at m.p.,2015,15054277.0,A,2015,current
+Gross Domestic Product at m.p.(5),2015,15158020.0,A,2015,current
+Statistical Discrepancy (6),2015,103745.0,A,2015,current
+Net factor income from abroad (7),2015,984021.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2015,16142043.0,A,2015,current
+Net current transfers from abroad (9),2015,56001.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2015,16198044.0,A,2015,current
+Gross Domestic saving (11)=(5)-(1),2015,3358785.0,A,2015,current
+Gross National saving (12)=(10)-(1),2015,4398807.0,A,2015,current
+Current Account Balance (13)=(12)-(2)-(6),2015,-83589.0,A,2015,current
+Comsumption,2015,77.84,C,2015,current
+Private,2015,72.44,A,2015,current
+General Govt.,2015,5.4,A,2015,current
+Investment,2015,28.89,E,2015,current
+Private,2015,22.07,A,2015,current
+Public,2015,6.82,B,2015,current
+Exports of goods & services,2015,17.34,S,2015,current
+Imports of goods & services,2015,24.75,S,2015,current
+Gross Domestic saving,2015,22.16,A,2015,current
+Gross National saving,2015,29.02,A,2015,current
+Domestic demand (1)+(2),2015,8438208.0,A,2015,current
+Consumption (1),2015,5839989.0,C,2015,current
+Private,2015,5408068.0,A,2015,current
+General Govt.,2015,431921.0,A,2015,current
+Investment (2),2015,2598219.0,E,2015,current
+Private,2015,1986084.0,A,2015,current
+Public,2015,612135.0,B,2015,current
+Resource balance (3)-(4),2015,-325733.0,A,2015,current
+Exports (3),2015,1440765.0,E,2015,current
+Imports (4),2015,1766498.0,I,2015,current
+Gross Domestic Exp. at m.p.,2015,8112475.0,A,2015,current
+Gross Domestic Product at m.p.(5),2015,8248624.0,A,2015,current
+Statistical Discrepancy (6),2015,136149.0,A,2015,current
+Net factor income from abroad (7),2015,535480.0,A,2015,current
+Gross National Income at m.p. (8)=(5)+(7),2015,8784104.0,A,2015,current
+Net current transfers from abroad (9),2015,30474.0,A,2015,current
+Gross Disposible National Income (10)=(8)+(9),2015,8814578.0,A,2015,current

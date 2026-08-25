@@ -7,8 +7,8 @@ from typing import Dict, Any
 # ============================================================
 # CONFIGURATION
 # ============================================================
-RAW_DIR = Path("../raw_data/original")
-OUTPUT_DIR = Path("../raw_data/extracted/csv")
+RAW_DIR = Path("../../raw_data/original")
+OUTPUT_DIR = Path("../../raw_data/extracted/csv")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
@@ -57,8 +57,8 @@ FILE_CONFIG: Dict[str, Dict[str, Any]] = {
     "diarrhea_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "health-insurance_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "orphans_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
-    "select-child-mortality-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
-    "select-education-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
+    "select-child-mortality-indicators_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
+    "select-education-indicators_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
     "select-gender-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "social-marketing_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "toilet-facilities_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
@@ -117,31 +117,92 @@ def try_read_csv(file_path: Path, encodings: list = None) -> pd.DataFrame:
     raise UnicodeDecodeError(f"Could not decode {file_path}")
 
 def parse_wdi(file_path: Path, config: Dict) -> None:
-    df = try_read_csv(file_path)
-    header_row = 0
-    for i, row in df.iterrows():
-        if isinstance(row.iloc[0], str) and 'Country Name' in row.iloc[0]:
-            header_row = i
-            break
-    if header_row > 0:
-        df = pd.read_csv(file_path, skiprows=header_row, encoding='utf-8', low_memory=False)
-    else:
+    """
+    Parses WDI CSV files with metadata rows at the top.
+    """
+    print(f"   → Parsing WDI file: {file_path.name}")
+    
+    # Read the file with pandas, skip the first 3 rows (metadata)
+    try:
+        df = pd.read_csv(file_path, skiprows=3, encoding='utf-8', low_memory=False)
+    except Exception as e:
+        print(f"   ⚠️ Failed to read with skiprows=3: {e}")
         df = try_read_csv(file_path)
     
-    id_vars = config.get('melt_id_vars', ["Country Name", "Country Code", "Indicator Name", "Indicator Code"])
+    # Print column names for debugging
+    print(f"   → Columns found: {list(df.columns)[:10]}...")
+    
+    # Clean column names (remove spaces, special characters)
+    df.columns = df.columns.str.strip()
+    
+    # Try to find the right column names
+    country_col = None
+    code_col = None
+    indicator_col = None
+    indicator_code_col = None
+    
+    for col in df.columns:
+        col_lower = col.lower()
+        if 'country name' in col_lower:
+            country_col = col
+        if 'country code' in col_lower:
+            code_col = col
+        if 'indicator name' in col_lower:
+            indicator_col = col
+        if 'indicator code' in col_lower:
+            indicator_code_col = col
+    
+    # If we couldn't find the columns, use defaults
+    if country_col is None:
+        country_col = df.columns[0]
+    if code_col is None:
+        code_col = df.columns[1]
+    if indicator_col is None:
+        indicator_col = df.columns[2]
+    if indicator_code_col is None:
+        indicator_code_col = df.columns[3]
+    
+    print(f"   → Using columns: Country={country_col}, Code={code_col}, Indicator={indicator_col}, IndicatorCode={indicator_code_col}")
+    
+    # Find year columns (4-digit numbers)
     year_cols = []
     for col in df.columns:
-        if isinstance(col, str) and col.isdigit() and len(col) == 4:
-            year_cols.append(col)
+        col_str = str(col).strip()
+        if col_str.isdigit() and len(col_str) == 4:
+            year_cols.append(col_str)
         elif isinstance(col, int) and 1960 <= col <= 2030:
             year_cols.append(str(col))
     
+    if not year_cols:
+        print(f"   ⚠️ No year columns found in {file_path.name}")
+        return
+    
+    print(f"   → Found {len(year_cols)} year columns: {year_cols[:5]}...")
+    
+    # Keep only the columns we need
+    id_vars = [country_col, code_col, indicator_col, indicator_code_col]
     keep_cols = id_vars + year_cols
     df = df[keep_cols]
-    df_melted = df.melt(id_vars=id_vars, value_vars=year_cols, var_name='year', value_name='value')
-    df_melted = df_melted.dropna(subset=['value'])
-    df_melted['year'] = df_melted['year'].astype(int)
     
+    # Melt the data
+    df_melted = df.melt(id_vars=id_vars, value_vars=year_cols, var_name='year', value_name='value')
+    
+    # Rename columns to match the schema
+    rename_map = {
+        country_col: 'country_name',
+        code_col: 'country_code',
+        indicator_col: 'indicator_name',
+        indicator_code_col: 'indicator_code'
+    }
+    df_melted = df_melted.rename(columns=rename_map)
+    
+    # Clean up
+    df_melted = df_melted.dropna(subset=['value'])
+    df_melted['year'] = pd.to_numeric(df_melted['year'], errors='coerce').astype('Int64')
+    df_melted['value'] = pd.to_numeric(df_melted['value'], errors='coerce')
+    df_melted = df_melted.dropna(subset=['country_code', 'indicator_code', 'year'])
+    
+    # Output
     out_name = file_path.stem + "_melted.csv"
     out_path = OUTPUT_DIR / out_name
     df_melted.to_csv(out_path, index=False, encoding='utf-8')

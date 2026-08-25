@@ -1,0 +1,766 @@
+year,month,rate_type,exchange_rate_value,end_of_period_rate,period_average_rate
+2005,1,"National Currency per US Dollar, End of period",61.4925,1,0
+2005,1,"National Currency per US Dollar, Period average",61.6536,0,1
+2005,1,"US Dollars per National Currency,Period average",0.016219653,0,1
+2005,2,"National Currency per US Dollar, End of period",63.2399,1,0
+2005,2,"National Currency per US Dollar, Period average",63.1172,0,1
+2005,2,"US Dollars per National Currency,Period average",0.015843542,0,1
+2005,3,"National Currency per US Dollar, End of period",63.522,1,0
+2005,3,"National Currency per US Dollar, Period average",63.5512,0,1
+2005,3,"US Dollars per National Currency,Period average",0.015735344,0,1
+2005,4,"National Currency per US Dollar, End of period",63.5687,1,0
+2005,4,"National Currency per US Dollar, Period average",63.5195,0,1
+2005,4,"US Dollars per National Currency,Period average",0.015743197,0,1
+2005,5,"National Currency per US Dollar, End of period",63.455,1,0
+2005,5,"National Currency per US Dollar, Period average",63.5462,0,1
+2005,5,"US Dollars per National Currency,Period average",0.015736582,0,1
+2005,6,"National Currency per US Dollar, End of period",63.7458,1,0
+2005,6,"National Currency per US Dollar, Period average",63.7458,0,1
+2005,6,"US Dollars per National Currency,Period average",0.015687308,0,1
+2005,7,"National Currency per US Dollar, End of period",65.0,1,0
+2005,7,"National Currency per US Dollar, Period average",64.1828,0,1
+2005,7,"US Dollars per National Currency,Period average",0.015580498,0,1
+2005,8,"National Currency per US Dollar, End of period",65.6038,1,0
+2005,8,"National Currency per US Dollar, Period average",65.3989,0,1
+2005,8,"US Dollars per National Currency,Period average",0.015290777,0,1
+2005,9,"National Currency per US Dollar, End of period",65.6679,1,0
+2005,9,"National Currency per US Dollar, Period average",65.6311,0,1
+2005,9,"US Dollars per National Currency,Period average",0.015236679,0,1
+2005,10,"National Currency per US Dollar, End of period",65.75,1,0
+2005,10,"National Currency per US Dollar, Period average",65.724,0,1
+2005,10,"US Dollars per National Currency,Period average",0.015215142,0,1
+2005,11,"National Currency per US Dollar, End of period",65.8527,1,0
+2005,11,"National Currency per US Dollar, Period average",65.795,0,1
+2005,11,"US Dollars per National Currency,Period average",0.015198723,0,1
+2005,12,"National Currency per US Dollar, End of period",66.21,1,0
+2005,12,"National Currency per US Dollar, Period average",66.0644,0,1
+2005,12,"US Dollars per National Currency,Period average",0.015136745,0,1
+2006,1,"National Currency per US Dollar, End of period",66.6,1,0
+2006,1,"National Currency per US Dollar, Period average",66.3981,0,1
+2006,1,"US Dollars per National Currency,Period average",0.015060672,0,1
+2006,2,"National Currency per US Dollar, End of period",67.7455,1,0
+2006,2,"National Currency per US Dollar, Period average",67.1268,0,1
+2006,2,"US Dollars per National Currency,Period average",0.01489718,0,1
+2006,3,"National Currency per US Dollar, End of period",71.5458,1,0
+2006,3,"National Currency per US Dollar, Period average",70.267,0,1
+2006,3,"US Dollars per National Currency,Period average",0.014231432,0,1
+2006,4,"National Currency per US Dollar, End of period",69.8405,1,0
+2006,4,"National Currency per US Dollar, Period average",70.2018,0,1
+2006,4,"US Dollars per National Currency,Period average",0.014244649,0,1
+2006,5,"National Currency per US Dollar, End of period",69.9295,1,0
+2006,5,"National Currency per US Dollar, Period average",69.4692,0,1
+2006,5,"US Dollars per National Currency,Period average",0.014394869,0,1
+2006,6,"National Currency per US Dollar, End of period",69.7272,1,0
+2006,6,"National Currency per US Dollar, Period average",69.7088,0,1
+2006,6,"US Dollars per National Currency,Period average",0.014345391,0,1
+2006,7,"National Currency per US Dollar, End of period",69.7114,1,0
+2006,7,"National Currency per US Dollar, Period average",69.6723,0,1
+2006,7,"US Dollars per National Currency,Period average",0.014352906,0,1
+2006,8,"National Currency per US Dollar, End of period",69.6857,1,0
+2006,8,"National Currency per US Dollar, Period average",69.6603,0,1
+2006,8,"US Dollars per National Currency,Period average",0.014355379,0,1
+2006,9,"National Currency per US Dollar, End of period",67.294,1,0
+2006,9,"National Currency per US Dollar, Period average",67.8488,0,1
+2006,9,"US Dollars per National Currency,Period average",0.014738654,0,1
+2006,10,"National Currency per US Dollar, End of period",67.7201,1,0
+2006,10,"National Currency per US Dollar, Period average",67.1113,0,1
+2006,10,"US Dollars per National Currency,Period average",0.01490062,0,1
+2006,11,"National Currency per US Dollar, End of period",68.3395,1,0
+2006,11,"National Currency per US Dollar, Period average",70.2349,0,1
+2006,11,"US Dollars per National Currency,Period average",0.0142379358410135,0,1
+2006,12,"National Currency per US Dollar, End of period",69.0651,1,0
+2006,12,"National Currency per US Dollar, Period average",69.4995,0,1
+2006,12,"US Dollars per National Currency,Period average",0.0143885927236887,0,1
+2007,1,"National Currency per US Dollar, End of period",69.1092,1,0
+2007,1,"National Currency per US Dollar, Period average",69.7185,0,1
+2007,1,"US Dollars per National Currency,Period average",0.0143433952250837,0,1
+2007,2,"National Currency per US Dollar, End of period",69.0,1,0
+2007,2,"National Currency per US Dollar, Period average",69.0116,0,1
+2007,2,"US Dollars per National Currency,Period average",0.0144903175697999,0,1
+2007,3,"National Currency per US Dollar, End of period",68.8035,1,0
+2007,3,"National Currency per US Dollar, Period average",68.9468,0,1
+2007,3,"US Dollars per National Currency,Period average",0.0145039363683304,0,1
+2007,4,"National Currency per US Dollar, End of period",69.22,1,0
+2007,4,"National Currency per US Dollar, Period average",68.9396,0,1
+2007,4,"US Dollars per National Currency,Period average",0.0145054511485416,0,1
+2007,5,"National Currency per US Dollar, End of period",69.0262,1,0
+2007,5,"National Currency per US Dollar, Period average",69.0914,0,1
+2007,5,"US Dollars per National Currency,Period average",0.0144735813719218,0,1
+2007,6,"National Currency per US Dollar, End of period",68.8,1,0
+2007,6,"National Currency per US Dollar, Period average",68.9337,0,1
+2007,6,"US Dollars per National Currency,Period average",0.0145066926626599,0,1
+2007,7,"National Currency per US Dollar, End of period",68.5033,1,0
+2007,7,"National Currency per US Dollar, Period average",68.6439,0,1
+2007,7,"US Dollars per National Currency,Period average",0.0145679368450802,0,1
+2007,8,"National Currency per US Dollar, End of period",68.7,1,0
+2007,8,"National Currency per US Dollar, Period average",68.5968,0,1
+2007,8,"US Dollars per National Currency,Period average",0.0145779394957199,0,1
+2007,9,"National Currency per US Dollar, End of period",68.7083,1,0
+2007,9,"National Currency per US Dollar, Period average",68.7042,0,1
+2007,9,"US Dollars per National Currency,Period average",0.0145551509223599,0,1
+2007,10,"National Currency per US Dollar, End of period",68.6797,1,0
+2007,10,"National Currency per US Dollar, Period average",68.7022,0,1
+2007,10,"US Dollars per National Currency,Period average",0.0145555746395312,0,1
+2007,11,"National Currency per US Dollar, End of period",68.6026,1,0
+2007,11,"National Currency per US Dollar, Period average",68.6227,0,1
+2007,11,"US Dollars per National Currency,Period average",0.014572437400452,0,1
+2007,12,"National Currency per US Dollar, End of period",68.5761,1,0
+2007,12,"National Currency per US Dollar, Period average",68.5871,0,1
+2007,12,"US Dollars per National Currency,Period average",0.0145800011955601,0,1
+2008,1,"National Currency per US Dollar, End of period",68.58,1,0
+2008,1,"National Currency per US Dollar, Period average",68.5798,0,1
+2008,1,"US Dollars per National Currency,Period average",0.0145815531687173,0,1
+2008,2,"National Currency per US Dollar, End of period",68.5798,1,0
+2008,2,"National Currency per US Dollar, Period average",68.5799,0,1
+2008,2,"US Dollars per National Currency,Period average",0.014581531906579,0,1
+2008,3,"National Currency per US Dollar, End of period",68.58,1,0
+2008,3,"National Currency per US Dollar, Period average",68.5802,0,1
+2008,3,"US Dollars per National Currency,Period average",0.0145814681205362,0,1
+2008,4,"National Currency per US Dollar, End of period",68.58,1,0
+2008,4,"National Currency per US Dollar, Period average",68.6278,0,1
+2008,4,"US Dollars per National Currency,Period average",0.014571354465683,0,1
+2008,5,"National Currency per US Dollar, End of period",68.5498,1,0
+2008,5,"National Currency per US Dollar, Period average",68.5758,0,1
+2008,5,"US Dollars per National Currency,Period average",0.0145824037050971,0,1
+2008,6,"National Currency per US Dollar, End of period",68.5297,1,0
+2008,6,"National Currency per US Dollar, Period average",68.5296,0,1
+2008,6,"US Dollars per National Currency,Period average",0.0145922345964372,0,1
+2008,7,"National Currency per US Dollar, End of period",68.52,1,0
+2008,7,"National Currency per US Dollar, Period average",68.5151,0,1
+2008,7,"US Dollars per National Currency,Period average",0.014595322782861,0,1
+2008,8,"National Currency per US Dollar, End of period",68.52,1,0
+2008,8,"National Currency per US Dollar, Period average",68.5199,0,1
+2008,8,"US Dollars per National Currency,Period average",0.0145943003419445,0,1
+2008,9,"National Currency per US Dollar, End of period",68.5148,1,0
+2008,9,"National Currency per US Dollar, Period average",68.5187,0,1
+2008,9,"US Dollars per National Currency,Period average",0.0145945559387437,0,1
+2008,10,"National Currency per US Dollar, End of period",68.6499,1,0
+2008,10,"National Currency per US Dollar, Period average",68.5458,0,1
+2008,10,"US Dollars per National Currency,Period average",0.0145887858920605,0,1
+2008,11,"National Currency per US Dollar, End of period",68.8,1,0
+2008,11,"National Currency per US Dollar, Period average",68.7166,0,1
+2008,11,"US Dollars per National Currency,Period average",0.0145525244264123,0,1
+2008,12,"National Currency per US Dollar, End of period",68.92,1,0
+2008,12,"National Currency per US Dollar, Period average",68.8901,0,1
+2008,12,"US Dollars per National Currency,Period average",0.014515873833831,0,1
+2009,1,"National Currency per US Dollar, End of period",68.9,1,0
+2009,1,"National Currency per US Dollar, Period average",68.939,0,1
+2009,1,"US Dollars per National Currency,Period average",0.0145055773945082,0,1
+2009,2,"National Currency per US Dollar, End of period",68.9021,1,0
+2009,2,"National Currency per US Dollar, Period average",68.9082,0,1
+2009,2,"US Dollars per National Currency,Period average",0.0145120609738754,0,1
+2009,3,"National Currency per US Dollar, End of period",69.0287,1,0
+2009,3,"National Currency per US Dollar, Period average",68.9835,0,1
+2009,3,"US Dollars per National Currency,Period average",0.0144962201106062,0,1
+2009,4,"National Currency per US Dollar, End of period",69.0281,1,0
+2009,4,"National Currency per US Dollar, Period average",69.0197,0,1
+2009,4,"US Dollars per National Currency,Period average",0.0144886170180398,0,1
+2009,5,"National Currency per US Dollar, End of period",69.03,1,0
+2009,5,"National Currency per US Dollar, Period average",69.0268,0,1
+2009,5,"US Dollars per National Currency,Period average",0.0144871267391796,0,1
+2009,6,"National Currency per US Dollar, End of period",69.06,1,0
+2009,6,"National Currency per US Dollar, Period average",69.0455,0,1
+2009,6,"US Dollars per National Currency,Period average",0.0144832031051987,0,1
+2009,7,"National Currency per US Dollar, End of period",69.06,1,0
+2009,7,"National Currency per US Dollar, Period average",69.06,0,1
+2009,7,"US Dollars per National Currency,Period average",0.0144801621778164,0,1
+2009,8,"National Currency per US Dollar, End of period",69.06,1,0
+2009,8,"National Currency per US Dollar, Period average",69.06,0,1
+2009,8,"US Dollars per National Currency,Period average",0.0144801621778164,0,1
+2009,9,"National Currency per US Dollar, End of period",69.06,1,0
+2009,9,"National Currency per US Dollar, Period average",69.06,0,1
+2009,9,"US Dollars per National Currency,Period average",0.0144801621778164,0,1
+2009,10,"National Currency per US Dollar, End of period",69.15,1,0
+2009,10,"National Currency per US Dollar, Period average",69.1026,0,1
+2009,10,"US Dollars per National Currency,Period average",0.0144712355251467,0,1
+2009,11,"National Currency per US Dollar, End of period",69.04,1,0
+2009,11,"National Currency per US Dollar, Period average",69.0988,0,1
+2009,11,"US Dollars per National Currency,Period average",0.0144720313522087,0,1
+2009,12,"National Currency per US Dollar, End of period",69.2667,1,0
+2009,12,"National Currency per US Dollar, Period average",69.1647,0,1
+2009,12,"US Dollars per National Currency,Period average",0.0144582424271341,0,1
+2010,1,"National Currency per US Dollar, End of period",69.2015,1,0
+2010,1,"National Currency per US Dollar, Period average",69.2038,0,1
+2010,1,"US Dollars per National Currency,Period average",0.0144500735508744,0,1
+2010,2,"National Currency per US Dollar, End of period",69.232,1,0
+2010,2,"National Currency per US Dollar, Period average",69.2888,0,1
+2010,2,"US Dollars per National Currency,Period average",0.0144323469305285,0,1
+2010,3,"National Currency per US Dollar, End of period",69.2429,1,0
+2010,3,"National Currency per US Dollar, Period average",69.2509,0,1
+2010,3,"US Dollars per National Currency,Period average",0.0144402455419352,0,1
+2010,4,"National Currency per US Dollar, End of period",69.2914,1,0
+2010,4,"National Currency per US Dollar, Period average",69.2559,0,1
+2010,4,"US Dollars per National Currency,Period average",0.0144392030137505,0,1
+2010,5,"National Currency per US Dollar, End of period",69.361,1,0
+2010,5,"National Currency per US Dollar, Period average",69.2961,0,1
+2010,5,"US Dollars per National Currency,Period average",0.0144308265544526,0,1
+2010,6,"National Currency per US Dollar, End of period",69.5013,1,0
+2010,6,"National Currency per US Dollar, Period average",69.358,0,1
+2010,6,"US Dollars per National Currency,Period average",0.0144179474609995,0,1
+2010,7,"National Currency per US Dollar, End of period",69.4078,1,0
+2010,7,"National Currency per US Dollar, Period average",69.4349,0,1
+2010,7,"US Dollars per National Currency,Period average",0.0144019794080498,0,1
+2010,8,"National Currency per US Dollar, End of period",69.5826,1,0
+2010,8,"National Currency per US Dollar, Period average",69.483,0,1
+2010,8,"US Dollars per National Currency,Period average",0.0143920095562943,0,1
+2010,9,"National Currency per US Dollar, End of period",70.2485,1,0
+2010,9,"National Currency per US Dollar, Period average",69.7033,0,1
+2010,9,"US Dollars per National Currency,Period average",0.0143465230484066,0,1
+2010,10,"National Currency per US Dollar, End of period",70.7938,1,0
+2010,10,"National Currency per US Dollar, Period average",70.4887,0,1
+2010,10,"US Dollars per National Currency,Period average",0.0141866710550769,0,1
+2010,11,"National Currency per US Dollar, End of period",70.3615,1,0
+2010,11,"National Currency per US Dollar, Period average",70.4016,0,1
+2010,11,"US Dollars per National Currency,Period average",0.0142042226313038,0,1
+2010,12,"National Currency per US Dollar, End of period",70.7497,1,0
+2010,12,"National Currency per US Dollar, Period average",70.6265,0,1
+2010,12,"US Dollars per National Currency,Period average",0.0141589913134588,0,1
+2011,1,"National Currency per US Dollar, End of period",71.15,1,0
+2011,1,"National Currency per US Dollar, Period average",71.0427,0,1
+2011,1,"US Dollars per National Currency,Period average",0.0140760415918877,0,1
+2011,2,"National Currency per US Dollar, End of period",71.3,1,0
+2011,2,"National Currency per US Dollar, Period average",71.1778,0,1
+2011,2,"US Dollars per National Currency,Period average",0.0140493243679911,0,1
+2011,3,"National Currency per US Dollar, End of period",72.7648,1,0
+2011,3,"National Currency per US Dollar, Period average",71.9831,0,1
+2011,3,"US Dollars per National Currency,Period average",0.0138921496851344,0,1
+2011,4,"National Currency per US Dollar, End of period",72.9489,1,0
+2011,4,"National Currency per US Dollar, Period average",72.8494,0,1
+2011,4,"US Dollars per National Currency,Period average",0.0137269490208567,0,1
+2011,5,"National Currency per US Dollar, End of period",73.4967,1,0
+2011,5,"National Currency per US Dollar, Period average",73.2237,0,1
+2011,5,"US Dollars per National Currency,Period average",0.0136567805232459,0,1
+2011,6,"National Currency per US Dollar, End of period",74.2329,1,0
+2011,6,"National Currency per US Dollar, Period average",73.9166,0,1
+2011,6,"US Dollars per National Currency,Period average",0.0135287607925689,0,1
+2011,7,"National Currency per US Dollar, End of period",74.7371,1,0
+2011,7,"National Currency per US Dollar, Period average",74.4848,0,1
+2011,7,"US Dollars per National Currency,Period average",0.0134255579661891,0,1
+2011,8,"National Currency per US Dollar, End of period",73.6128,1,0
+2011,8,"National Currency per US Dollar, Period average",74.5227,0,1
+2011,8,"US Dollars per National Currency,Period average",0.0134187301318927,0,1
+2011,9,"National Currency per US Dollar, End of period",75.2267,1,0
+2011,9,"National Currency per US Dollar, Period average",74.6769,0,1
+2011,9,"US Dollars per National Currency,Period average",0.0133910218554868,0,1
+2011,10,"National Currency per US Dollar, End of period",76.1992,1,0
+2011,10,"National Currency per US Dollar, Period average",75.741,0,1
+2011,10,"US Dollars per National Currency,Period average",0.0132028887920677,0,1
+2011,11,"National Currency per US Dollar, End of period",76.864,1,0
+2011,11,"National Currency per US Dollar, Period average",76.5247,0,1
+2011,11,"US Dollars per National Currency,Period average",0.0130676761882111,0,1
+2011,12,"National Currency per US Dollar, End of period",81.8529,1,0
+2011,12,"National Currency per US Dollar, Period average",79.6854,0,1
+2011,12,"US Dollars per National Currency,Period average",0.0125493503201339,0,1
+2012,1,"National Currency per US Dollar, End of period",84.4656,1,0
+2012,1,"National Currency per US Dollar, Period average",83.4135,0,1
+2012,1,"US Dollars per National Currency,Period average",0.0119884670946549,0,1
+2012,2,"National Currency per US Dollar, End of period",81.7967,1,0
+2012,2,"National Currency per US Dollar, Period average",83.1101,0,1
+2012,2,"US Dollars per National Currency,Period average",0.0120322319429287,0,1
+2012,3,"National Currency per US Dollar, End of period",81.829,1,0
+2012,3,"National Currency per US Dollar, Period average",81.8008,0,1
+2012,3,"US Dollars per National Currency,Period average",0.0122248193171705,0,1
+2012,4,"National Currency per US Dollar, End of period",81.8914,1,0
+2012,4,"National Currency per US Dollar, Period average",81.8299,0,1
+2012,4,"US Dollars per National Currency,Period average",0.0122204719790688,0,1
+2012,5,"National Currency per US Dollar, End of period",81.939,1,0
+2012,5,"National Currency per US Dollar, Period average",81.8571,0,1
+2012,5,"US Dollars per National Currency,Period average",0.0122164112825888,0,1
+2012,6,"National Currency per US Dollar, End of period",81.8252,1,0
+2012,6,"National Currency per US Dollar, Period average",81.8766,0,1
+2012,6,"US Dollars per National Currency,Period average",0.0122135017819499,0,1
+2012,7,"National Currency per US Dollar, End of period",81.7026,1,0
+2012,7,"National Currency per US Dollar, Period average",81.7739,0,1
+2012,7,"US Dollars per National Currency,Period average",0.0122288407425841,0,1
+2012,8,"National Currency per US Dollar, End of period",81.7176,1,0
+2012,8,"National Currency per US Dollar, Period average",81.5459,0,1
+2012,8,"US Dollars per National Currency,Period average",0.0122630322309276,0,1
+2012,9,"National Currency per US Dollar, End of period",81.5896,1,0
+2012,9,"National Currency per US Dollar, Period average",81.7392,0,1
+2012,9,"US Dollars per National Currency,Period average",0.0122340321412492,0,1
+2012,10,"National Currency per US Dollar, End of period",81.2005,1,0
+2012,10,"National Currency per US Dollar, Period average",81.3189,0,1
+2012,10,"US Dollars per National Currency,Period average",0.0122972642276273,0,1
+2012,11,"National Currency per US Dollar, End of period",81.6378,1,0
+2012,11,"National Currency per US Dollar, Period average",81.4847,0,1
+2012,11,"US Dollars per National Currency,Period average",0.0122722425191478,0,1
+2012,12,"National Currency per US Dollar, End of period",79.8499,1,0
+2012,12,"National Currency per US Dollar, Period average",80.6013,0,1
+2012,12,"US Dollars per National Currency,Period average",0.0124067477819837,0,1
+2013,1,"National Currency per US Dollar, End of period",79.2068,1,0
+2013,1,"National Currency per US Dollar, Period average",79.5316,0,1
+2013,1,"US Dollars per National Currency,Period average",0.0125736185365314,0,1
+2013,2,"National Currency per US Dollar, End of period",78.85,1,0
+2013,2,"National Currency per US Dollar, Period average",79.007,0,1
+2013,2,"US Dollars per National Currency,Period average",0.0126571063323503,0,1
+2013,3,"National Currency per US Dollar, End of period",78.1932,1,0
+2013,3,"National Currency per US Dollar, Period average",78.5857,0,1
+2013,3,"US Dollars per National Currency,Period average",0.0127249614115545,0,1
+2013,4,"National Currency per US Dollar, End of period",77.9326,1,0
+2013,4,"National Currency per US Dollar, Period average",78.0249,0,1
+2013,4,"US Dollars per National Currency,Period average",0.0128164214244427,0,1
+2013,5,"National Currency per US Dollar, End of period",77.7509,1,0
+2013,5,"National Currency per US Dollar, Period average",77.8339,0,1
+2013,5,"US Dollars per National Currency,Period average",0.0128478721996457,0,1
+2013,6,"National Currency per US Dollar, End of period",77.7593,1,0
+2013,6,"National Currency per US Dollar, Period average",77.7521,0,1
+2013,6,"US Dollars per National Currency,Period average",0.0128613889528386,0,1
+2013,7,"National Currency per US Dollar, End of period",77.75,1,0
+2013,7,"National Currency per US Dollar, Period average",77.7525,0,1
+2013,7,"US Dollars per National Currency,Period average",0.0128613227870486,0,1
+2013,8,"National Currency per US Dollar, End of period",77.75,1,0
+2013,8,"National Currency per US Dollar, Period average",77.75022,0,1
+2013,8,"US Dollars per National Currency,Period average",0.0128616999411706,0,1
+2013,9,"National Currency per US Dollar, End of period",77.75,1,0
+2013,9,"National Currency per US Dollar, Period average",77.7501,0,1
+2013,9,"US Dollars per National Currency,Period average",0.0128617197920003,0,1
+2013,10,"National Currency per US Dollar, End of period",77.75,1,0
+2013,10,"National Currency per US Dollar, Period average",77.7502,0,1
+2013,10,"US Dollars per National Currency,Period average",0.0128617032496379,0,1
+2013,11,"National Currency per US Dollar, End of period",77.75,1,0
+2013,11,"National Currency per US Dollar, Period average",77.7501,0,1
+2013,11,"US Dollars per National Currency,Period average",0.0128617197920003,0,1
+2013,12,"National Currency per US Dollar, End of period",77.75,1,0
+2013,12,"National Currency per US Dollar, Period average",77.7505,0,1
+2013,12,"US Dollars per National Currency,Period average",0.0128616536228063,0,1
+2014,1,"National Currency per US Dollar, End of period",77.75,1,0
+2014,1,"National Currency per US Dollar, Period average",77.7503,0,1
+2014,1,"US Dollars per National Currency,Period average",0.0128616867073182,0,1
+2014,2,"National Currency per US Dollar, End of period",77.7502,1,0
+2014,2,"National Currency per US Dollar, Period average",77.7501,0,1
+2014,2,"US Dollars per National Currency,Period average",0.0128617197920003,0,1
+2014,3,"National Currency per US Dollar, End of period",77.6709,1,0
+2014,3,"National Currency per US Dollar, Period average",77.7094,0,1
+2014,3,"US Dollars per National Currency,Period average",0.0128684560683778,0,1
+2014,4,"National Currency per US Dollar, End of period",77.65,1,0
+2014,4,"National Currency per US Dollar, Period average",77.6623,0,1
+2014,4,"US Dollars per National Currency,Period average",0.0128762604249423,0,1
+2014,5,"National Currency per US Dollar, End of period",77.63,1,0
+2014,5,"National Currency per US Dollar, Period average",77.6404,0,1
+2014,5,"US Dollars per National Currency,Period average",0.0128798924271384,0,1
+2014,6,"National Currency per US Dollar, End of period",77.63,1,0
+2014,6,"National Currency per US Dollar, Period average",77.63,0,1
+2014,6,"US Dollars per National Currency,Period average",0.0128816179312122,0,1
+2014,7,"National Currency per US Dollar, End of period",77.52,1,0
+2014,7,"National Currency per US Dollar, Period average",77.5932,0,1
+2014,7,"US Dollars per National Currency,Period average",0.0128877272750705,0,1
+2014,8,"National Currency per US Dollar, End of period",77.4002,1,0
+2014,8,"National Currency per US Dollar, Period average",77.4558,0,1
+2014,8,"US Dollars per National Currency,Period average",0.0129105890068917,0,1
+2014,9,"National Currency per US Dollar, End of period",77.4,1,0
+2014,9,"National Currency per US Dollar, Period average",77.4,0,1
+2014,9,"US Dollars per National Currency,Period average",0.0129198966408269,0,1
+2014,10,"National Currency per US Dollar, End of period",77.4087,1,0
+2014,10,"National Currency per US Dollar, Period average",77.401,0,1
+2014,10,"US Dollars per National Currency,Period average",0.0129197297192543,0,1
+2014,11,"National Currency per US Dollar, End of period",77.9494,1,0
+2014,11,"National Currency per US Dollar, Period average",77.8522,0,1
+2014,11,"US Dollars per National Currency,Period average",0.0128448521685964,0,1
+2014,12,"National Currency per US Dollar, End of period",77.9494,1,0
+2014,12,"National Currency per US Dollar, Period average",77.8522,0,1
+2014,12,"US Dollars per National Currency,Period average",0.0128448521685964,0,1
+2015,1,"National Currency per US Dollar, End of period",77.8,1,0
+2015,1,"National Currency per US Dollar, Period average",77.8713,0,1
+2015,1,"US Dollars per National Currency,Period average",0.0128417016281993,0,1
+2015,2,"National Currency per US Dollar, End of period",77.8,1,0
+2015,2,"National Currency per US Dollar, Period average",77.8,0,1
+2015,2,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,3,"National Currency per US Dollar, End of period",77.8,1,0
+2015,3,"National Currency per US Dollar, Period average",77.8,0,1
+2015,3,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,4,"National Currency per US Dollar, End of period",77.8,1,0
+2015,4,"National Currency per US Dollar, Period average",77.8,0,1
+2015,4,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,5,"National Currency per US Dollar, End of period",77.8,1,0
+2015,5,"National Currency per US Dollar, Period average",77.8,0,1
+2015,5,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,6,"National Currency per US Dollar, End of period",77.8004,1,0
+2015,6,"National Currency per US Dollar, Period average",77.8,0,1
+2015,6,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,7,"National Currency per US Dollar, End of period",77.8,1,0
+2015,7,"National Currency per US Dollar, Period average",77.8,0,1
+2015,7,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,8,"National Currency per US Dollar, End of period",77.8,1,0
+2015,8,"National Currency per US Dollar, Period average",77.8,0,1
+2015,8,"US Dollars per National Currency,Period average",0.0128534704370179,0,1
+2015,9,"National Currency per US Dollar, End of period",77.8,1,0
+2015,9,"National Currency per US Dollar, Period average",77.8001,0,1
+2015,9,"US Dollars per National Currency,Period average",0.012853453915869,0,1
+2015,10,"National Currency per US Dollar, End of period",77.8,1,0
+2015,10,"National Currency per US Dollar, Period average",77.8143,0,1
+2015,10,"US Dollars per National Currency,Period average",0.0128511083438391,0,1
+2015,11,"National Currency per US Dollar, End of period",78.93,1,0
+2015,11,"National Currency per US Dollar, Period average",78.511,0,1
+2015,11,"US Dollars per National Currency,Period average",0.0127370686910114,0,1
+2015,12,"National Currency per US Dollar, End of period",78.5003,1,0
+2015,12,"National Currency per US Dollar, Period average",78.7662,0,1
+2015,12,"US Dollars per National Currency,Period average",0.0126958009907803,0,1
+2016,1,"National Currency per US Dollar, End of period",78.5014,1,0
+2016,1,"National Currency per US Dollar, Period average",78.5001,0,1
+2016,1,"US Dollars per National Currency,Period average",0.0127388372753665,0,1
+2016,2,"National Currency per US Dollar, End of period",78.45,1,0
+2016,2,"National Currency per US Dollar, Period average",78.5516,0,1
+2016,2,"US Dollars per National Currency,Period average",0.0127304854388707,0,1
+2016,3,"National Currency per US Dollar, End of period",78.4,1,0
+2016,3,"National Currency per US Dollar, Period average",78.4134,0,1
+2016,3,"US Dollars per National Currency,Period average",0.0127529223321524,0,1
+2016,4,"National Currency per US Dollar, End of period",78.4,1,0
+2016,4,"National Currency per US Dollar, Period average",78.4,0,1
+2016,4,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,5,"National Currency per US Dollar, End of period",78.4,1,0
+2016,5,"National Currency per US Dollar, Period average",78.4,0,1
+2016,5,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,6,"National Currency per US Dollar, End of period",78.4,1,0
+2016,6,"National Currency per US Dollar, Period average",78.4,0,1
+2016,6,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,7,"National Currency per US Dollar, End of period",78.4,1,0
+2016,7,"National Currency per US Dollar, Period average",78.4,0,1
+2016,7,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,8,"National Currency per US Dollar, End of period",78.4,1,0
+2016,8,"National Currency per US Dollar, Period average",78.4,0,1
+2016,8,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,9,"National Currency per US Dollar, End of period",78.4,1,0
+2016,9,"National Currency per US Dollar, Period average",78.4,0,1
+2016,9,"US Dollars per National Currency,Period average",0.0127551020408163,0,1
+2016,10,"National Currency per US Dollar, End of period",78.4148,1,0
+2016,10,"National Currency per US Dollar, Period average",78.4008,0,1
+2016,10,"US Dollars per National Currency,Period average",0.0127549718880419,0,1
+2016,11,"National Currency per US Dollar, End of period",78.7197,1,0
+2016,11,"National Currency per US Dollar, Period average",78.5472,0,1
+2016,11,"US Dollars per National Currency,Period average",0.0127311985659577,0,1
+2016,12,"National Currency per US Dollar, End of period",78.7022,1,0
+2016,12,"National Currency per US Dollar, Period average",78.804,0,1
+2016,12,"US Dollars per National Currency,Period average",0.0126897111821734,0,1
+2017,1,"National Currency per US Dollar, End of period",79.0695,1,0
+2017,1,"National Currency per US Dollar, Period average",78.8534,0,1
+2017,1,"US Dollars per National Currency,Period average",0.0126817613444696,0,1
+2017,2,"National Currency per US Dollar, End of period",79.3697,1,0
+2017,2,"National Currency per US Dollar, Period average",79.236,0,1
+2017,2,"US Dollars per National Currency,Period average",0.0126205260235246,0,1
+2017,3,"National Currency per US Dollar, End of period",79.67,1,0
+2017,3,"National Currency per US Dollar, Period average",79.5352,0,1
+2017,3,"US Dollars per National Currency,Period average",0.0125730494171134,0,1
+2017,4,"National Currency per US Dollar, End of period",80.23,1,0
+2017,4,"National Currency per US Dollar, Period average",79.8322,0,1
+2017,4,"US Dollars per National Currency,Period average",0.0125262738594201,0,1
+2017,5,"National Currency per US Dollar, End of period",80.5516,1,0
+2017,5,"National Currency per US Dollar, Period average",80.4926,0,1
+2017,5,"US Dollars per National Currency,Period average",0.012423502284682,0,1
+2017,6,"National Currency per US Dollar, End of period",80.5988,1,0
+2017,6,"National Currency per US Dollar, Period average",80.5874,0,1
+2017,6,"US Dollars per National Currency,Period average",0.0124088877417561,0,1
+2017,7,"National Currency per US Dollar, End of period",80.66,1,0
+2017,7,"National Currency per US Dollar, Period average",80.6263,0,1
+2017,7,"US Dollars per National Currency,Period average",0.0124029007904368,0,1
+2017,8,"National Currency per US Dollar, End of period",80.7,1,0
+2017,8,"National Currency per US Dollar, Period average",80.6939,0,1
+2017,8,"US Dollars per National Currency,Period average",0.0123925104623769,0,1
+2017,9,"National Currency per US Dollar, End of period",80.8,1,0
+2017,9,"National Currency per US Dollar, Period average",80.7377,0,1
+2017,9,"US Dollars per National Currency,Period average",0.0123857875564946,0,1
+2017,10,"National Currency per US Dollar, End of period",80.8681,1,0
+2017,10,"National Currency per US Dollar, Period average",80.8217,0,1
+2017,10,"US Dollars per National Currency,Period average",0.0123729146998887,0,1
+2017,11,"National Currency per US Dollar, End of period",82.3,1,0
+2017,11,"National Currency per US Dollar, Period average",81.2842,0,1
+2017,11,"US Dollars per National Currency,Period average",0.012307,0,1
+2017,12,"National Currency per US Dollar, End of period",82.7,1,0
+2017,12,"National Currency per US Dollar, Period average",82.5499,0,1
+2017,12,"US Dollars per National Currency,Period average",0.012114,0,1
+2018,1,"National Currency per US Dollar, End of period",82.9,1,0
+2018,1,"National Currency per US Dollar, Period average",82.8168,0,1
+2018,1,"US Dollars per National Currency,Period average",0.012075,0,1
+2018,2,"National Currency per US Dollar, End of period",82.96,1,0
+2018,2,"National Currency per US Dollar, Period average",82.92,0,1
+2018,2,"US Dollars per National Currency,Period average",0.012075,0,1
+2018,3,"National Currency per US Dollar, End of period",82.96,1,0
+2018,3,"National Currency per US Dollar, Period average",82.96,0,1
+2018,3,"US Dollars per National Currency,Period average",0.012054,0,1
+2018,4,"National Currency per US Dollar, End of period",82.98,1,0
+2018,4,"National Currency per US Dollar, Period average",82.974615,0,1
+2018,4,"US Dollars per National Currency,Period average",0.012052,0,1
+2018,5,"National Currency per US Dollar, End of period",83.7,1,0
+2018,5,"National Currency per US Dollar, Period average",83.384615,0,1
+2018,5,"US Dollars per National Currency,Period average",0.011993,0,1
+2018,6,"National Currency per US Dollar, End of period",83.725,1,0
+2018,6,"National Currency per US Dollar, Period average",83.701042,0,1
+2018,6,"US Dollars per National Currency,Period average",0.011947,0,1
+2018,7,"National Currency per US Dollar, End of period",83.75,1,0
+2018,7,"National Currency per US Dollar, Period average",83.747222,0,1
+2018,7,"US Dollars per National Currency,Period average",0.011941,0,1
+2018,8,"National Currency per US Dollar, End of period",83.75,1,0
+2018,8,"National Currency per US Dollar, Period average",83.75,0,1
+2018,8,"US Dollars per National Currency,Period average",0.01194,0,1
+2018,9,"National Currency per US Dollar, End of period",83.75,1,0
+2018,9,"National Currency per US Dollar, Period average",83.75,0,1
+2018,9,"US Dollars per National Currency,Period average",0.01194,0,1
+2018,10,"National Currency per US Dollar, End of period",83.85,1,0
+2018,10,"National Currency per US Dollar, Period average",83.816667,0,1
+2018,10,"US Dollars per National Currency,Period average",0.011931,0,1
+2018,11,"National Currency per US Dollar, End of period",83.9,1,0
+2018,11,"National Currency per US Dollar, Period average",83.873462,0,1
+2018,11,"US Dollars per National Currency,Period average",0.011923,0,1
+2018,12,"National Currency per US Dollar, End of period",83.9,1,0
+2018,12,"National Currency per US Dollar, Period average",83.9,0,1
+2018,12,"US Dollars per National Currency,Period average",0.011919,0,1
+2019,1,"National Currency per US Dollar, End of period",83.95,1,0
+2019,1,"National Currency per US Dollar, Period average",83.94,0,1
+2019,1,"US Dollars per National Currency,Period average",0.011919,0,1
+2019,2,"National Currency per US Dollar, End of period",84.15,1,0
+2019,2,"National Currency per US Dollar, Period average",84.04,0,1
+2019,2,"US Dollars per National Currency,Period average",0.01,0,1
+2019,3,"National Currency per US Dollar, End of period",84.25,1,0
+2019,3,"National Currency per US Dollar, Period average",84.21,0,1
+2019,3,"US Dollars per National Currency,Period average",0.01,0,1
+2019,4,"National Currency per US Dollar, End of period",84.45,1,0
+2019,4,"National Currency per US Dollar, Period average",84.330962,0,1
+2019,4,"US Dollars per National Currency,Period average",0.011858,0,1
+2019,5,"National Currency per US Dollar, End of period",84.5,1,0
+2019,5,"National Currency per US Dollar, Period average",84.492308,0,1
+2019,5,"US Dollars per National Currency,Period average",0.011858,0,1
+2019,6,"National Currency per US Dollar, End of period",84.5,1,0
+2019,6,"National Currency per US Dollar, Period average",84.5,0,1
+2019,6,"US Dollars per National Currency,Period average",0.011858,0,1
+2019,7,"National Currency per US Dollar, End of period",84.5,1,0
+2019,7,"National Currency per US Dollar, Period average",84.5,0,1
+2019,7,"US Dollars per National Currency,Period average",0.01,0,1
+2019,8,"National Currency per US Dollar, End of period",84.5,1,0
+2019,8,"National Currency per US Dollar, Period average",84.5,0,1
+2019,8,"US Dollars per National Currency,Period average",0.0118343195266272,0,1
+2019,9,"National Currency per US Dollar, End of period",84.5,1,0
+2019,9,"National Currency per US Dollar, Period average",84.5,0,1
+2019,9,"US Dollars per National Currency,Period average",0.0118343195266272,0,1
+2019,10,"National Currency per US Dollar, End of period",84.75,1,0
+2019,10,"National Currency per US Dollar, Period average",84.75,0,1
+2019,10,"US Dollars per National Currency,Period average",0.01,0,1
+2019,11,"National Currency per US Dollar, End of period",84.9,1,0
+2019,11,"National Currency per US Dollar, Period average",84.781,0,1
+2019,11,"US Dollars per National Currency,Period average",0.01,0,1
+2019,12,"National Currency per US Dollar, End of period",84.9,1,0
+2019,12,"National Currency per US Dollar, Period average",84.898,0,1
+2019,12,"US Dollars per National Currency,Period average",0.01,0,1
+2020,1,"National Currency per US Dollar, End of period",84.9,1,0
+2020,1,"National Currency per US Dollar, Period average",84.9,0,1
+2020,1,"US Dollars per National Currency,Period average",0.01,0,1
+2020,2,"National Currency per US Dollar, End of period",84.95,1,0
+2020,2,"National Currency per US Dollar, Period average",84.95,0,1
+2020,2,"US Dollars per National Currency,Period average",0.01,0,1
+2020,3,"National Currency per US Dollar, End of period",84.95,1,0
+2020,3,"National Currency per US Dollar, Period average",84.95,0,1
+2020,3,"US Dollars per National Currency,Period average",0.01,0,1
+2020,4,"National Currency per US Dollar, End of period",84.95,1,0
+2020,4,"National Currency per US Dollar, Period average",84.95,0,1
+2020,4,"US Dollars per National Currency,Period average",0.01,0,1
+2020,5,"National Currency per US Dollar, End of period",84.95,1,0
+2020,5,"National Currency per US Dollar, Period average",84.95,0,1
+2020,5,"US Dollars per National Currency,Period average",0.01,0,1
+2020,6,"National Currency per US Dollar, End of period",84.9,1,0
+2020,6,"National Currency per US Dollar, Period average",84.9,0,1
+2020,6,"US Dollars per National Currency,Period average",0.01,0,1
+2020,7,"National Currency per US Dollar, End of period",84.8,1,0
+2020,7,"National Currency per US Dollar, Period average",84.8137,0,1
+2020,7,"US Dollars per National Currency,Period average",0.01,0,1
+2020,8,"National Currency per US Dollar, End of period",84.825,1,0
+2020,8,"National Currency per US Dollar, Period average",84.84,0,1
+2020,8,"US Dollars per National Currency,Period average",0.01,0,1
+2020,9,"National Currency per US Dollar, End of period",84.84,1,0
+2020,9,"National Currency per US Dollar, Period average",84.802,0,1
+2020,9,"US Dollars per National Currency,Period average",0.01,0,1
+2020,10,"National Currency per US Dollar, End of period",84.802,1,0
+2020,10,"National Currency per US Dollar, Period average",84.801,0,1
+2020,10,"US Dollars per National Currency,Period average",0.01,0,1
+2020,11,"National Currency per US Dollar, End of period",84.8,1,0
+2020,11,"National Currency per US Dollar, Period average",84.8,0,1
+2020,11,"US Dollars per National Currency,Period average",0.01,0,1
+2020,12,"National Currency per US Dollar, End of period",84.802,1,0
+2020,12,"National Currency per US Dollar, Period average",84.8,0,1
+2020,12,"US Dollars per National Currency,Period average",0.01,0,1
+2021,1,"National Currency per US Dollar, End of period",84.801106,1,0
+2021,1,"National Currency per US Dollar, Period average",84.8025,0,1
+2021,1,"US Dollars per National Currency,Period average",0.01,0,1
+2021,2,"National Currency per US Dollar, End of period",84.8,1,0
+2021,2,"National Currency per US Dollar, Period average",84.800719,0,1
+2021,2,"US Dollars per National Currency,Period average",0.01,0,1
+2021,3,"National Currency per US Dollar, End of period",84.8,1,0
+2021,3,"National Currency per US Dollar, Period average",84.8,0,1
+2021,3,"US Dollars per National Currency,Period average",0.01,0,1
+2021,4,"National Currency per US Dollar, End of period",84.8,1,0
+2021,4,"National Currency per US Dollar, Period average",84.8,0,1
+2021,4,"US Dollars per National Currency,Period average",0.01,0,1
+2021,5,"National Currency per US Dollar, End of period",84.8,1,0
+2021,5,"National Currency per US Dollar, Period average",84.8,0,1
+2021,5,"US Dollars per National Currency,Period average",0.01,0,1
+2021,6,"National Currency per US Dollar, End of period",84.8125,1,0
+2021,6,"National Currency per US Dollar, Period average",84.814825,0,1
+2021,6,"US Dollars per National Currency,Period average",0.01,0,1
+2021,7,"National Currency per US Dollar, End of period",84.8,1,0
+2021,7,"National Currency per US Dollar, Period average",84.8,0,1
+2021,7,"US Dollars per National Currency,Period average",0.01,0,1
+2021,8,"National Currency per US Dollar, End of period",85.2,1,0
+2021,8,"National Currency per US Dollar, Period average",84.95,0,1
+2021,8,"US Dollars per National Currency,Period average",0.01,0,1
+2021,9,"National Currency per US Dollar, End of period",85.5,1,0
+2021,9,"National Currency per US Dollar, Period average",85.25,0,1
+2021,9,"US Dollars per National Currency,Period average",0.01,0,1
+2021,10,"National Currency per US Dollar, End of period",85.675,1,0
+2021,10,"National Currency per US Dollar, Period average",85.612115,0,1
+2021,10,"US Dollars per National Currency,Period average",0.011681,0,1
+2021,11,"National Currency per US Dollar, End of period",85.8,1,0
+2021,11,"National Currency per US Dollar, Period average",85.775,0,1
+2021,11,"US Dollars per National Currency,Period average",0.01,0,1
+2021,12,"National Currency per US Dollar, End of period",85.8,1,0
+2021,12,"National Currency per US Dollar, Period average",85.8,0,1
+2021,12,"US Dollars per National Currency,Period average",0.0116550116550117,0,1
+2022,1,"National Currency per US Dollar, End of period",86.0,1,0
+2022,1,"National Currency per US Dollar, Period average",85.9538461538461,0,1
+2022,1,"US Dollars per National Currency,Period average",0.0116341507069984,0,1
+2022,2,"National Currency per US Dollar, End of period",86.0,1,0
+2022,2,"National Currency per US Dollar, Period average",86.0,0,1
+2022,2,"US Dollars per National Currency,Period average",0.0116279069767442,0,1
+2022,3,"National Currency per US Dollar, End of period",86.2,1,0
+2022,3,"National Currency per US Dollar, Period average",86.0592592592592,0,1
+2022,3,"US Dollars per National Currency,Period average",0.011619900154932,0,1
+2022,4,"National Currency per US Dollar, End of period",86.45,1,0
+2022,4,"National Currency per US Dollar, Period average",86.2298,0,1
+2022,4,"US Dollars per National Currency,Period average",0.011597,0,1
+2022,5,"National Currency per US Dollar, End of period",89.0,1,0
+2022,5,"National Currency per US Dollar, Period average",87.1826923076923,0,1
+2022,5,"US Dollars per National Currency,Period average",0.0114701665379949,0,1
+2022,6,"National Currency per US Dollar, End of period",93.45,1,0
+2022,6,"National Currency per US Dollar, Period average",92.0346846153846,0,1
+2022,6,"US Dollars per National Currency,Period average",0.0108654688629513,0,1
+2022,7,"National Currency per US Dollar, End of period",94.7,1,0
+2022,7,"National Currency per US Dollar, Period average",93.8873076923077,0,1
+2022,7,"US Dollars per National Currency,Period average",0.0106510669501489,0,1
+2022,8,"National Currency per US Dollar, End of period",95.0,1,0
+2022,8,"National Currency per US Dollar, Period average",94.9055555555555,0,1
+2022,8,"US Dollars per National Currency,Period average",0.0105367909617749,0,1
+2022,9,"National Currency per US Dollar, End of period",96.0,1,0
+2022,9,"National Currency per US Dollar, Period average",95.6153846153846,0,1
+2022,9,"US Dollars per National Currency,Period average",0.0104585679806919,0,1
+2022,10,"National Currency per US Dollar, End of period",97.0,1,0
+2022,10,"National Currency per US Dollar, Period average",96.6153846153846,0,1
+2022,10,"US Dollars per National Currency,Period average",0.0103503184713376,0,1
+2022,11,"National Currency per US Dollar, End of period",98.0,1,0
+2022,11,"National Currency per US Dollar, Period average",97.6153846153846,0,1
+2022,11,"US Dollars per National Currency,Period average",0.0103503184713376,0,1
+2022,12,"National Currency per US Dollar, End of period",99.0,1,0
+2022,12,"National Currency per US Dollar, Period average",98.8461538461538,0,1
+2022,12,"US Dollars per National Currency,Period average",0.0103503184713376,0,1
+2023,1,"National Currency per US Dollar, End of period",100.0,1,0
+2023,1,"National Currency per US Dollar, Period average",99.888889,0,1
+2023,1,"US Dollars per National Currency,Period average",0.0103503184713376,0,1
+2023,2,"National Currency per US Dollar, End of period",101.0,1,0
+2023,2,"National Currency per US Dollar, Period average",100.958333333333,0,1
+2023,2,"US Dollars per National Currency,Period average",0.0099050763516302,0,1
+2023,3,"National Currency per US Dollar, End of period",102.0,1,0
+2023,3,"National Currency per US Dollar, Period average",101.962962962963,0,1
+2023,3,"US Dollars per National Currency,Period average",0.0098074827460951,0,1
+2023,4,"National Currency per US Dollar, End of period",103.0,1,0
+2023,4,"National Currency per US Dollar, Period average",102.92,0,1
+2023,4,"US Dollars per National Currency,Period average",0.0097162844928099,0,1
+2023,5,"National Currency per US Dollar, End of period",104.5,1,0
+2023,5,"National Currency per US Dollar, Period average",104.388888888889,0,1
+2023,5,"US Dollars per National Currency,Period average",0.0095795635976583,0,1
+2023,6,"National Currency per US Dollar, End of period",106.0,1,0
+2023,6,"National Currency per US Dollar, Period average",105.884615384615,0,1
+2023,6,"US Dollars per National Currency,Period average",0.0094442426443879,0,1
+2023,7,"National Currency per US Dollar, End of period",109.0,1,0
+2023,7,"National Currency per US Dollar, Period average",108.757173,0,1
+2023,7,"US Dollars per National Currency,Period average",0.009195,0,1
+2023,8,"National Currency per US Dollar, End of period",109.5,1,0
+2023,8,"National Currency per US Dollar, Period average",109.457778,0,1
+2023,8,"US Dollars per National Currency,Period average",0.009136,0,1
+2023,9,"National Currency per US Dollar, End of period",110.25,1,0
+2023,9,"National Currency per US Dollar, Period average",109.97,0,1
+2023,9,"US Dollars per National Currency,Period average",0.009093,0,1
+2023,10,"National Currency per US Dollar, End of period",110.5,1,0
+2023,10,"National Currency per US Dollar, Period average",110.490556,0,1
+2023,10,"US Dollars per National Currency,Period average",0.009051,0,1
+2023,11,"National Currency per US Dollar, End of period",110.5,1,0
+2023,11,"National Currency per US Dollar, Period average",110.880769,0,1
+2023,11,"US Dollars per National Currency,Period average",0.009019,0,1
+2023,12,"National Currency per US Dollar, End of period",110.0,1,0
+2023,12,"National Currency per US Dollar, Period average",110.153846,0,1
+2023,12,"US Dollars per National Currency,Period average",0.009078,0,1
+2024,1,"National Currency per US Dollar, End of period",110.0,1,0
+2024,1,"National Currency per US Dollar, Period average",110.0,0,1
+2024,1,"US Dollars per National Currency,Period average",0.009090909090909,0,1
+2024,2,"National Currency per US Dollar, End of period",110.0,1,0
+2024,2,"National Currency per US Dollar, Period average",110.0,0,1
+2024,2,"US Dollars per National Currency,Period average",0.009090909090909,0,1
+2024,3,"National Currency per US Dollar, End of period",110.0,1,0
+2024,3,"National Currency per US Dollar, Period average",110.0,0,1
+2024,3,"US Dollars per National Currency,Period average",0.009090909090909,0,1
+2024,4,"National Currency per US Dollar, End of period",110.0,1,0
+2024,4,"National Currency per US Dollar, Period average",110.0,0,1
+2024,4,"US Dollars per National Currency,Period average",0.009090909090909,0,1
+2024,5,"National Currency per US Dollar, End of period",117.7,1,0
+2024,5,"National Currency per US Dollar, Period average",115.027592592593,0,1
+2024,5,"US Dollars per National Currency,Period average",0.0086935662779783,0,1
+2024,6,"National Currency per US Dollar, End of period",118.0,1,0
+2024,6,"National Currency per US Dollar, Period average",117.93795,0,1
+2024,6,"US Dollars per National Currency,Period average",0.0084790349501581,0,1
+2024,7,"National Currency per US Dollar, End of period",118.0,1,0
+2024,7,"National Currency per US Dollar, Period average",117.927777777778,0,1
+2024,7,"US Dollars per National Currency,Period average",0.0084797663353276,0,1
+2024,8,"National Currency per US Dollar, End of period",120.0,1,0
+2024,8,"National Currency per US Dollar, Period average",118.725,0,1
+2024,8,"US Dollars per National Currency,Period average",0.0084228258580753,0,1
+2024,9,"National Currency per US Dollar, End of period",120.0,1,0
+2024,9,"National Currency per US Dollar, Period average",118.872151898734,0,1
+2024,9,"US Dollars per National Currency,Period average",0.0083333333333333,0,1
+2024,10,"National Currency per US Dollar, End of period",120.0,1,0
+2024,10,"National Currency per US Dollar, Period average",119.998148148148,0,1
+2024,10,"US Dollars per National Currency,Period average",0.0083334619361409,0,1
+2024,11,"National Currency per US Dollar, End of period",120.0,1,0
+2024,11,"National Currency per US Dollar, Period average",119.32,0,1
+2024,11,"US Dollars per National Currency,Period average",0.01,0,1
+2024,12,"National Currency per US Dollar, End of period",120.0,1,0
+2024,12,"National Currency per US Dollar, Period average",119.435759493671,0,1
+2024,12,"US Dollars per National Currency,Period average",0.0083333333333333,0,1
+2025,1,"National Currency per US Dollar, End of period",121.925925925926,1,0
+2025,1,"National Currency per US Dollar, Period average",119.799189189189,0,1
+2025,1,"US Dollars per National Currency,Period average",0.0082017010935601,0,1
+2025,2,"National Currency per US Dollar, End of period",122.0,1,0
+2025,2,"National Currency per US Dollar, Period average",122.0,0,1
+2025,2,"US Dollars per National Currency,Period average",0.0081967213114754,0,1
+2025,3,"National Currency per US Dollar, End of period",122.0,1,0
+2025,3,"National Currency per US Dollar, Period average",122.0,0,1
+2025,3,"US Dollars per National Currency,Period average",0.0081967213114754,0,1
+2025,4,"National Currency per US Dollar, End of period",122.0,1,0
+2025,4,"National Currency per US Dollar, Period average",122.0,0,1
+2025,4,"US Dollars per National Currency,Period average",0.0081967213114754,0,1
+2025,5,"National Currency per US Dollar, End of period",122.9,1,0
+2025,5,"National Currency per US Dollar, Period average",122.33875,0,1
+2025,5,"US Dollars per National Currency,Period average",0.008174,0,1
+2025,6,"National Currency per US Dollar, End of period",122.775,1,0
+2025,6,"National Currency per US Dollar, Period average",122.872307692308,0,1
+2025,6,"US Dollars per National Currency,Period average",0.0081385303066347,0,1
+2025,7,"National Currency per US Dollar, End of period",122.615,1,0
+2025,7,"National Currency per US Dollar, Period average",121.963703703704,0,1
+2025,7,"US Dollars per National Currency,Period average",0.0081991606488876,0,1
+2025,8,"National Currency per US Dollar, End of period",121.64,1,0
+2025,8,"National Currency per US Dollar, Period average",121.718653846154,0,1
+2025,8,"US Dollars per National Currency,Period average",0.0082156675940891,0,1
+2025,9,"National Currency per US Dollar, End of period",121.8,1,0
+2025,9,"National Currency per US Dollar, Period average",121.741490384615,0,1
+2025,9,"US Dollars per National Currency,Period average",0.0082141264809615,0,1
+2025,10,"National Currency per US Dollar, End of period",122.29,1,0
+2025,10,"National Currency per US Dollar, Period average",122.004537037037,0,1
+2025,10,"US Dollars per National Currency,Period average",0.0081964164963507,0,1
+2025,11,"National Currency per US Dollar, End of period",122.26,1,0
+2025,11,"National Currency per US Dollar, Period average",122.319,0,1
+2025,11,"US Dollars per National Currency,Period average",0.0081753447951667,0,1
+2025,12,"National Currency per US Dollar, End of period",122.325,1,0
+2025,12,"National Currency per US Dollar, Period average",122.292407407407,0,1
+2025,12,"US Dollars per National Currency,Period average",0.0081771225311525,0,1
+2026,1,"National Currency per US Dollar, End of period",122.35,1,0
+2026,1,"National Currency per US Dollar, Period average",122.324038461538,0,1
+2026,1,"US Dollars per National Currency,Period average",0.0081750080570992,0,1
+2026,2,"National Currency per US Dollar, End of period",122.3,1,0
+2026,2,"National Currency per US Dollar, Period average",122.3025,0,1
+2026,2,"US Dollars per National Currency,Period average",0.0081764477422783,0,1
+2026,3,"National Currency per US Dollar, End of period",122.75,1,0
+2026,3,"National Currency per US Dollar, Period average",122.624444444444,0,1
+2026,3,"US Dollars per National Currency,Period average",0.0081549808811003,0,1
