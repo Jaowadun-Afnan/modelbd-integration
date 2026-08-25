@@ -1,111 +1,93 @@
-
 import pandas as pd
 from pathlib import Path
-from mapping_dicts import map_country_to_code, map_gender
+from mapping_dicts import map_admin_to_pcode, map_gender
 
-RAW_DIR = Path("../../raw_data/extracted/csv")
-STAGING_DIR = Path("../../staging/clean")
+BASE_DIR = Path(__file__).resolve().parent.parent
+RAW_DIR = BASE_DIR / "raw_data" / "extracted" / "csv"
+STAGING_DIR = BASE_DIR / "staging" / "clean"
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
 def transform_all_dhs():
-    """
-    Consolidates all DHS subnational CSVs into DHS_Subnational_Observation.
-    """
     print("   → Consolidating DHS Subnational files...")
-    
-    # List of DHS files from your extracted folder
-    dhs_patterns = [
-        "dhs-quickstats_subnational_bgd (1).csv",
-        "dhs-mobile_subnational_bgd (1).csv",
-        "sdgs_subnational_bgd (1).csv",
-        "mdgs_subnational_bgd (1).csv",
-        "rbm_subnational_bgd (1).csv",
-        "iycf_subnational_bgd (1).csv",
-        "mics-indicators_subnational_bgd (1).csv",
-        "access-to-health-care_subnational_bgd (1).csv",
-        "anemia_subnational_bgd (1).csv",
-        "birth-registration_subnational_bgd (1).csv",
-        "child-mortality-rates_subnational_bgd (1).csv"
-    ]
-    
+    # Find all CSV files that contain 'subnational_bgd' in the name
+    dhs_files = list(RAW_DIR.glob("*subnational_bgd*.csv"))
+    if not dhs_files:
+        print("      ⚠️ No DHS subnational files found.")
+        return
     all_dfs = []
-    
-    for pattern in dhs_patterns:
-        file_path = RAW_DIR / pattern
-        if not file_path.exists():
-            print(f"      ⚠️ Skipping {pattern} (not found)")
-            continue
-        
-        df = pd.read_csv(file_path, low_memory=False)
-        
-        # Standardize column names to match DHS_Subnational_Observation
-        # Map common column names
+    for file in dhs_files:
+        print(f"      Processing {file.name}...")
+        df = pd.read_csv(file, low_memory=False)
+        # Common rename map
         rename_map = {
             'ISO3': 'country_code',
             'SurveyYear': 'survey_year',
-            'CharacteristicId': 'characteristic_id',
-            'IndicatorId': 'indicator_id',
-            'ByVariableId': 'by_variable_id',
-            'DataId': 'data_id',
-            'Location': 'location',
-            'Indicator': 'indicator_name',
-            'Value': 'value',
-            'Precision': 'precision',
+            'SurveyYearLabel': 'survey_year_label',
             'SurveyId': 'survey_id',
-            'IndicatorOrder': 'indicator_order',
+            'SurveyType': 'survey_type',
+            'IndicatorId': 'indicator_id',
+            'Indicator': 'indicator_name',
             'IndicatorType': 'indicator_type',
-            'CharacteristicOrder': 'characteristic_order',
+            'IndicatorOrder': 'indicator_order',
+            'CharacteristicId': 'characteristic_id',
             'CharacteristicCategory': 'characteristic_category',
             'CharacteristicLabel': 'characteristic_label',
+            'CharacteristicOrder': 'characteristic_order',
+            'ByVariableId': 'by_variable_id',
             'ByVariableLabel': 'by_variable_label',
-            'IsTotal': 'is_total',
-            'IsPreferred': 'is_preferred',
-            'SDRID': 'sdr_id',
+            'DataId': 'data_id',
+            'Location': 'location',
             'RegionId': 'region_id',
-            'SurveyYearLabel': 'survey_year_label',
-            'SurveyType': 'survey_type',
+            'Value': 'value',
+            'Precision': 'precision',
             'DenominatorWeighted': 'denominator_weighted',
             'DenominatorUnweighted': 'denominator_unweighted',
             'CILow': 'ci_low',
             'CIHigh': 'ci_high',
+            'IsTotal': 'is_total',
+            'IsPreferred': 'is_preferred',
+            'SDRID': 'sdr_id',
             'LevelRank': 'level_rank'
         }
-        
-        # Only rename columns that exist
-        existing_rename = {k: v for k, v in rename_map.items() if k in df.columns}
-        df = df.rename(columns=existing_rename)
-        
-        # Add a discriminator domain
-        df['observation_domain'] = pattern.replace('.csv', '').replace('_subnational_bgd (1)', '')
-        
-        # Ensure country_code is standardized (if ISO3 exists, keep it; if not, map)
-        if 'country_code' not in df.columns:
-            if 'CountryName' in df.columns:
-                df['country_code'] = df['CountryName'].apply(map_country_to_code)
-        
-        # Clean boolean columns to 'Y'/'N'
+        df.rename(columns={k:v for k,v in rename_map.items() if k in df.columns}, inplace=True)
+        # If no country_code, try to map from CountryName
+        if 'country_code' not in df.columns and 'CountryName' in df.columns:
+            df['country_code'] = df['CountryName'].apply(lambda x: 'BGD')  # default to BGD, but you can use map_country_to_code if needed
+        # Add domain based on file name
+        df['observation_domain'] = file.stem.replace('_subnational_bgd', '').replace('_', ' ').title()
+        # Standardise gender if a 'Sex' or 'Gender' column exists
+        if 'Sex' in df.columns:
+            df['gender'] = df['Sex'].apply(map_gender)
+        elif 'Gender' in df.columns:
+            df['gender'] = df['Gender'].apply(map_gender)
+        else:
+            df['gender'] = 'Total'
+        # Standardise admin location if 'Location' or 'RegionName' exists
+        if 'Location' in df.columns:
+            df['admin_pcode'] = df['Location'].apply(map_admin_to_pcode)
+        elif 'RegionName' in df.columns:
+            df['admin_pcode'] = df['RegionName'].apply(map_admin_to_pcode)
+        else:
+            df['admin_pcode'] = 'UNMAPPED'
+        # Drop rows missing the composite key (if key columns exist)
+        key_cols = ['survey_id', 'indicator_id', 'characteristic_id', 'by_variable_id']
+        existing_keys = [c for c in key_cols if c in df.columns]
+        if existing_keys:
+            df.dropna(subset=existing_keys, inplace=True)
+        # Clean booleans
         for col in ['is_total', 'is_preferred']:
             if col in df.columns:
                 df[col] = df[col].apply(lambda x: 'Y' if x in [1, '1', True, 'Y', 'y'] else 'N')
-        
-        # Drop rows missing the composite key
-        pk_cols = ['survey_id', 'indicator_id', 'characteristic_id', 'by_variable_id']
-        df = df.dropna(subset=[c for c in pk_cols if c in df.columns])
-        
         all_dfs.append(df)
-        print(f"      ✅ Loaded {pattern} ({len(df)} rows)")
-    
     if not all_dfs:
-        print("      ❌ No DHS files found.")
+        print("      ❌ No data loaded.")
         return
-    
-    # Combine all DHS dataframes
     combined = pd.concat(all_dfs, ignore_index=True, sort=False)
-    
-    # Deduplicate on the composite key
-    combined = combined.drop_duplicates(subset=['survey_id', 'indicator_id', 'characteristic_id', 'by_variable_id'])
-    
-    # Save
+    # Deduplicate on available key columns
+    if existing_keys:
+        combined.drop_duplicates(subset=existing_keys, inplace=True)
+    else:
+        combined.drop_duplicates(inplace=True)
     out_path = STAGING_DIR / "DHS_Subnational_Observation.csv"
     combined.to_csv(out_path, index=False, encoding='utf-8')
     print(f"      ✅ Combined {len(combined)} rows into {out_path}")
