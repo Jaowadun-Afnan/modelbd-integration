@@ -57,8 +57,8 @@ FILE_CONFIG: Dict[str, Dict[str, Any]] = {
     "diarrhea_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "health-insurance_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "orphans_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
-    "select-child-mortality-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
-    "select-education-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
+    "select-child-mortality-indicators_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
+    "select-education-indicators_subnational_bgd (1).csv": {"type": "standard", "encoding": "utf-8"},
     "select-gender-indicators_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "social-marketing_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
     "toilet-facilities_subnational_bgd.csv": {"type": "standard", "encoding": "utf-8"},
@@ -117,18 +117,40 @@ def try_read_csv(file_path: Path, encodings: list = None) -> pd.DataFrame:
     raise UnicodeDecodeError(f"Could not decode {file_path}")
 
 def parse_wdi(file_path: Path, config: Dict) -> None:
-    df = try_read_csv(file_path)
-    header_row = 0
-    for i, row in df.iterrows():
-        if isinstance(row.iloc[0], str) and 'Country Name' in row.iloc[0]:
-            header_row = i
+    """
+    Parses WDI CSV files with metadata rows at the top.
+    Skips rows until it finds the actual header with 'Country Name'.
+    """
+    print(f"   → Parsing WDI file: {file_path.name}")
+    
+    # First, read the file to find where the data starts
+    with open(file_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+    
+    # Find the line that contains the column headers
+    header_line = 0
+    for i, line in enumerate(lines):
+        if 'Country Name' in line and 'Country Code' in line:
+            header_line = i
             break
-    if header_row > 0:
-        df = pd.read_csv(file_path, skiprows=header_row, encoding='utf-8', low_memory=False)
+    
+    # If we found the header, use skiprows to start from there
+    if header_line > 0:
+        df = pd.read_csv(file_path, skiprows=header_line, encoding='utf-8', low_memory=False)
     else:
+        # If not found, try reading normally
         df = try_read_csv(file_path)
     
+    # Clean up column names
+    df.columns = df.columns.str.strip()
+    
+    # Get the id_vars from config
     id_vars = config.get('melt_id_vars', ["Country Name", "Country Code", "Indicator Name", "Indicator Code"])
+    
+    # Find which id_vars actually exist
+    existing_id_vars = [col for col in id_vars if col in df.columns]
+    
+    # Find year columns (4-digit numbers)
     year_cols = []
     for col in df.columns:
         if isinstance(col, str) and col.isdigit() and len(col) == 4:
@@ -136,12 +158,24 @@ def parse_wdi(file_path: Path, config: Dict) -> None:
         elif isinstance(col, int) and 1960 <= col <= 2030:
             year_cols.append(str(col))
     
-    keep_cols = id_vars + year_cols
-    df = df[keep_cols]
-    df_melted = df.melt(id_vars=id_vars, value_vars=year_cols, var_name='year', value_name='value')
-    df_melted = df_melted.dropna(subset=['value'])
-    df_melted['year'] = df_melted['year'].astype(int)
+    if not year_cols:
+        print(f"   ⚠️ No year columns found in {file_path.name}")
+        return
     
+    # Keep only id_vars and year columns
+    keep_cols = existing_id_vars + year_cols
+    df = df[keep_cols]
+    
+    # Melt the data
+    df_melted = df.melt(id_vars=existing_id_vars, value_vars=year_cols, var_name='year', value_name='value')
+    
+    # Clean up
+    df_melted = df_melted.dropna(subset=['value'])
+    df_melted['year'] = pd.to_numeric(df_melted['year'], errors='coerce').astype('Int64')
+    df_melted['value'] = pd.to_numeric(df_melted['value'], errors='coerce')
+    df_melted = df_melted.dropna(subset=['country_code', 'indicator_code', 'year'])
+    
+    # Output
     out_name = file_path.stem + "_melted.csv"
     out_path = OUTPUT_DIR / out_name
     df_melted.to_csv(out_path, index=False, encoding='utf-8')
