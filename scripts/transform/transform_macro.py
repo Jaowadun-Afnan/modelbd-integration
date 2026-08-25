@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from mapping_dicts import map_sector_code, parse_fiscal_year
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 RAW_DIR = BASE_DIR / "raw_data" / "extracted" / "csv"
 STAGING_DIR = BASE_DIR / "staging" / "clean"
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
