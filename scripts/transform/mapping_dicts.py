@@ -251,9 +251,9 @@ def parse_fiscal_year(text, return_start_year=True):
         return 0
 
     # Remove 'FY' prefix and any non‑digit/hyphen characters
-    cleaned = re.sub(r'[^0-9\-]', '', text)  # keep only digits and hyphens
-    # Find all 4‑digit numbers (years)
-    years = re.findall(r'\b(19|20)\d{2}\b', cleaned)
+    cleaned = re.sub(r'[^0-9\-]', '', text)   # keep digits and hyphens
+    # Find all 4‑digit years (the full number, not just the first two digits)
+    years = re.findall(r'\d{4}', cleaned)     # corrected: no capturing group
     if years:
         start = int(years[0])
         end = int(years[-1]) if len(years) > 1 else start + 1
