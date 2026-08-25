@@ -28,23 +28,29 @@ def transform_macroeconomic_indicator():
     }
     df.rename(columns={k:v for k,v in rename_map.items() if k in df.columns}, inplace=True)
     
-    # Determine year: from 'period' or 'year'
+    # Determine year: from 'year' or 'period'
     if 'year' in df.columns:
         df['year'] = pd.to_numeric(df['year'], errors='coerce')
     elif 'period' in df.columns:
-        # Apply parse_fiscal_year to convert '2007-08' -> 2007
+        # Apply parse_fiscal_year, which now returns 0 for invalid
         df['year'] = df['period'].apply(parse_fiscal_year, return_start_year=True)
+        # Replace 0 with NaN and drop
+        df['year'] = df['year'].replace(0, pd.NA)
     else:
         print("   ❌ No 'year' or 'period' column found.")
         return
     
-    df.dropna(subset=['year'], inplace=True)
+    # Convert year to numeric and drop NaN
+    df['year'] = pd.to_numeric(df['year'], errors='coerce')
+    df = df.dropna(subset=['year'])
     df['year'] = df['year'].astype(int)
     df.drop_duplicates(subset=['year'], inplace=True)
     
     out = STAGING_DIR / "Macroeconomic_Indicator.csv"
     df.to_csv(out, index=False, encoding='utf-8')
     print(f"   ✅ Saved {len(df)} rows to {out}")
+
+# ... rest of functions unchanged ...
 
 def transform_sectoral_gdp():
     nag_files = list(RAW_DIR.glob("*nag*.csv")) + list(RAW_DIR.glob("*NAG*.csv"))
