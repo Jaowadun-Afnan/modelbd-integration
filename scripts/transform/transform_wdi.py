@@ -1,7 +1,6 @@
 import pandas as pd
 from pathlib import Path
 
-# Correct base path: project root
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 RAW_DIR = BASE_DIR / "raw_data" / "extracted" / "csv"
 STAGING_DIR = BASE_DIR / "staging" / "clean"
@@ -13,18 +12,18 @@ def transform_metadata_country():
         print("⚠️ Metadata_Country not found. Skipping.")
         return
     df = pd.read_csv(meta_file, low_memory=False)
-    # Print columns for debugging
-    print("   Columns found in Metadata_Country:", list(df.columns))
+    # Normalise column names: strip and lower
+    df.columns = [str(c).strip().lower() for c in df.columns]
     rename_map = {
-        "Country Code": "country_code",
-        "Region": "region",
-        "IncomeGroup": "income_group",
-        "SpecialNotes": "special_notes",
-        "TableName": "country_name"
+        "country code": "country_code",
+        "region": "region",
+        "incomegroup": "income_group",
+        "specialnotes": "special_notes",
+        "tablename": "country_name"
     }
-    df.rename(columns={k:v for k,v in rename_map.items() if k in df.columns}, inplace=True)
+    df.rename(columns=rename_map, inplace=True)
     if 'country_code' not in df.columns:
-        print("   ❌ 'Country Code' column not found. Check the file.")
+        print("   ❌ 'Country Code' column not found.")
         return
     if 'country_name' not in df.columns:
         df['country_name'] = df['country_code']
@@ -41,21 +40,23 @@ def transform_metadata_indicator():
         print("⚠️ Metadata_Indicator not found. Skipping.")
         return
     df = pd.read_csv(meta_file, low_memory=False)
-    print("   Columns found in Metadata_Indicator:", list(df.columns))
+    df.columns = [str(c).strip().lower() for c in df.columns]
     rename_map = {
-        "Indicator Code": "indicator_code",
-        "Indicator Name": "indicator_name",
-        "SOURCE_NOTE": "source_notes",
-        "SOURCE_ORGANIZATION": "source_organization"
+        "indicator_code": "indicator_code",
+        "indicator_name": "indicator_name",
+        "source_note": "source_notes",
+        "source_organization": "source_organization"
     }
-    df.rename(columns={k:v for k,v in rename_map.items() if k in df.columns}, inplace=True)
+    # If 'indicator_code' not present, try to find it
     if 'indicator_code' not in df.columns:
-        # Try alternative case
-        if 'IndicatorCode' in df.columns:
-            df.rename(columns={'IndicatorCode':'indicator_code'}, inplace=True)
-        else:
-            print("   ❌ 'Indicator Code' column not found. Check the file.")
-            return
+        # Look for any column containing 'indicator' and 'code'
+        for col in df.columns:
+            if 'indicator' in col and 'code' in col:
+                df.rename(columns={col: 'indicator_code'}, inplace=True)
+                break
+    if 'indicator_code' not in df.columns:
+        print("   ❌ 'Indicator Code' column not found.")
+        return
     df['domain'] = 'Other'
     keep_cols = ['indicator_code', 'indicator_name', 'domain', 'source_notes', 'source_organization']
     df = df[[c for c in keep_cols if c in df.columns]]
@@ -70,7 +71,8 @@ def transform_wdi_observations():
         print("⚠️ WDI melted file not found. Skipping.")
         return
     df = pd.read_csv(wdi_file, low_memory=False)
-    print("   Columns found in WDI melted:", list(df.columns))
+    # Already has proper names? Maybe not - check
+    # If 'country_code' not present, rename from 'Country Code'
     rename_map = {
         "Country Code": "country_code",
         "Indicator Code": "indicator_code",
