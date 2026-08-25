@@ -238,8 +238,8 @@ def map_vaccine_code(text: Optional[str]) -> str:
 # ---------- FISCAL YEAR PARSER (Robust) ----------
 def parse_fiscal_year(text, return_start_year=True):
     """
-    Convert 'FY2007', 'FY 2007', '2007-08', '2007/08', or numeric year to int.
-    Handles NaN, None, floats safely.
+    Convert any string containing a 4-digit year (e.g., 'FY2007', '2007-08', '2007') to int.
+    Safe with NaN, None, floats.
     """
     if text is None:
         return 0
@@ -249,16 +249,22 @@ def parse_fiscal_year(text, return_start_year=True):
         return int(text)
     if not isinstance(text, str):
         return 0
-    cleaned = re.sub(r'^fy\s*', '', text.strip(), flags=re.IGNORECASE)
+
+    # Remove 'FY' prefix and any non‑digit/hyphen characters
+    cleaned = re.sub(r'[^0-9\-]', '', text)  # keep only digits and hyphens
+    # Find all 4‑digit numbers (years)
     years = re.findall(r'\b(19|20)\d{2}\b', cleaned)
     if years:
         start = int(years[0])
         end = int(years[-1]) if len(years) > 1 else start + 1
         return start if return_start_year else end
+
+    # Fallback: if any numbers exist, take the first as start
     nums = re.findall(r'\d+', cleaned)
     if nums:
         start = int(nums[0])
         return start if return_start_year else start + 1
+
     return 0
 
 # ---------- DHS SURVEY TYPE ----------
