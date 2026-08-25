@@ -7,13 +7,22 @@ STAGING_DIR = BASE_DIR / "staging" / "clean"
 STAGING_DIR.mkdir(parents=True, exist_ok=True)
 
 def transform_all_agri_labor():
-    # Search for any file with 'agri' or 'labor' in name
-    patterns = ["*agri*.csv", "*agriculture*.csv", "*labor*.csv", "*labour*.csv"]
+    # List all CSV files in raw_data/extracted/csv for debugging
+    all_files = list(RAW_DIR.glob("*.csv"))
+    if not all_files:
+        print("⚠️ No CSV files found in raw_data/extracted/csv. Check the folder.")
+        return
+    print("   All files in raw_data/extracted/csv:")
+    for f in all_files:
+        print(f"      - {f.name}")
+    # Search for likely agriculture/labor files
+    patterns = ["*agri*.csv", "*agriculture*.csv", "*labor*.csv", "*labour*.csv", "*employment*.csv", "*crop*.csv"]
     files = []
     for p in patterns:
         files.extend(RAW_DIR.glob(p))
+    files = list(set(files))  # remove duplicates
     if not files:
-        print("⚠️ No agriculture/labor files found. Skipping.")
+        print("⚠️ No agriculture/labor files matched. Skipping.")
         return
     all_dfs = []
     for file in files:
@@ -21,7 +30,7 @@ def transform_all_agri_labor():
         df = pd.read_csv(file, low_memory=False)
         # Clean columns
         df.columns = [str(c).strip().lower().replace(' ', '_') for c in df.columns]
-        # Add file name for reference
+        # If 'year' present, keep; otherwise just save raw for inspection
         df['source_file'] = file.name
         all_dfs.append(df)
     if all_dfs:
